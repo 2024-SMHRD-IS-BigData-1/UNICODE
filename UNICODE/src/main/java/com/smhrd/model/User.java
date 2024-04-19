@@ -9,20 +9,20 @@ import lombok.Setter;
 import lombok.ToString;
 
 @AllArgsConstructor
-
+@RequiredArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 @ToString
 
-public class USER {
+public class User {
 	
-	private String id;
-	private String pw;
-	private String email;
-	private String name;
-	private String tel;
-	private String region;
+	@NonNull private String id;
+	@NonNull private String pw;
+	@NonNull private String email;
+	@NonNull private String name;
+	@NonNull private String tel;
+	@NonNull private String region;
 	private String joindate;
 	
 }

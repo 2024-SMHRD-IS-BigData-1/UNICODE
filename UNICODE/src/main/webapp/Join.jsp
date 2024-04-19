@@ -11,18 +11,18 @@
 </head>
 <body>
     <div class="join-wrapper">
-        <form class="join-form" action="#">
+        <form class="join-form" action="JoinService" method="post">
             <h2>UNICODE 회원가입</h2>
             <!-- 아이디 -->
             <div id="join-id">
-                <input type="text" placeholder="아이디 입력">
-                <button>중복 확인</button>
+                <input type="text" placeholder="아이디 입력" name="id" id="inputE">
+                <input type="button" value="중복체크" onclick="checkE()">
             </div>
             <span class="error_id"></span>
     
             <!-- 비밀번호 -->
             <div id="join-pw">
-                <input type="password" placeholder="비밀번호 입력">
+                <input type="password" placeholder="비밀번호 입력" name="pw">
             </div>
     
             <!-- 비밀번호 확인 -->
@@ -33,22 +33,22 @@
     
             <!-- 이메일 -->
             <div id="join-email">
-                <input type="text" id="join-email2" placeholder="이메일 입력">
+                <input type="text" id="join-email2" placeholder="이메일 입력" name="email">
             </div>
             
             <!-- 이름 -->
             <div id="join-name">
-                <input type="name" placeholder="이름 입력">
+                <input type="name" placeholder="이름 입력" name="name">
             </div>
     
             <!-- 전화번호 -->
             <div id="join-tel">
-                <input type="tel" placeholder="전화번호 입력">
+                <input type="tel" placeholder="전화번호 입력" name="tel">
             </div>
     
             <!-- 주소 -->
             <div id="join-address">
-                <input type="text" placeholder="지역 입력">
+                <input type="text" placeholder="지역 입력" name="region">
             </div>
 
             <label for="join-check">
@@ -57,11 +57,43 @@
             </label>
 
             <div id="join-btn" style="margin-top: 13px;">
-                <input type="button" value="가입하기">
+                <input type="submit" value="Join">
             </div>
         </form>
 
     </div>
+
+	<!-- script -->
+	<script type="text/javascript">
+		function checkE(){
+			var inputE = $("#inputE").val()
+			console.log(inputE)
+			// JSON(JavaScript Object Notation)
+			// {key1 : value1, key2 : value, {key3 : value3}}
+			$.ajax(
+				{
+					// 어디로 요청할건지
+					url : "IDCheck",
+					// 어떤 데이터를 보낼건지
+					data : {'inputE' : inputE},
+					// 어떤 방식으로 요청할건지
+					type : 'get',
+					// 성공했을 때 / 실패했을 때 어떻게 처리할건지
+					success : function(data){
+						if(data=='true'){
+							$('#checkE').html('사용 가능한 이메일입니다~')
+						}else{
+							$('#checkE').html('사용 불가능한 이메일입니다~')
+						}
+					},
+					error : function(){
+						alert("통신실패!")
+					}
+				}		
+			)
+			
+		}
+	</script>
 
 </body>
 </html>

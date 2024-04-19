@@ -4,6 +4,10 @@
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
+	<typeAliases>
+		<typeAlias type="com.smhrd.model.User" alias="User"/>
+		
+	</typeAliases>
 
 	<!-- 환경설정(계정, driver, url...) -->
 	<environments default="development">
@@ -20,7 +24,7 @@
 	
 	<!-- SQL문들 정의해주는 mapper.xml을 계속해서 만들건데 어디에 있는지 경로를 지정해주는 태그 -->
 	<mappers>
-		<mapper resource="com/smhrd/db/JoinMapper.xml" />
+		<mapper resource="com/smhrd/db/UserMapper.xml" />
 		
 	</mappers>
 	
