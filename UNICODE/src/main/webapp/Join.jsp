@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/Join.css">
-    <link rel="icon" href="./">
 </head>
 <body>
     <div class="join-wrapper">
@@ -18,7 +18,7 @@
                 <input type="text" placeholder="아이디 입력" name="id" id="inputE">
                 <input type="button" value="중복체크" onclick="checkE()">
             </div>
-            <span class="error_id"></span>
+            <span class="checkE"></span>
     
             <!-- 비밀번호 -->
             <div id="join-pw">
@@ -57,19 +57,24 @@
             </label>
 
             <div id="join-btn" style="margin-top: 13px;">
-                <input type="submit" value="Join">
+                <input type="submit" value="회원가입">
             </div>
         </form>
 
     </div>
 
 	<!-- script -->
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="assets/js/main.js"></script>
 	<script type="text/javascript">
 		function checkE(){
-			var inputE = $("#inputE").val()
-			console.log(inputE)
-			// JSON(JavaScript Object Notation)
-			// {key1 : value1, key2 : value, {key3 : value3}}
+			var inputE = $("#inputE").val()	
 			$.ajax(
 				{
 					// 어디로 요청할건지

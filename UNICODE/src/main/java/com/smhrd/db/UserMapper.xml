@@ -2,10 +2,13 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.smhrd.db.JoinMapper">
+<mapper namespace="com.smhrd.db.UserMapper">
   
   <insert id="join" parameterType="User">
-  	insert into web_member values(#{id}, #{pw}, #{email}, #{name}, #{tel}, #{region}, #{joindate)
+  	insert into user_info values(#{id}, #{pw} , #{name}, #{tel}, #{joindate}, #{region}, #{email})
   </insert>
   
+  <select id="IDCheck" parameterType="String" resultType="User">
+  	select * from user_info where u_id=#{id}
+  </select>
 </mapper>

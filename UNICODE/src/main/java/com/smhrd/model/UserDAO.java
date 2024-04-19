@@ -22,8 +22,10 @@ public class UserDAO {
 
 
 	public User IDCheck(String inputE) {
-		// TODO Auto-generated method stub
-		return null;
+		SqlSession session = sqlSessionFactory.openSession(true);
+		User user = (User)session.selectOne("com.smhrd.db.UserMapper.IDCheck", inputE);
+		session.close();
+		return user;
 	}
 
 

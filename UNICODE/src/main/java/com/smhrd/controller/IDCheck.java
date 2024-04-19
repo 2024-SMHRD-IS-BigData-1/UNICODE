@@ -19,7 +19,6 @@ public class IDCheck extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		// post 방식 인코딩
 		request.setCharacterEncoding("UTF-8");
 		
 		String inputE = request.getParameter("inputE");
