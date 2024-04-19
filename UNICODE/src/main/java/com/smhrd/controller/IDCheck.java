@@ -19,11 +19,10 @@ public class IDCheck extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.setCharacterEncoding("UTF-8");
+		
 		
 		String inputE = request.getParameter("inputE");
 		
-		System.out.println(inputE);
 
 		User user = new UserDAO().IDCheck(inputE);
 		

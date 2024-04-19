@@ -9,7 +9,6 @@
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/Join.css">
 </head>
-<body>
     <div class="join-wrapper">
         <form class="join-form" action="JoinService" method="post">
             <h2>UNICODE 회원가입</h2>
@@ -57,48 +56,52 @@
             </label>
 
             <div id="join-btn" style="margin-top: 13px;">
-                <input type="submit" value="회원가입">
+                <input type="submit" value="가입하기">
+            </div>
+            
+            <div style="margin-top: 13px;">
+               <input type="submit" value="돌아가기">
             </div>
         </form>
 
     </div>
 
-	<!-- script -->
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/skel.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-	<script src="assets/js/main.js"></script>
-	<script type="text/javascript">
-		function checkE(){
-			var inputE = $("#inputE").val()	
-			$.ajax(
-				{
-					// 어디로 요청할건지
-					url : "IDCheck",
-					// 어떤 데이터를 보낼건지
-					data : {'inputE' : inputE},
-					// 어떤 방식으로 요청할건지
-					type : 'get',
-					// 성공했을 때 / 실패했을 때 어떻게 처리할건지
-					success : function(data){
-						if(data=='true'){
-							$('#checkE').html('사용 가능한 이메일입니다~')
-						}else{
-							$('#checkE').html('사용 불가능한 이메일입니다~')
-						}
-					},
-					error : function(){
-						alert("통신실패!")
-					}
-				}		
-			)
-			
-		}
-	</script>
-
+   <!-- script -->
+   <!-- Scripts -->
+   <script src="assets/js/jquery.min.js"></script>
+   <script src="assets/js/jquery.scrolly.min.js"></script>
+   <script src="assets/js/jquery.scrollex.min.js"></script>
+   <script src="assets/js/skel.min.js"></script>
+   <script src="assets/js/util.js"></script>
+   <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+   <script src="assets/js/main.js"></script>
+   <script type="text/javascript">
+      function checkE(){
+         var inputE = $("#inputE").val()   
+         $.ajax(
+            {
+               // 어디로 요청할건지
+               url : "IDCheck",
+               // 어떤 데이터를 보낼건지
+               data : {'inputE' : inputE},
+               // 어떤 방식으로 요청할건지
+               type : 'get',
+               // 성공했을 때 / 실패했을 때 어떻게 처리할건지
+               success : function(data){
+                  if(data=='true'){
+                     $('#checkE').html('사용 가능한 이메일입니다~')
+                  }else{
+                     $('#checkE').html('사용 불가능한 이메일입니다~')
+                  }
+               },
+               error : function(){
+                  alert("통신실패!")
+               }
+            }      
+         )
+         
+      }
+   </script>
+   
 </body>
 </html>

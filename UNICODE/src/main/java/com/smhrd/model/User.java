@@ -18,11 +18,11 @@ import lombok.ToString;
 public class User {
 	
 	@NonNull private String id;
-	@NonNull private String pw;
-	@NonNull private String email;
-	@NonNull private String name;
-	@NonNull private String tel;
-	@NonNull private String region;
+	private String pw;
+	private String email;
+	private String name;
+	private String tel;
+	private String region;
 	private String joindate;
 	
 }

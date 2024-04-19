@@ -106,11 +106,21 @@ body{
     }
 /* .join-id, pw, repw, email, name, tel, address 끝 */
 
+/* .join-check-s(이용약관 보기) 시작 */
+#join-check-s{
+    /* text-decoration-line:none; */
+    margin-left: 10px;
+    color: #3D5AFE;
+    text-decoration-color: #3D5AFE;
+    text-decoration-thickness: 3px;
+}
+/* .join-check-s(이용약관 보기) 끝 */
+
 /* .join-id, .join-id button 시작 */
 #join-id{
     position: relative;
 }
-#join-id button{
+input[type="button"]{
     color: white;
     position: absolute;
     width: 90px;
@@ -124,21 +134,12 @@ body{
 }
 /* .join-id, .join-id button 끝 */
 
-/* .join-check-s(이용약관 보기) 시작 */
-#join-check-s{
-    /* text-decoration-line:none; */
-    margin-left: 10px;
-    color: #3D5AFE;
-    text-decoration-color: #3D5AFE;
-    text-decoration-thickness: 3px;
-}
-/* .join-check-s(이용약관 보기) 끝 */
 
 /* unicodeJoin에 input type 시작 */
     input[type="text"],
     input[type="password"],
     input[type="tel"],
-    input[type="button"],
+    input[type="submit"],
     input[type="name"] {
         width: 100%;
         padding: 10px;
@@ -147,14 +148,14 @@ body{
         box-sizing: border-box;
     }
 
-    input[type="button"] {
+    input[type="submit"] {
         background-color: #3D5AFE;
         color: white;
         border: none;
         cursor: pointer;
     }
 
-    input[type="button"]:hover {
+    input[type="submit"]:hover {
         background-color: #3D5AFE;
     }
 /* unicodeJoin에 input type 끝 */
