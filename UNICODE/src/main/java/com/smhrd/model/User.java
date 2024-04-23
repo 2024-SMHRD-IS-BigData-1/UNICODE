@@ -23,6 +23,7 @@ public class User {
 	private String u_id;
 	@NonNull 
 	private String u_pw;
+	
 	private String u_name;
 	private String u_tel;
 	private String u_region;
