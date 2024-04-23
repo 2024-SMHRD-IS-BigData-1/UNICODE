@@ -19,6 +19,8 @@ public class IDCheck extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		PrintWriter out = response.getWriter();
+		
 		
 		
 		String inputE = request.getParameter("inputE");
@@ -27,8 +29,6 @@ public class IDCheck extends HttpServlet {
 
 		User user = new UserDAO().IDCheck(inputE);
 		System.out.println(user);
-		PrintWriter out = response.getWriter();
-		
 		if(user == null) {
 			// 사용가능한 이메일 -> true
 			out.print(true);

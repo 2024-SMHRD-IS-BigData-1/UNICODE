@@ -15,7 +15,7 @@
             <!-- 아이디 -->
             <div id="join-id">
                 <input type="text" placeholder="아이디 입력" name="id" id="inputE">
-                <input type="button" value="중복체크" onclick="checkE()">
+                <input type="button" value="중복체크" onclick="checkE()" style="cursor:pointer">
             </div>
             <span class="checkE"></span>
     
