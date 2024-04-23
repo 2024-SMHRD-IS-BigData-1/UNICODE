@@ -14,14 +14,17 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-
 public class User {
 	
-	@NonNull private String id;
-	private String pw;
-	private String name;
-	private String tel;
-	private String joindate;
-	private String region;
-	private String email;
+	@NonNull 
+	private String u_id;
+	@NonNull 
+	private String u_pw;
+	
+	private String u_email;
+	private String u_name;
+	private String u_tel;
+	private String u_region;
+	
+	
 }
