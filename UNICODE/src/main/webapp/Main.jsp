@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" isELIgnored="false"%>
+<%@page import="com.smhrd.model.User"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,33 +11,13 @@
 	<link rel="stylesheet" href="assets/css/Main.css">
 </head>
 <body>
-    <header>
-        <div id="logo_menu" class="wrap">
-            <div id="logo_img">
-                <a href="main.html">
-                    <img src="./img/logo.png"> 
-                </a>
-            </div>
-            <div id="search_box">           
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input id="search-input" type="text" name="search-input" placeholder="  검색어를 입력하세요.">
-                
-            </div>
-
-            <div class="menu_cont">
-              <ul id="menu">
-                  <li><a href="#">코딩 페스티벌</a></li>
-                  <li><a href="./프로모션/promotion.html">개발자 찾기</a></li>
-                  <li><a href="#">커뮤니티</a></li>
-                  <% if(session.getAttribute("id") == null) { %>
-                      <li><a href="Login.jsp">로그인/회원가입</a></li>
-                  <% } else { %>
-                      <li><span><%= session.getAttribute("id") %>님</span> / <a href="logout.jsp">로그아웃</a></li>
-                  <% } %>
-              </ul>
-          </div>
-        </div>
-
+    <div id="header"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("#header").load("header.jsp");
+    });
+    </script>
         <!-- banner 시작 -->
         <div class="slider">
             <div class="slide">
@@ -101,7 +82,7 @@
         </div>
 
         <!-- banner끝 -->
-    </header>
+   
     <div style="width:100%; height:48px"></div>
     <div class="wrap title">
       <h3 class="category-title">
