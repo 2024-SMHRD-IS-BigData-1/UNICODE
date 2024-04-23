@@ -29,7 +29,7 @@
                   <li><a href="./프로모션/promotion.html">개발자 찾기</a></li>
                   <li><a href="#">커뮤니티</a></li>
                   <% if(session.getAttribute("id") == null) { %>
-                      <li><a href="login.jsp">로그인/회원가입</a></li>
+                      <li><a href="Login.jsp">로그인/회원가입</a></li>
                   <% } else { %>
                       <li><span><%= session.getAttribute("id") %>님</span> / <a href="logout.jsp">로그아웃</a></li>
                   <% } %>

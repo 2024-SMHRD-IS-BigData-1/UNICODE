@@ -89,9 +89,9 @@
                // 성공했을 때 / 실패했을 때 어떻게 처리할건지
                success : function(data){
                   if(data=='true'){
-                     $('#checkE').html('사용 가능한 이메일입니다~')
+                     alert("사용 가능한 이메일입니다!")
                   }else{
-                     $('#checkE').html('사용 불가능한 이메일입니다~')
+                	  alert("사용 불가능한 이메일입니다!")
                   }
                },
                error : function(){

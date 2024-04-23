@@ -21,7 +21,6 @@ public class LoginService extends HttpServlet {
 		String pw = request.getParameter("pw");
 
 		System.out.println(id+pw);
-		// System.out.println(email + pw);
 
 		User user = new User(id, pw);
 
@@ -33,11 +32,12 @@ public class LoginService extends HttpServlet {
 			System.out.println("로그인 성공!");
 			HttpSession session = request.getSession();
 			session.setAttribute("loginUser", loginUser);
+			response.sendRedirect("Main.jsp");
 		} else {
 			System.out.println(loginUser);
 			System.out.println("로그인 실패..");
+			response.sendRedirect("Login.jsp");
 		}
-//		response.sendRedirect("Main.jsp");
 
 			
 			

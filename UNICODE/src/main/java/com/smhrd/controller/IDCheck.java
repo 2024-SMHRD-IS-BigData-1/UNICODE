@@ -27,7 +27,7 @@ public class IDCheck extends HttpServlet {
 		
 		System.out.println(inputE);
 
-		User user = new UserDAO().IDCheck(inputE);
+		String user = new UserDAO().IDCheck(inputE);
 		System.out.println(user);
 		if(user == null) {
 			// 사용가능한 이메일 -> true
