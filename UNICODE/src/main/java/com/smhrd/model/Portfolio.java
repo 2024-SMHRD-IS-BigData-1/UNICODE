@@ -16,20 +16,20 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class User {
-	
+public class Portfolio {
+
+
 	@NonNull 
+	private String p_title;
+	private String p_range;
 	private String u_id;
-	@NonNull 
-	private String u_pw;
-	
-	private String u_name;
-	private String u_tel;
-	private String u_region;
-	private String u_email;
-	private LocalDate join_date;
-	
-	
-	
+	private String p_category;
+	private String p_field;
+	private String p_tech;
+	private String p_period;
+	private String p_url;
+	private String p_content;
+	private String p_file;
+
 	
 }

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.smhrd.db.PortfolioMapper">
+	
+	
+	<insert id="enroll" parameterType="Portfolio">
+	  insert into portfolio_info 
+	  values(portfolio_info_SEQ.NEXTVAL ,#{p_title}, #{p_range} ,#{u_id}, #{p_category}, #{p_field}, #{p_tech}, #{p_period}, #{p_url}, #{p_content},
+	  #{p_file},sysdate)
+	  
+	</insert>
+
+
+</mapper>
