@@ -5,11 +5,11 @@
 <mapper namespace="com.smhrd.db.UserMapper">
   
   <insert id="join" parameterType="User">
-  	insert into user_info values(#{id}, #{pw} , #{name}, #{tel},sysdate, #{region}, #{email})
+  	insert into user_info values(#{u_id}, #{u_pw} , #{u_name}, #{u_tel},sysdate, #{u_region}, #{u_email})
   </insert>
   
   <select id="IDCheck" parameterType="String" resultType="User">
-  	select * from user_info where u_id=#{id}
+  	select * from user_info where u_id=#{u_id}
   </select>
   
   <select id="login" parameterType="User" resultType="User">
