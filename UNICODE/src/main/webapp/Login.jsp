@@ -17,7 +17,7 @@
                 <input type="checkbox" id="remember-check">아이디 저장
             </label>
             <input type="submit" value="로그인">
-            <input type="submit" value="회원가입" src="Join.jsp">
+            <input type="submit" value="회원가입">
             <button class="github_btn">
                 <i class="fa"></i>
                 GitHub 로그인
