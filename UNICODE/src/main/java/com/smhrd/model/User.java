@@ -19,10 +19,9 @@ public class User {
 	
 	@NonNull private String id;
 	private String pw;
-	private String email;
 	private String name;
 	private String tel;
-	private String region;
 	private String joindate;
-	
+	private String region;
+	private String email;
 }

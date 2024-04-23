@@ -23,15 +23,15 @@ public class IDCheck extends HttpServlet {
 		
 		String inputE = request.getParameter("inputE");
 		
+		System.out.println(inputE);
 
 		User user = new UserDAO().IDCheck(inputE);
-		
+		System.out.println(user);
 		PrintWriter out = response.getWriter();
 		
 		if(user == null) {
 			// 사용가능한 이메일 -> true
 			out.print(true);
-		
 		}else {
 			// 사용불가능한 이메일 -> false
 			out.print(false);
