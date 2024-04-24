@@ -12,7 +12,8 @@ import javax.servlet.http.HttpSession;
 
 import com.smhrd.model.Portfolio;
 import com.smhrd.model.PortfolioDAO;
-import com.smhrd.model.UserDAO;
+import com.smhrd.model.User;
+
 
 @WebServlet("/PortfolioWrite")
 public class PortfolioWrite extends HttpServlet {
@@ -27,7 +28,8 @@ public class PortfolioWrite extends HttpServlet {
 		String title = request.getParameter("title");
 		String[] ranges = request.getParameterValues("range");
 		String range = String.join(",", ranges);
-		String u_id = "test";
+		User user = (User) session.getAttribute("loginUser");
+		String u_id = user.getU_id();
 		String[] categorys = request.getParameterValues("category");
 		String category = String.join(",", categorys);
 		String field = request.getParameter("port_field");
