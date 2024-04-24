@@ -30,6 +30,7 @@
 	<mappers>
 		<mapper resource="com/smhrd/db/UserMapper.xml" />
 		<mapper resource="com/smhrd/db/PortfolioMapper.xml" />
+		<mapper resource="com/smhrd/db/CompanyMapper.xml" />
 	</mappers>
 	
 	
