@@ -15,4 +15,9 @@
   <select id="login" parameterType="User" resultType="User">
   	select * from user_info where u_id = #{u_id} and u_pw = #{u_pw} 
   </select>
+  
+   <insert id="profil" parameterType="User">
+  	insert into profile_info values(#{u_id}, #{profile_tech}, #{profile_period}, #{profile_wage},#{profile_career},
+  	#{profile_img},#{profile_name},#{profile_tel},#{profile_region},#{profile_license}, #{profile_award},#{profile_residence})
+  </insert>
 </mapper>

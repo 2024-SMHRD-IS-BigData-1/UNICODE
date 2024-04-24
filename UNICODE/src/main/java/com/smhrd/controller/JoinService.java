@@ -33,7 +33,7 @@ public class JoinService extends HttpServlet {
 		
 		if(cnt > 0) {
 			System.out.println("회원가입 성공!");
-			//response.sendRedirect("JoinSuccess.jsp?email="+member.getEmail());
+			response.sendRedirect("Profil.jsp?id="+user.getU_id());
 		}else {
 			System.out.println("회원가입 실패..");
 			// response.sendRedirect("Main.jsp");

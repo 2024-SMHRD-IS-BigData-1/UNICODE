@@ -37,7 +37,13 @@ public class UserDAO {
 	}
 
 	
-	
+	public int profil(Profil profil) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		System.out.println(profil);
+		int cnt = session.insert("com.smhrd.db.UserMapper.profil", profil);
+		session.close();
+		return cnt;
+	}
 	
 	
 	
