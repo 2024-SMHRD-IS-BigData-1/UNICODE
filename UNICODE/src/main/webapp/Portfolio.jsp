@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="assets/css/portfolio_write.css"/>
 </head>
 <body>
-    <!-- header 시작 -->
+<!-- header 시작 -->
     <div id="header"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
