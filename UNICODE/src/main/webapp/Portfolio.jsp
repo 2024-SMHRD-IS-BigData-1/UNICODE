@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/9e1b042d62.js" crossorigin="anonymous"></script>
     <title>Document</title>
-    <link rel="stylesheet" href="assets/css/style.css"/>
+    <link rel="stylesheet" href="assets/css/Main.css"/>
     <link rel="stylesheet" href="assets/css/portfolio_write.css"/>
 </head>
 <body>
@@ -16,7 +16,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
     $(document).ready(function(){
-        $("#header").load("header.html");
+        $("#header").load("header.jsp");
     });
     </script>
 <!-- header 끝 -->
