@@ -6,6 +6,7 @@
 
 	<typeAliases>
 		<typeAlias type="com.smhrd.model.User" alias="User"/>
+		<typeAlias type="com.smhrd.model.Profil" alias="Profil"/>
 		<typeAlias type="com.smhrd.model.Portfolio" alias="Portfolio"/>
 	</typeAliases>
 	

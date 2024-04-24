@@ -15,7 +15,7 @@
 		String id = request.getParameter("id");
 	%>
 
-	<form action="ProfilService">
+	<form action="ProfilService" method="post" enctype="multipart/form-data">
 	    <div class="info_modification">
 	        <div>
 	            <h2 class="info_modification_h2">UNICODE 프로필</h2>
@@ -121,9 +121,9 @@
 	                    <label for="">상주 여부</label>
 	                </h3>
 	                <span>
-	                    <input type="radio" name="profile_residence" value="가능">가능
-	                    <input type="radio" name="profile_residence" value="불가능">불가능
-	                    <input type="radio" name="profile_residence" value="상관없음">상관없음
+	                    <input type="radio" name="profile_residence" value="상주">가능
+	                    <input type="radio" name="profile_residence" value="외주">불가능
+	                    <input type="radio" name="profile_residence" value="상주•외주">상관없음
 	                </span>
 	            </div>
 	
