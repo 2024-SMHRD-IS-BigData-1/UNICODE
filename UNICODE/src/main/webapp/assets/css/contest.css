@@ -1,0 +1,185 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+#contest-write{
+    border-radius: 80px;
+    font-size: 15px;
+    line-height: 50px;
+    position: relative;
+    width: 15%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 0px;
+    text-align: center;
+    background-color: rgb(38, 86, 246);
+    color: rgb(255, 255, 255);
+    margin-bottom: 5%;
+}
+
+
+#contest {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    max-width: 90%;
+    min-width: 1000px;
+    margin: 0 auto;
+}
+
+#area {
+    display: flex;
+    justify-content: space-between;
+}
+
+.side_bar {
+    display: flex;
+    flex-direction: column;
+    width: 192px;
+    margin-top: 24px;
+    box-sizing: border-box;
+    top: 0;
+}
+
+.sidetitle {
+    font-weight: 700;
+    color: #102035;
+    line-height: 26px;
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 0;
+}
+
+.list-bar {
+    font-size: 16px;
+    color: #8e94a0;
+    overflow: hidden;
+    white-space: normal;
+    word-break: break-all;
+    line-height: 24px;
+    display: flex;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+}
+
+.description>label {
+    cursor: pointer;
+    margin-right: 8px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.checkbutton {
+    width: 20px;
+}
+
+.radio_label {
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: -0.25px;
+    margin-top: -2px;
+    color: #404a5c;
+}
+
+.list-wrapper {
+    flex: 1;
+    margin-left: 64px;
+}
+
+
+.contest-box ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+a.contest-list {
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+    outline: solid;
+    outline-color: #3d5afe;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;    
+    color: inherit;
+}   
+.thumbnail{
+    width: 30%;
+    margin-right: 20px;
+}
+
+.thumbnail>img {
+    width: 200px;
+    height: 200px;
+    padding-bottom: 20px;
+    overflow: hidden;
+}
+
+.contest-info {
+    width: 40%;
+    margin-top: 10px;
+    flex-direction: column;
+    align-items: center;
+}
+.contest-info>div{
+    margin-bottom: 30px; 
+}
+
+
+
+.prize-info {
+    width: 30%;
+    margin-top: 10px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.pagination {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.pagination nav {
+    display: flex;
+    flex-direction: row;
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 700;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-btn {
+    background-color: #c2c9d4;
+    color: #fff;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    margin-right: 8px;
+}
+
+.next-page {
+    margin-left: 8px;
+}

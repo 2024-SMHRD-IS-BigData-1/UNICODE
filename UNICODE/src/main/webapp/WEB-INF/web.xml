@@ -28,6 +28,18 @@
   	<description></description>
   	<servlet-class>com.smhrd.controller.ProfilService</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>Contest</servlet-name>
+  	<display-name>Contest</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.model.Contest</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ContestWrite</servlet-name>
+  	<display-name>ContestWrite</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.ContestWrite</servlet-class>
+  </servlet>
 
   <servlet-mapping>
   	<servlet-name>JoinService</servlet-name>
@@ -44,6 +56,14 @@
   <servlet-mapping>
   	<servlet-name>ProfilService</servlet-name>
   	<url-pattern>/ProfilService</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Contest</servlet-name>
+  	<url-pattern>/Contest</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ContestWrite</servlet-name>
+  	<url-pattern>/ContestWrite</url-pattern>
   </servlet-mapping>
 
 </web-app>

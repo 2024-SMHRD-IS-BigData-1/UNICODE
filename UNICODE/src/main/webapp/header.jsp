@@ -11,8 +11,8 @@
 <header>
         <div id="logo_menu" class="wrap">
             <div id="logo_img">
-                <a href="main.html">
-                    <img src="./img/logo.png"> 
+                <a href="Main.jsp">
+                    <img src="assets/img/LOGO.png"> 
                 </a>
             </div>
             <div id="search_box">           
@@ -23,7 +23,7 @@
 			<%Object loginUser = session.getAttribute("loginUser"); %>
             <div class="menu_cont">
               <ul id="menu">
-                  <li><a href="#">코딩 페스티벌</a></li>
+                  <li><a href="Contest.jsp">코딩 페스티벌</a></li>
                   <li><a href="./프로모션/promotion.html">개발자 찾기</a></li>
                   <li><a href="#">커뮤니티</a></li>
                   <% if(loginUser == null) { %>
@@ -32,7 +32,7 @@
                 	  User user = (User)loginUser;
                   %>
                   	  
-                      <li><a href="mypage_port.jsp">마이페이지</a></li>     
+                      <li><a href="Portfolio.jsp">마이페이지</a></li>     
                       <li><a href="LogoutService">로그아웃</a></li>
                   <% } %>
               </ul>
