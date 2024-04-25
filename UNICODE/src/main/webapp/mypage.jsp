@@ -17,6 +17,11 @@
     <link rel="stylesheet" href="assets/css/mypage.css"/>
     <link rel="stylesheet" href="assets/css/mypage_port.css"/>
     <link rel="stylesheet" href="assets/css/portfolio.css">
+    <style type="text/css">
+    .portfolio{
+    	min-height: 0 !important
+    }
+    </style>
 </head>
 
 <body>
