@@ -1,3 +1,9 @@
+<%@page import="com.smhrd.model.Portfolio"%>
+<%@page import="java.util.List"%>
+<%@page import="com.smhrd.model.Profil"%>
+<%@page import="com.smhrd.model.PortfolioDAO"%>
+<%@page import="com.smhrd.model.UserDAO"%>
+<%@page import="com.smhrd.model.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -9,6 +15,8 @@
     <script src="https://kit.fontawesome.com/9e1b042d62.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/Main.css"/>
     <link rel="stylesheet" href="assets/css/mypage.css"/>
+    <link rel="stylesheet" href="assets/css/mypage_port.css"/>
+    <link rel="stylesheet" href="assets/css/portfolio.css">
 </head>
 
 <body>
@@ -35,29 +43,37 @@
         </div>
     </header>
     
+    <%Object loginUser = session.getAttribute("loginUser"); 
+    	User user = (User)loginUser;
+    %>
+    <%
+    Profil profil = new UserDAO().userprofil(user); 
+       List<Portfolio> portfolioList = new PortfolioDAO().portfolioList(user);
+    %>
+    
     <!-- 사용자 정보 시작 -->
     <div class="wrap" style="width: 1080px;">
         <div class="profile-box-wrapper" style="display: flex; justify-content: space-between; align-items: center;">
             <div style="display: flex; align-items: center;">
                 <div class="profile-img">
-                    <img class="user-img" src="/img/user-profile1.jpg" alt="프로필 이미지" style="width: 160px;">
+                    <img class="user-img" src="assets/image/<%=profil.getProfile_img() %>" alt="프로필 이미지" style="width: 160px;">
                 </div>
                 <div>
                     <div class="profile-title">
-                        <span class="profile-username">jackson</span>
+                        <span class="profile-username"><%=profil.getU_id() %></span>
                     </div>
                     <div class="profile-subtitle">
                         <div class="icon-badge">
-                            <i class="fa-solid fa-laptop"></i> 개발
+                            <i class="fa-solid fa-user"></i><%=profil.getProfile_name() %>
                         </div>
                         <div class="icon-badge">
-                            <i class="fa-regular fa-folder"></i> 사용자 입력
+                            <i class="fa-solid fa-code"></i><%=profil.getProfile_tech() %>
                         </div>
                         <div class="icon-badge">
-                            <i class="fa-solid fa-location-dot"></i> 서울특별시 구로구
+                            <i class="fa-solid fa-location-dot"></i><%= profil.getProfile_region() %>
                         </div>
                         <div class="icon-badge">
-                            외주 선호
+                            <i class="fa-solid fa-house"></i><%= profil.getProfile_residence() %>
                         </div>
                     </div>
                 </div>
@@ -96,102 +112,69 @@
                 <div style="margin: 30px 30px 30px 10px;"><b>포트폴리오</b></div>
                 <div style="margin: 20px 50px;"><a href="mypage_port.jsp"><button class="more-btn">더보기 >> </button></a></div>
             </div>
-            <div class="port-list">
-                <div>
-                    <div class="port-list-img">
-                        <img src="/img/포켓몬1.jpg" alt="">
-                    </div>
-                    <div class="port-list-text">
-                        <div style="font-size: large;">
-                            <b>제목1</b>
+            <div class="portfolio">
+                
+                <div class="portfolio-view">
+                    <section id="portfolio-list">
+                        <div class="portfolio-list-wrap">
+                            <div class="portfolio-item-list" style="margin-bottom:30px;">
+                            	<!-- 포트폴리오 시작 -->
+                            	
+                            	<% int cnt=0;
+                            	for(Portfolio p : portfolioList){
+                            		cnt++;
+                            		if(cnt<=6){
+                            			
+                            		
+                            		%>
+                            		<a class="portfolio-item">
+                                    <div style="width: 100%; "><img src="assets/image/<%=p.getPort_file()%>" alt="" style="width: 100%; border-radius: 8px;"></div>
+                                    <div class="portfolio-content-wrapper">
+                                        <div class="portfolio-content-title"><%= p.getPort_title() %></div>
+                                        <div class="caption-1">
+                                            <span><%=p.getPort_range() %></span>
+                                            <div class="seperator"></div>
+                                            <span><%=p.getPort_category() %></span>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-hover-overlay">
+                                        <div class="portfolio-hover-content">자세히 보기</div>
+                                    </div>
+                                </a>
+                                <%
+                                	if(cnt %3 == 0 && cnt < portfolioList.size()){
+                                		
+                                %>
+                                	</div><div class="portfolio-item-list" style="margin-bottom:30px;">
+                                
+                                <% 	}
+                            	}
+                            	}%>
+                              
+                                <!-- 포트폴리오 끝 -->
+                               
+                            </div>
+                           
+                            
                         </div>
-                        <div>
-                            내용1
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="port-list-img">
-                        <img src="/img/포켓몬1.jpg" alt="">
-                    </div>
-                    <div class="port-list-text">
-                        <div style="font-size: large;">
-                            <b>제목1</b>
-                        </div>
-                        <div>
-                            내용1
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="port-list-img">
-                        <img src="/img/포켓몬1.jpg" alt="">
-                    </div>
-                    <div class="port-list-text">
-                        <div style="font-size: large;">
-                            <b>제목1</b>
-                        </div>
-                        <div>
-                            내용1
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="port-list">
-                <div>
-                    <div class="port-list-img">
-                        <img src="/img/포켓몬1.jpg" alt="">
-                    </div>
-                    <div class="port-list-text">
-                        <div style="font-size: large;">
-                            <b>제목1</b>
-                        </div>
-                        <div>
-                            내용1
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="port-list-img">
-                        <img src="/img/포켓몬1.jpg" alt="">
-                    </div>
-                    <div class="port-list-text">
-                        <div style="font-size: large;">
-                            <b>제목1</b>
-                        </div>
-                        <div>
-                            내용1
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="port-list-img">
-                        <img src="/img/포켓몬1.jpg" alt="">
-                    </div>
-                    <div class="port-list-text">
-                        <div style="font-size: large;">
-                            <b>제목1</b>
-                        </div>
-                        <div>
-                            내용1
-                        </div>
-                    </div>
+                    </section>
                 </div>
             </div>
+
             <div class="divider-hr"></div>
             <div style="margin-left: 10px; padding-left: 30px;"><b>보유 기술</b></div>
             <div style="margin-top: 15px;">
                 <div style="display: flex; justify-content: space-between; padding: 0 100px 0 100px; margin-bottom: 10px; text-align: center; align-items: center;">
-                    <div class="tools-circle" style="font-size: small;">JAVA</div>
-                    <div class="tools-circle" style="font-size: small;">C#</div>
-                    <div class="tools-circle" style="font-size: small;">JAVA</div>
-                    <div class="tools-circle" style="font-size: small;">JAVA</div>
+                    <div class="tools-circle" style="font-size: small;"><%=profil.getProfile_tech() %></div>
+                    <div class="tools-circle" style="font-size: small;"><%=profil.getProfile_tech() %></div>
+                    <div class="tools-circle" style="font-size: small;"><%=profil.getProfile_tech() %></div>
+                    <div class="tools-circle" style="font-size: small;"><%=profil.getProfile_tech() %></div>
                 </div>
                 <div style="display: flex; justify-content: space-between; padding: 0 100px 0 100px; margin-top: 10px; text-align: center;">
-                    <div class="tools-circle" style="font-size: small;">C#</div>
-                    <div class="tools-circle" style="font-size: small;">JAVA</div>
-                    <div class="tools-circle" style="font-size: small;">JAVA</div>
-                    <div class="tools-circle" style="font-size: small;">JAVA</div>
+                    <div class="tools-circle" style="font-size: small;"><%=profil.getProfile_tech() %></div>
+                    <div class="tools-circle" style="font-size: small;"><%=profil.getProfile_tech() %></div>
+                    <div class="tools-circle" style="font-size: small;"><%=profil.getProfile_tech() %></div>
+                    <div class="tools-circle" style="font-size: small;"><%=profil.getProfile_tech() %></div>
                 </div>
             </div>
             <div class="divider-hr"></div>
