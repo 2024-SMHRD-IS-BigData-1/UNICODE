@@ -1,5 +1,6 @@
 package com.smhrd.model;
 
+import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -36,7 +37,7 @@ public class UserDAO {
 		return loginUser;
 	}
 
-	
+
 	public int profil(Profil profil) {
 		SqlSession session = sqlSessionFactory.openSession(true);
 		System.out.println(profil);
@@ -45,9 +46,13 @@ public class UserDAO {
 		return cnt;
 	}
 	
-	
-	
-	
-	
+	public Profil userprofil(User user) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		Profil userprofil = session.selectOne("com.smhrd.db.UserMapper.userprofil",user);
+		session.close();
+		return userprofil;
+	}
+
+
 	
 }

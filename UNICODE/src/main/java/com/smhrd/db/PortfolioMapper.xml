@@ -9,10 +9,12 @@
 	
 	<insert id="enroll" parameterType="Portfolio">
 	  insert into portfolio_info 
-	  values(portfolio_info_SEQ.NEXTVAL ,#{p_title}, #{p_range} ,#{u_id}, #{p_category}, #{p_field}, #{p_tech}, #{p_period}, #{p_url}, #{p_content},
-	  #{p_file},sysdate)
+	  values(portfolio_info_SEQ.NEXTVAL ,#{port_title}, #{port_range} ,#{u_id}, #{port_category}, #{port_field}, #{port_tech}, #{port_period}, #{port_url}, #{port_content},
+	  #{port_file},sysdate)
 	  
 	</insert>
 
-
+	<select id="portfolioList" parameterType="User" resultType="Portfolio">
+		select * from portfolio_info where u_id=#{u_id}
+	</select>
 </mapper>

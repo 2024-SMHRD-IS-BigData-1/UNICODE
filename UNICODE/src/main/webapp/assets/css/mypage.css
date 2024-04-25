@@ -1,0 +1,230 @@
+* {
+    box-sizing: border-box;
+    line-height: 1rem;
+}
+.profile-box-wrapper {
+    box-shadow: 0 2px 7px 0 rgba(0,0,0,.1);
+    border-radius: 30px;
+    background-color: #fff;
+    margin-top: 12px;
+}
+.profile-img {
+    height: 180px;
+    align-items: center;
+    margin-right: 24px;
+    position: relative;
+}
+.user-img {
+    width: 100%;
+    height: 180px;
+    border-radius: 30px;
+    
+}
+.profile-username {
+    margin-right: 20px;
+    color: #212121;
+    font-weight: 500;
+    line-height: 36px;
+    font-size: x-large;
+}
+.profile-subtitle {
+    margin-bottom: 8px;
+    font-size: x-small;
+    padding-top: 10px;
+}
+.icon-badge {
+    display: inline-block;
+    position: relative;
+    margin-right: 8px;
+    color: #616161;
+}
+.icon-img {
+    position: relative;
+    top: 2px;
+    margin-right: 4px;
+}
+#header-button > a{
+    text-decoration: none;
+    color: #212121;
+    padding-right: 20px;
+}
+.mypage-modify {
+    border-radius: 7px;
+    color: #616161;
+    padding: 10px 25px 10px 25px;
+    border: solid 1px #e0e0e0;
+    background-color: #fff;
+    margin-left: 16px;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    background: none;
+    align-items: center;
+}
+.mypage {
+    margin: 12px auto;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 7px 0 rgba(0,0,0,.1);
+    align-items: center;
+    font-size: small;
+}
+.port-list {
+    display: flex; 
+    justify-content: space-between; 
+    padding: 0 30px 0 30px; 
+    margin-bottom: 20px;
+}
+.port-list-img {
+    width: 200px;
+}
+.port-list-img>img{
+    width: 100%;
+}
+.divider-hr {
+    margin: 30px 0; /* 상하 마진 */
+    width: 100%;
+    height: 0.5px;
+    border: 0.5px solid rgba(0,0,0,.1);
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.1);
+    
+}
+.tools-circle {
+    width: 100px;
+    max-height: 150px;
+    background-color: #cccccc48;
+    border-radius: 100px;
+    margin-top: 10px;
+    /* margin-left: 10px; */
+    padding: 10px 0;
+}
+.contest-list{
+    margin: 20px auto;
+    width: 30%;
+    min-height: 150px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 7px 0 rgba(0,0,0,.1);
+}
+.project-done {
+    align-items: center;
+    display: flex;
+}
+.skill-img {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+}
+.used-skill {
+    margin-right: 10px; 
+    display: flex;
+}
+.skill-name {
+    margin-left: 10px;
+    font-size: x-small;
+}
+.project-continue {
+    margin: 40px auto;
+    max-width: 650px;
+    min-height: 150px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 7px 0 rgba(0,0,0,.1);
+    align-items: center;
+    display: flex;
+}
+.port-list-img {
+    width: 150px;
+}
+.port-list-img>img{
+    width: 100%;
+}
+.port-list-square {
+    margin: 30px 30px 10px 30px ;
+    width: 150px;
+    height: 150px;
+    background-color: #e8eaf600;
+    border: 1px solid #2c2c2c69;
+    align-items: center;
+}
+
+.port-list-text {
+    margin: 30px 20px 20px 30px;
+}
+.font-content {
+    font-size: smaller;
+}
+.port-list-collect {
+    display: flex;
+}
+.port-list-group {
+    font-size: x-small;
+    margin-bottom: 10px;
+}
+.port-list-title {
+    margin-bottom: 10px;
+}
+.divider-hr-list {
+    margin: 30px 30px; /* 상하 마진 */
+    width: 750px;
+    height: 0.5px;
+    background-color: #ccc;
+    border: none;
+}
+.plus-minus-btn {
+    border-radius: 50px;
+    color: #616161;
+    border: solid 1px #e0e0e0;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    user-select: none;
+    background: none;
+    margin-right: 5px;
+}
+.profile-folder {
+    width: 160px;
+}
+.more-btn {
+    border-radius: 4px;
+    color: #616161;
+    padding: 5px 15px 5px 15px;
+    border: solid 1px #e0e0e0;
+    background-color: #fff;
+    margin-left: 16px;
+    font-size: 12px;
+    line-height: 24px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    background: none
+}
+.profile-filed {
+    margin-right: 7px;
+}
+.add-btn {
+    color: #616161;
+    border: solid 1px #e0e0e0;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    user-select: none;
+    background: none;
+    margin-right: 5px;
+    border-radius: 10%;
+    align-items: center;
+}

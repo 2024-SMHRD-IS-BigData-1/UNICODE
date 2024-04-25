@@ -6,7 +6,10 @@
 
 	<typeAliases>
 		<typeAlias type="com.smhrd.model.User" alias="User"/>
+		<typeAlias type="com.smhrd.model.Profil" alias="Profil"/>
 		<typeAlias type="com.smhrd.model.Portfolio" alias="Portfolio"/>
+		<typeAlias type="com.smhrd.model.Company" alias="Company"/>
+		<typeAlias type="com.smhrd.model.Contest" alias="Contest"/>
 	</typeAliases>
 	
 
@@ -28,6 +31,8 @@
 	<mappers>
 		<mapper resource="com/smhrd/db/UserMapper.xml" />
 		<mapper resource="com/smhrd/db/PortfolioMapper.xml" />
+		<mapper resource="com/smhrd/db/CompanyMapper.xml" />
+		<mapper resource="com/smhrd/db/ContestMapper.xml" />
 	</mappers>
 	
 	

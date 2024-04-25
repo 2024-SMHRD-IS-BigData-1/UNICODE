@@ -16,20 +16,18 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class Portfolio {
+public class Company {
 
-
-	@NonNull 
-	private String port_title;
-	private String port_range;
-	private String u_id;
-	private String port_category;
-	private String port_field;
-	private String port_tech;
-	private String port_period;
-	private String port_url;
-	private String port_content;
-	private String port_file;
-
+	private String bno_idx;
+	@NonNull
+	private String company_id;
+	@NonNull
+	private String company_pw;
+	private String company_name;
+	private String company_owner;
+	private String company_homepage;
+	private String company_addr;
+	private String company_tel;
+	private LocalDate join_date;
 	
 }

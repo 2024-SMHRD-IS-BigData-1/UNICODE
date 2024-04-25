@@ -20,7 +20,7 @@
     </script>
     <main id="contest">
         <!-- 기업아이디가 null이 아니라면 공모하기 버튼 나타내기 -->
-    <% if (session.getAttribute("loginUser")!= null) {%>
+    <% if (session.getAttribute("loginCompany")!= null) {%>
     <div id="contest-write"><a href="ContestWrite.jsp">공모하기</a></div>    	
     <%}%>
         <section id="area">

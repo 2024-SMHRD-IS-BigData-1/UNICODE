@@ -28,7 +28,27 @@
   	<description></description>
   	<servlet-class>com.smhrd.controller.ProfilService</servlet-class>
   </servlet>
+
+	<servlet>
+	  	<servlet-name>PortfolioWrite</servlet-name>
+	  	<display-name>PortfolioWrite</display-name>
+	  	<description></description>
+	  	<servlet-class>com.smhrd.controller.PortfolioWrite</servlet-class>
+	  </servlet>
+
   <servlet>
+  	<servlet-name>C_LoginService</servlet-name>
+  	<display-name>C_LoginService</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.C_LoginService</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>C_JoinService</servlet-name>
+  	<display-name>C_JoinService</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.C_JoinService</servlet-class>
+  </servlet>
+    <servlet>
   	<servlet-name>Contest</servlet-name>
   	<display-name>Contest</display-name>
   	<description></description>
@@ -40,6 +60,7 @@
   	<description></description>
   	<servlet-class>com.smhrd.controller.ContestWrite</servlet-class>
   </servlet>
+
 
   <servlet-mapping>
   	<servlet-name>JoinService</servlet-name>
@@ -57,7 +78,22 @@
   	<servlet-name>ProfilService</servlet-name>
   	<url-pattern>/ProfilService</url-pattern>
   </servlet-mapping>
+
+   <servlet-mapping>
+  	<servlet-name>PortfolioWrite</servlet-name>
+  	<url-pattern>/PortfolioWrite</url-pattern>
+  </servlet-mapping>
+
   <servlet-mapping>
+  	<servlet-name>C_LoginService</servlet-name>
+  	<url-pattern>/C_LoginService</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>C_JoinService</servlet-name>
+  	<url-pattern>/C_JoinService</url-pattern>
+  </servlet-mapping>
+  
+    <servlet-mapping>
   	<servlet-name>Contest</servlet-name>
   	<url-pattern>/Contest</url-pattern>
   </servlet-mapping>
@@ -65,5 +101,7 @@
   	<servlet-name>ContestWrite</servlet-name>
   	<url-pattern>/ContestWrite</url-pattern>
   </servlet-mapping>
+
+
 
 </web-app>
