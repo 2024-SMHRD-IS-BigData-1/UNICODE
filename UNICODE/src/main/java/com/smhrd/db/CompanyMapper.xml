@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.db.CompanyMapper">
+  
+  <insert id="join" parameterType="Company">
+  	insert into company_info values(#{bno_idx}, #{company_id}, #{company_pw}, #{company_name}, #{company_owner}, #{company_homepage}, #{company_addr}, #{company_tel}, #{join_date})
+  </insert>
+  
+  <select id="C_IDCheck" parameterType="String" resultType="String">
+  	select c_id from user_info where company_id=#{company_id}
+  </select>
+  
+  <select id="login" parameterType="Company" resultType="Company">
+  	select * from company_info where company_id = #{company_id} and company_pw = #{company_pw} 
+  </select>
+  
+</mapper>
