@@ -36,7 +36,7 @@
                 	  User user = (User)loginUser;
                   %>
                   	  
-                      <li><a href="mypage_port.jsp">마이페이지</a></li>     
+                      <li><a href="mypage.jsp">마이페이지</a></li>     
                       <li><a href="LogoutService">로그아웃</a></li>
                   <% }else{
                   	Company company = (Company)loginCompany;
