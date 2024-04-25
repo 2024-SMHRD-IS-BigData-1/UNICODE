@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -19,11 +20,13 @@
         $("#header").load("header.jsp");
     });
     </script>
+    <%User user = (User) session.getAttribute("loginUser"); %>
 <!-- header 끝 -->
 <div class="container">
     <div class="portfolio">
-        <form action="PortfolioWrite" id="portfolio-form" method="post">
+        <form action="PortfolioWrite" id="portfolio-form" method="post" enctype="multipart/form-data">
             <div class="portfolio-add-title">포트폴리오 등록</div>
+            <input type="text" name="id" value="<%=user.getU_id()%>" style="display:none;" >
             <div class="portfolio-add-content-box">
                 <div class="label-input-partner">
                     <input class="input-title" data-type="label" name="title" onkeyup="max_input(this, 100)" type="text" value="" placeholder="포트폴리오 제목*">

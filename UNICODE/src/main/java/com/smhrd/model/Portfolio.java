@@ -20,16 +20,16 @@ public class Portfolio {
 
 
 	@NonNull 
-	private String p_title;
-	private String p_range;
+	private String port_title;
+	private String port_range;
 	private String u_id;
-	private String p_category;
-	private String p_field;
-	private String p_tech;
-	private String p_period;
-	private String p_url;
-	private String p_content;
-	private String p_file;
+	private String port_category;
+	private String port_field;
+	private String port_tech;
+	private String port_period;
+	private String port_url;
+	private String port_content;
+	private String port_file;
 
 	
 }

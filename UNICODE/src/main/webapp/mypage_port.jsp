@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.PortfolioDAO"%>
+<%@page import="com.smhrd.model.Portfolio"%>
 <%@page import="com.smhrd.model.User"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="com.smhrd.model.Profil"%>
@@ -28,7 +30,10 @@
     <%Object loginUser = session.getAttribute("loginUser"); 
     	User user = (User)loginUser;
     %>
-    <% Profil profil = new UserDAO().userprofil(user); %>
+    <%
+    Profil profil = new UserDAO().userprofil(user); 
+       List<Portfolio> portfolioList = new PortfolioDAO().portfolioList(user);
+    %>
     
     <!-- 사용자 정보 시작 -->
     <div class="wrap" style="width: 1080px;">
@@ -87,7 +92,7 @@
                                         포트폴리오 설정
                                     </button>
                                 </a>
-                                <a href="./portfolio_write.jsp" class="btn-link">
+                                <a href="Portfolio.jsp" class="btn-link">
                                     <button class="portfolio-btn portfolio-add">
                                         포트폴리오 추가
                                     </button>
@@ -95,20 +100,33 @@
                             </div>
                             <div class="portfolio-item-list" style="margin-bottom:30px;">
                             	<!-- 포트폴리오 시작 -->
-                                <a class="portfolio-item">
-                                    <div style="width: 100%; "><img src="assets/img/portfolio_img.jpg" alt="" style="width: 100%; border-radius: 8px;"></div>
+                            	
+                            	<% int cnt=0;
+                            	for(Portfolio p : portfolioList){
+                            		%>
+                            		<a class="portfolio-item">
+                                    <div style="width: 100%; "><img src="assets/image/<%=p.getPort_file()%>" alt="" style="width: 100%; border-radius: 8px;"></div>
                                     <div class="portfolio-content-wrapper">
-                                        <div class="portfolio-content-title">신입 개발자 경력 향상을 위한 플랫폼</div>
+                                        <div class="portfolio-content-title"><%= p.getPort_title() %></div>
                                         <div class="caption-1">
-                                            <span>개발·기획</span>
+                                            <span><%=p.getPort_range() %></span>
                                             <div class="seperator"></div>
-                                            <span>웹</span>
+                                            <span><%=p.getPort_category() %></span>
                                         </div>
                                     </div>
                                     <div class="portfolio-hover-overlay">
                                         <div class="portfolio-hover-content">자세히 보기</div>
                                     </div>
                                 </a>
+                                <%cnt++;
+                                	if(cnt %3 == 0 && cnt < portfolioList.size()){
+                                		
+                                %>
+                                	</div><div class="portfolio-item-list" style="margin-bottom:30px;">
+                                
+                                <% 	}
+                            	}%>
+                              
                                 <!-- 포트폴리오 끝 -->
                                
                             </div>
