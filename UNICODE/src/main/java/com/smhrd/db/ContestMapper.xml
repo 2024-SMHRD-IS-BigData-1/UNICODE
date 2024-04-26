@@ -7,7 +7,12 @@
 	<insert id="enroll" parameterType="Contest">
 	  insert into contest_info 
 	  values(contest_info_SEQ.NEXTVAL ,#{bno_idx}, #{c_title} ,#{prize}, #{period}, #{c_content}, #{c_category},
-	  sysdate)
+	  sysdate,#{c_file})
 	</insert>
+	
+	<select id="" resultType="Contest">
+		select con_title,con_prize,con_period,con_content,con_category,con_file
+		from contest_info;
+	</select>
 
 </mapper>

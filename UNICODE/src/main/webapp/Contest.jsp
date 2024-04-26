@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,93 +64,27 @@
             </aside>
             <div class="list-wrapper">                
                 <article class="contest-box">
-                    <ul>
-                        <li>
-                            <a href="#" class="contest-list">
-                                <div class="thumbnail">
-                                    <img src="assets/img/포켓몬1.png" alt="이미지 불러오기 실패" class="thum-img">
-                                </div>
-                                <div class="contest-info">
-                                    <div>카테고리 회사이름</div>
-                                    <div>제목</div>
-                                    <div>내용</div>
-                                </div>
-                                <ul class="prize-info">
-                                    <li>총상금 40만원</li>
-                                    <li>개최기간 7일</li>
-                                    <li>24.04.17~24.04.24</li>
-                                </ul>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="Contest.jsp" class="contest-list">
-                                <div class="thumbnail">
-                                    <img src="assets/img/포켓몬2.png" alt="이미지 불러오기 실패" class="thum-img">
-                                </div>
-                                <div class="contest-info">
-                                    <div>카테고리 회사이름</div>
-                                    <div>제목</div>
-                                    <div>내용</div>
-                                </div>
-                                <ul class="prize-info">
-                                    <li>총상금 40만원</li>
-                                    <li>개최기간 7일</li>
-                                    <li>24.04.17~24.04.24</li>
-                                </ul>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="contest-list">
-                                <div class="thumbnail">
-                                    <img src="assets/img/포켓몬3.png" alt="이미지 불러오기 실패" class="thum-img">
-                                </div>
-                                <div class="contest-info">
-                                    <div>카테고리 회사이름</div>
-                                    <div>제목</div>
-                                    <div>내용</div>
-                                </div>
-                                <ul class="prize-info">
-                                    <li>총상금 40만원</li>
-                                    <li>개최기간 7일</li>
-                                    <li>24.04.17~24.04.24</li>
-                                </ul>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="contest-list">
-                                <div class="thumbnail">
-                                    <img src="assets/img/포켓몬4.png" alt="이미지 불러오기 실패" class="thum-img">
-                                </div>
-                                <div class="contest-info">
-                                    <div>카테고리 회사이름</div>
-                                    <div>제목</div>
-                                    <div>내용</div>
-                                </div>
-                                <ul class="prize-info">
-                                    <li>총상금 40만원</li>
-                                    <li>개최기간 7일</li>
-                                    <li>24.04.17~24.04.24</li>
-                                </ul>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="contest-list">
-                                <div class="thumbnail">
-                                    <img src="assets/img/포켓몬5.png" alt="이미지 불러오기 실패" class="thum-img">
-                                </div>
-                                <div class="contest-info">
-                                    <div>카테고리 회사이름</div>
-                                    <div>제목</div>
-                                    <div>내용</div>
-                                </div>
-                                <ul class="prize-info">
-                                    <li>총상금 40만원</li>
-                                    <li>개최기간 7일</li>
-                                    <li>24.04.17~24.04.24</li>
-                                </ul>
-                            </a>
-                        </li>
-                    </ul>
+					<ul>
+					<c:forEach var="contest" items="${contestlist}">
+					    <li>
+					        <a href="#" class="contest-list">
+					            <div class="thumbnail">
+					                <img src="assets/img/${contest.c_file}" alt="이미지 불러오기 실패" class="thum-img">
+					            </div>
+					            <div class="contest-info">
+					                <div>${contest.c_title}</div>
+					                <div>${contest.c_category}</div>
+					                <div>${contest.c_content}</div>
+					            </div>
+					            <ul class="prize-info">
+					                <li>총상금 ${contest.prize}</li>
+					                <li>${contest.period}</li>
+					            </ul>
+					        </a>
+					    </li>
+					</c:forEach>
+					</ul>
+
                     <div class="pagination">
                         <nav>
                             <a class="page-btn" data-page="1">1</a>

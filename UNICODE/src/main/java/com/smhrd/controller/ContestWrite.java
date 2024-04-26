@@ -36,7 +36,7 @@ public class ContestWrite extends HttpServlet {
 		
 		
 		
-		Contest contest = new Contest(bno_idx,title, prize, period, content, category);
+		Contest contest = new Contest(bno_idx,title, prize, period, content, category,filename);
 		
 		int cnt = new ContestDAO().enroll(contest);
 		

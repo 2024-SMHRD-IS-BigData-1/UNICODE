@@ -1,5 +1,7 @@
 package com.smhrd.model;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -13,6 +15,12 @@ public class ContestDAO {
 		int cnt = session.insert("com.smhrd.db.ContestMapper.enroll", contest);
 		session.close();
 		return cnt;
+	}
+	public List<Contest> ContestGet() {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		List<Contest> contestInfoList = session.selectList("com.smhrd.db.ContestMapper.getContestInfo");
+		System.out.println(contestInfoList);
+	    return contestInfoList;
 	}
 
 }

@@ -27,4 +27,5 @@ public class Contest {
 	private String period;
 	private String c_content;
 	private String c_category;
+	private String c_file;
 }
