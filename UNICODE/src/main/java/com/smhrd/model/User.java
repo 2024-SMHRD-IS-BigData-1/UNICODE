@@ -25,7 +25,6 @@ public class User {
 	
 	private String u_name;
 	private String u_tel;
-	private String u_region;
 	private String u_email;
 	private LocalDate join_date;
 	

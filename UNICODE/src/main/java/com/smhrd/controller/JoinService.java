@@ -23,11 +23,10 @@ public class JoinService extends HttpServlet {
 		String pw = request.getParameter("pw");
 		String name = request.getParameter("name");
 		String tel = request.getParameter("tel");
-		String region = request.getParameter("region");
 		String email = request.getParameter("email");
 		LocalDate join_date = LocalDate.now();
 		
-		User user = new User(id, pw, name, tel, region, email, join_date);
+		User user = new User(id, pw, name, tel, email, join_date);
 		
 		int cnt = new UserDAO().join(user);
 		
