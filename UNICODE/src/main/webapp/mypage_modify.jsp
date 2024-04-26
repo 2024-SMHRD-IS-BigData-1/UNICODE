@@ -1,3 +1,6 @@
+<%@page import="com.smhrd.model.UserDAO"%>
+<%@page import="com.smhrd.model.Profil"%>
+<%@page import="com.smhrd.model.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -5,35 +8,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>UnicodeMypageModify</title>
     <script src="https://kit.fontawesome.com/9e1b042d62.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/Main.css"/>
     <link rel="stylesheet" href="assets/css/mypage.css"/>
 </head>
 
 <body>
-    <header>
-        <div id="logo_menu" class="wrap">
-            <div id="logo_img">
-                <a href="../main.html">
-                    <img src="/img/logo.png"> 
-                </a>
-            </div>
-            <div id="search_box">           
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input id="search-input" type="text" name="search-input" placeholder="  검색어를 입력하세요.">
-                
-            </div>
-            <div class="menu_cont">
-                <ul id="menu">
-                    <li><a href="#">코딩 페스티벌</a></li>
-                    <li><a href="/프로모션/promotion.html">개발자 찾기</a></li>
-                    <li><a href="#">커뮤니티</a></li>
-                    <li><a href="mypage.html">마이페이지</a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
+<%Object loginUser = session.getAttribute("loginUser"); 
+    	User user = (User)loginUser;
+    	Profil profil = new UserDAO().userprofil(user); 
+    %>
+	 	<%String techs = profil.getProfile_tech();
+	 	  String residence = profil.getProfile_residence();
+	 	%>
+    <div id="header"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("#header").load("header.jsp");
+    });
+    </script>
     
     <!-- 사용자 정보 시작 -->
     <div class="wrap" style="width: 1080px;">
@@ -43,36 +38,60 @@
                     <img class="user-img" src="/img/profile_img.jpeg" alt="프로필 이미지" style="cursor: pointer; width: 160px;">
                 </div>
                 <div>
+                	<form action="modifyService" method="get">
+                	<input type="text" name="u_id" value="<%=user.getU_id() %>" style="display:none;">
                     <div class="profile-title">
-                        <input class="profile-username" type="text" value="jackson"></input> <!-- value값은 원래 저장되어 있던 사용자 이름 --> 
+                        <input class="profile-username" type="text" name="mypage_modify_name" value="<%=user.getU_name()%>"></input> <!-- value값은 원래 저장되어 있던 사용자 이름 --> 
                     </div>
                     <div class="profile-subtitle">
                         <div style="display: flex;">
+						<div class="icon-badge">
+						    <% 
+						    String[] techList = {"C", "java", "python", "html", "css", "db", "jsp"};
+						    
+						    String[] userTechs = techs.split(",");
+						
+						    for (String tech : techList) {
+						        boolean isChecked = false;
+						        for (String userTech : userTechs) {
+						            if (tech.trim().equals(userTech.trim())) {
+						                isChecked = true;
+						                break;
+						            }
+						        }
+						        %>
+						        <div>
+						            <input type="checkbox" class="profile-filed" name="mypage_modify_tech" value="<%= tech %>" <% if(isChecked) { %>checked<% } %>>
+						            <i class="fa-solid fa-laptop"></i>
+						            <%= tech %>
+						        </div>
+						        <% 
+						    }
+						    %>
+						</div>
                         <div class="icon-badge">
-                            <div><input type="checkbox" class="profile-filed"><i class="fa-solid fa-laptop"></i> 개발</div>
-                            <div><input type="checkbox" class="profile-filed"><i class="fa-solid fa-pen-nib"></i> 디자인</div>
-                            <div><input type="checkbox" class="profile-filed"><i class="fa-regular fa-note-sticky"></i> 기획</div>
-                        </div>
-                        <div class="icon-badge">
-                            <i class="fa-regular fa-folder"></i>
-                            <input type="text" class="profile-folder" placeholder="영역을 입력하세요. ex) web" style="font-size: xx-small;">
+                            <i class="fa-solid fa-phone"></i>
+                            <input type="text" class="profile-folder" name="mypage_modify_tel" value="<%= profil.getProfile_tel() %>" style="font-size: xx-small;">
                         </div>
                         <div class="icon-badge">
                             <i class="fa-solid fa-location-dot"></i>
-                            <select class="region" name="region" style="font-size: x-small; margin-top: 2px; color: #5b5858;">
-                                <option>서울</option>
-                                <option>인천</option>
-                                <option>대전</option>
-                                <option>대구</option>
-                                <option>울산</option>
-                                <option>부산</option>
-                                <option>광주</option>
-                                <option>세종</option>
+                            <select class="region" name="mypage_modify_region" style="font-size: x-small; margin-top: 2px; color: #5b5858;">
+                                <option value="서울">서울</option>
+                                <option value="인천">인천</option>
+                                <option value="대전">대전</option>
+                                <option value="대구">대구</option>
+                                <option value="울산">울산</option>
+                                <option value="부산">부산</option>
+                                <option value="광주">광주</option>
+                                <option value="세종">세종</option>
                             </select>
                         </div>
+                        
+                        <% %>
                         <div class="icon-badge">
-                            <div><input type="checkbox"> 외주 선호</div>
-                            <div><input type="checkbox"> 기간제 선호</div>
+                            <div><input type="checkbox" name="mypage_modify_residence" value="상주"<%if(residence.equals("상주")){%>cheked <% } %> > 상주</div>
+                            <div><input type="checkbox" name="mypage_modify_residence" value="외주"<%if(residence.equals("외주")){%>cheked <% } %>> 외주</div>
+                            <div><input type="checkbox" name="mypage_modify_residence" value="상주•외주"<%if(residence.equals("상주•외주")){%>cheked <% } %>> 상관없음</div>
                         </div>
                         </div>
                     </div>
@@ -80,9 +99,12 @@
             </div>
             <div id="header-button">
                 <a href="modifyService">
-                    <div class="mypage-modify">확인</div>
+                    <div class="mypage-modify">
+                    <input type="submit" value="확인">
+                    </div>
                 </a>
             </div>
+            </form>
         </div>
         <!-- 사용자 정보 끝 -->
 
@@ -219,16 +241,16 @@
             </div>
             <div style="margin-top: 15px;">
                 <div style="display: flex; justify-content: space-between; padding: 0 100px 0 100px; margin-bottom: 10px; text-align: center; align-items: center;">
+                    <div class="tools-circle" style="font-size: small;">C</div>
                     <div class="tools-circle" style="font-size: small;">JAVA</div>
-                    <div class="tools-circle" style="font-size: small;">C#</div>
-                    <div class="tools-circle" style="font-size: small;">JAVA</div>
-                    <div class="tools-circle" style="font-size: small;">JAVA</div>
+                    <div class="tools-circle" style="font-size: small;">HTML</div>
+                    <div class="tools-circle" style="font-size: small;">CSS</div>
                 </div>
                 <div style="display: flex; justify-content: space-between; padding: 0 100px 0 100px; margin-top: 10px; text-align: center;">
-                    <div class="tools-circle" style="font-size: small;">C#</div>
-                    <div class="tools-circle" style="font-size: small;">JAVA</div>
-                    <div class="tools-circle" style="font-size: small;">JAVA</div>
-                    <div class="tools-circle" style="font-size: small;">JAVA</div>
+                    <div class="tools-circle" style="font-size: small;"></div>
+                    <div class="tools-circle" style="font-size: small;"></div>
+                    <div class="tools-circle" style="font-size: small;"></div>
+                    <div class="tools-circle" style="font-size: small;"></div>
                 </div>
             </div>
             <!-- 보유 기술 끝 -->

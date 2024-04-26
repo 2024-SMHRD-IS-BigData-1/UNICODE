@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>UnicodeCompanyJoin</title>
     <link rel="stylesheet" href="assets/css/Join.css">
     <style type="text/css">
     .region {
@@ -28,7 +28,7 @@
 </head>
     <div class="join-wrapper">
         <form class="join-form" action="C_JoinService" method="post">
-            <h2>UNICODE 회원가입</h2>
+            <h2>UNICODE 기업 회원가입</h2>
             <!-- 아이디 -->
             <div id="join-id">
                 <input type="text" placeholder="아이디 입력" name="id" id="inputE">

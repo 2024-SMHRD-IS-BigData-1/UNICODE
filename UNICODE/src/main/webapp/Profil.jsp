@@ -13,6 +13,7 @@
 <body>
 <%
 		String id = request.getParameter("id");
+		String tel = request.getParameter("tel");
 	%>
 
 	<form action="ProfilService" method="post" enctype="multipart/form-data">
@@ -45,7 +46,7 @@
 	                    <label for="tel">연락처</label>
 	                </h3>
 	                <span>
-	                    <input type="text" id="tel" name="profile_tel" maxlength="20">
+	                    <input type="text" id="tel" name="profile_tel" value="<%=tel%>" readonly>
 	                </span>
 	            </div>
 	
@@ -56,7 +57,7 @@
 	                </h3>
 	                <span>
 	                    <input type="checkbox" name="profile_tech" value="java">JAVA
-	                    <input style="margin-left:15px;" type="checkbox" name="profile_tech" value="c">C
+	                    <input style="margin-left:15px;" type="checkbox" name="profile_tech" value="C">C
 	                    <input style="margin-left:15px;" type="checkbox" name="profile_tech" value="python">PYTHON
 	                    <input style="margin-left:15px;" type="checkbox" name="profile_tech" value="html">HTML
 	                    <input style="margin-left:15px;" type="checkbox" name="profile_tech" value="css">CSS

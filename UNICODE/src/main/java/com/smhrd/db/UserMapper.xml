@@ -5,7 +5,7 @@
 <mapper namespace="com.smhrd.db.UserMapper">
   
   <insert id="join" parameterType="User">
-  	insert into user_info values(#{u_id}, #{u_pw} , #{u_name}, #{u_tel},#{join_date}, #{u_email})
+  	insert into user_info values(#{u_id}, #{u_pw} , #{u_name}, #{u_tel}, #{join_date}, #{u_email})
   </insert>
   
   <select id="IDCheck" parameterType="String" resultType="String">
@@ -20,8 +20,15 @@
   	insert into profile_info values(#{u_id}, #{profile_tech}, #{profile_period}, #{profile_wage},#{profile_career},
   	#{profile_img},#{profile_name},#{profile_tel},#{profile_region},#{profile_license}, #{profile_award},#{profile_residence})
   </insert>
-  	<select id="userprofil" parameterType="Profil" resultType="Profil">
-		select * from profile_info where u_id = #{u_id}
-	</select>
+  
+  <select id="userprofil" parameterType="Profil" resultType="Profil">
+	select * from profile_info where u_id = #{u_id}
+  </select>
+	
+  <update id="modify" parameterType="Profil">
+  	update profile_info set profile_name=#{profile_name}, profile_tel=#{profile_tel}, profile_region=#{profile_region},
+  	profile_tech=#{profile_tech}, profile_residence=#{profile_residence}
+  	where u_id = #{u_id}
+  </update>
   
 </mapper>

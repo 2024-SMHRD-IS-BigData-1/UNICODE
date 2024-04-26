@@ -4,12 +4,7 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
-  <servlet>
-  	<servlet-name>JoinService</servlet-name>
-  	<display-name>JoinService</display-name>
-  	<description></description>
-  	<servlet-class>com.smhrd.controller.JoinService</servlet-class>
-  </servlet>
+
   <servlet>
   	<servlet-name>LoginService</servlet-name>
   	<display-name>LoginService</display-name>
@@ -66,12 +61,21 @@
   	<description></description>
   	<servlet-class>com.smhrd.controller.KakaoJoinService</servlet-class>
   </servlet>
-
-
-  <servlet-mapping>
+  <servlet>
+  	<servlet-name>modifyService</servlet-name>
+  	<display-name>modifyService</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.modifyService</servlet-class>
+  </servlet>
+  <servlet>
   	<servlet-name>JoinService</servlet-name>
-  	<url-pattern>/JoinService1</url-pattern>
-  </servlet-mapping>
+  	<display-name>JoinService</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.JoinService</servlet-class>
+  </servlet>
+
+
+
   <servlet-mapping>
   	<servlet-name>LoginService</servlet-name>
   	<url-pattern>/LoginService</url-pattern>
@@ -110,6 +114,14 @@
   <servlet-mapping>
   	<servlet-name>KakaoJoinService</servlet-name>
   	<url-pattern>/KakaoJoinService</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>modifyService</servlet-name>
+  	<url-pattern>/modifyService</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>JoinService</servlet-name>
+  	<url-pattern>/JoinService</url-pattern>
   </servlet-mapping>
 
 

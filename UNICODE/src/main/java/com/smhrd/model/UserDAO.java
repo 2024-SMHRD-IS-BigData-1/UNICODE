@@ -54,5 +54,14 @@ public class UserDAO {
 	}
 
 
+	public int modify(Profil profil) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		int cnt = session.update("com.smhrd.db.UserMapper.modify", profil);
+		session.close();
+		return cnt;
+	}
+	
+	
+
 	
 }

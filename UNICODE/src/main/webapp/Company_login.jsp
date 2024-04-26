@@ -9,7 +9,7 @@
 </head>
 <body>
 	    <div class="login-wrapper">
-        <h2>UNICODE 로그인</h2>
+        <h2>UNICODE 기업 로그인</h2>
         <form method="post" action="C_LoginService" id="login-form">
             <input type="text" name="id" placeholder="아이디">
             <input type="password" name="pw" placeholder="비밀번호">
