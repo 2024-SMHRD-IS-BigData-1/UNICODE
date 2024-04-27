@@ -10,14 +10,13 @@
     <title>UnicodeMain</title>
 	<link rel="stylesheet" href="assets/css/Main.css">
 </head>
-<body>
-    <div id="header"></div>
+<body>    <div id="header"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
     $(document).ready(function(){
         $("#header").load("header.jsp");
     });
-    </script>
+    </script> 
         <!-- banner 시작 -->
         <div class="slider">
             <div class="slide">

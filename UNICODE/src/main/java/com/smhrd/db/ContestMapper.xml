@@ -6,13 +6,13 @@
 	
 	<insert id="enroll" parameterType="Contest">
 	  insert into contest_info 
-	  values(contest_info_SEQ.NEXTVAL ,#{bno_idx}, #{c_title} ,#{prize}, #{period}, #{c_content}, #{c_category},
-	  sysdate,#{c_file})
+	  values(contest_info_SEQ.NEXTVAL ,#{bno_idx}, #{con_title} ,#{con_prize}, #{con_period}, #{con_content}, #{con_category},
+	  sysdate,#{con_file})
 	</insert>
 	
-	<select id="" resultType="Contest">
+	<select id="ShowContest" resultType="Contest">
 		select con_title,con_prize,con_period,con_content,con_category,con_file
-		from contest_info;
+		from contest_info
 	</select>
 
 </mapper>

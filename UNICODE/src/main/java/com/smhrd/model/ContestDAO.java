@@ -16,11 +16,11 @@ public class ContestDAO {
 		session.close();
 		return cnt;
 	}
-	public List<Contest> ContestGet() {
+	public List<Contest> ShowContest() {
 		SqlSession session = sqlSessionFactory.openSession(true);
-		List<Contest> contestInfoList = session.selectList("com.smhrd.db.ContestMapper.getContestInfo");
-		System.out.println(contestInfoList);
-	    return contestInfoList;
+		List<Contest> contestList = session.selectList("com.smhrd.db.ContestMapper.ShowContest");
+		System.out.println(contestList);
+	    return contestList;
 	}
 
 }

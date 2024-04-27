@@ -20,12 +20,19 @@ public class Contest {
 
 	private String bno_idx;
 	@NonNull
-	private String c_title;
+	private String con_title;
 	@NonNull
-	private String prize;
+	private String con_prize;
 	@NonNull
-	private String period;
-	private String c_content;
-	private String c_category;
-	private String c_file;
+	private String con_period;
+	private String con_content;
+	private String con_category;
+	private String con_file;
+	
+	public String toJson() {
+	    return "{\"con_title\":\"" + this.con_title + "\",\"con_prize\":\"" + this.con_prize + "\",\"con_period\":\"" + this.con_period + "\",\"con_content\":\"" + this.con_content + "\",\"con_category\":\"" + this.con_category + "\",\"con_file\":\"" + this.con_file + "\"}";
+	}
+
+	
 }
+

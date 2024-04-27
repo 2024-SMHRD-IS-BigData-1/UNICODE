@@ -1,3 +1,8 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
+<%@page import="com.smhrd.model.ContestDAO"%>
+<%@page import="com.smhrd.model.Contest"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -11,10 +16,11 @@
     <title>Contest Page</title>
     <link rel="stylesheet" href="assets/css/contest.css"/>
     <link rel="stylesheet" href="assets/css/Main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.min.js"></script>
 </head>
 <body>
     <div id="header"></div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
     $(document).ready(function(){
         $("#header").load("header.jsp");
@@ -62,44 +68,62 @@
                     </div>
                 </div>
             </aside>
-            <div class="list-wrapper">                
+            <div class="list-wrapper">
+            <%List<Contest> contestList = new ContestDAO().ShowContest();
+			pageContext.setAttribute("contestList",contestList);
+			%>       
+      
                 <article class="contest-box">
 					<ul>
-					<c:forEach var="contest" items="${contestlist}">
+					<c:forEach var="contest" items="${contestList}">
 					    <li>
 					        <a href="#" class="contest-list">
 					            <div class="thumbnail">
-					                <img src="assets/img/${contest.c_file}" alt="이미지 불러오기 실패" class="thum-img">
+					                <img src="assets/img/${contest.con_file}" alt="이미지 불러오기 실패" class="thum-img">
 					            </div>
 					            <div class="contest-info">
-					                <div>${contest.c_title}</div>
-					                <div>${contest.c_category}</div>
-					                <div>${contest.c_content}</div>
+					                <div>${contest.con_title}</div>
+					                <div>${contest.con_category}</div>
+					                <div>${contest.con_content}</div>
 					            </div>
 					            <ul class="prize-info">
-					                <li>총상금 ${contest.prize}</li>
-					                <li>${contest.period}</li>
+					                <li>총상금 ${contest.con_prize}</li>
+					                <li>${contest.con_period}</li>
 					            </ul>
 					        </a>
 					    </li>
 					</c:forEach>
 					</ul>
-
                     <div class="pagination">
-                        <nav>
-                            <a class="page-btn" data-page="1">1</a>
-                            <a class="page-btn" data-page="2">2</a>
-                            <a class="page-btn" data-page="3">3</a>
-                            <a class="page-btn" data-page="4">4</a>
-                            <a class="page-btn" data-page="5">5</a>
-                            <a class="page-btn next-page">></a>
-                        </nav>
-                    </div>
+                    	<ol id="numbers">
+                    	</ol>
+					</div>
                 </article>
             </div>
         </section>
     </main>
-    <script src="assets/js/contest.js">
-    </script>
+<script type="text/javascript">
+const rowsPerPage = 5;
+const rows = document.querySelectorAll('.contest-box ul li a');
+const rowsCount = rows.length;
+const pageCount = Math.ceil(rowsCount / rowsPerPage);
+const numbers = document.querySelector('#numbers');
+
+// 페이지 네이션 생성부분 수정
+for (let i = 1; i <= pageCount; i++) {
+    let li = document.createElement('li');
+    let a = document.createElement('a');
+    a.href = "#";
+    a.textContent = i; // 페이지 번호를 텍스트로 설정
+    a.addEventListener('click', (e) => { // 각 링크에 이벤트 리스너 추가
+        e.preventDefault();
+        document.querySelectorAll('#numbers a').forEach(el => el.classList.remove('active'));
+        a.classList.add('active');
+    });
+    li.appendChild(a);
+    numbers.appendChild(li);
+}
+</script>
+
 </body>
 </html>
