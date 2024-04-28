@@ -1,0 +1,412 @@
+.member-list {
+    margin: 0 auto;
+    width: 900px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 7px 0 rgba(0,0,0,.1);
+    align-items: center;
+    margin-top: 12px;
+}
+.member-circle {
+    width: 150px;
+    max-height: 150px;
+    background-color: #cccccc48;
+    border-radius: 100px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.img1{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.divider-hr {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    width: 90%;
+    height: 0.5px;
+    background-color: #ccc;
+    border: none;
+}
+.pick_banner {
+    width: 40%;
+    /* min-width: 200px; */
+    /* height: auto; */
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border: 0px;
+    outline: 0px;
+    cursor: pointer;
+    background-color: #bec3dd;
+    border-radius: 8px;
+}
+.pick_banner .wrap {
+    margin-top: 12px;
+    max-width: 1440px;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding: 0px 40px;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.pick_banner .wrap .banner_text {
+    position: absolute;
+    z-index: 1;
+    font-size: 22px;
+    line-height: 34px;
+    letter-spacing: -0.5px;
+    font-weight: 700;
+    text-align: left;
+    
+    height: 100%;
+}
+.pick_banner .wrap .banner_text .sub {
+    margin-top: 4px;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: -0.25px;
+    font-weight: 500;
+}
+.pick_banner .wrap .banner_img {
+    width: 10% !important;
+    max-height: auto !important;
+    display: block !important;
+    object-fit: cover !important;
+    position: relative;
+    margin-left: auto;
+}
+.banner_button {
+    min-width: 160px;
+    margin-left: 16px; 
+}
+.divider-line {
+    margin: 10px 0; /* 상하 마진 */
+    width: 180px;
+    height: 0.5px;
+    background-color: #ccc;
+    border: none;
+    margin-top : 20px;
+    margin-bottom : 20px;
+}
+.region {
+    width: 200px; /* 너비를 200px로 설정 */
+    height: 40px; /* 높이를 40px로 설정 */
+    font-size: 16px; /* 텍스트 크기를 16px로 설정 */
+    padding: 5px; /* 내부 여백을 추가하여 더 편안한 사용감 제공 */
+    border-radius: 5px; /* 모서리를 약간 둥글게 처리 */
+    border: 1px solid #ccc; /* 테두리 색상 설정 */
+}
+.promotion-list {
+    float: right;
+    width: 1000px;
+    min-height: 500px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,.16);
+}
+.member-listup {
+    margin: 20px auto;
+    width: 900px;
+    min-height: 150px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 7px 0 rgba(0,0,0,.1);
+    align-items: center;
+    display: flex;
+}
+.member-border {
+    margin: 0 20px;
+    margin-right: 10px;
+    width: 100px;
+    min-height: 100px;
+    background-color: #cccccc48;
+    border-radius: 100px;
+}
+.img1-1{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.text-small {
+    font-size: smaller;
+}
+#pagination {
+    display: flex;
+    list-style: none;
+}
+#pagination button {
+    margin-left: 5px;
+    margin-right: 2px;
+    color: #616161; /* 페이지 번호 버튼 색상 변경 */
+}
+.item {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+.content-container {
+    display: flex;
+}
+.container {
+    position: relative;
+}
+.match-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 20px; /* 상단과 우측으로부터 조금 떨어져 있게 마진 설정 */
+}
+.btn {
+    border-radius: 4px;
+    color: #616161;
+    padding: 10px 25px 10px 25px;
+    border: solid 1px #e0e0e0;
+    background-color: #fff;
+    margin-left: 16px;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    background: none
+}
+.more-btn {
+    border-radius: 4px;
+    color: #616161;
+    padding: 5px 15px 5px 15px;
+    border: solid 1px #e0e0e0;
+    background-color: #fff;
+    margin-left: 16px;
+    font-size: 12px;
+    line-height: 24px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    background: none
+}
+.icon {
+    margin-left: 20px;
+}
+.icon-box {
+    display: flex;
+    font-size: x-small;
+    margin-left: 30px ;
+    margin-top: 15px;
+}
+.content-list {
+    margin: 20px auto;
+    width: 750px;
+    min-height: 350px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 7px 0 rgba(0,0,0,.1);
+    /* align-items: center; */
+    padding-top: 10px;
+
+}
+.port-list-img {
+    width: 200px;
+}
+.port-list-img>img{
+    width: 100%;
+}
+.port-list-text{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.tools {
+    margin: 30px auto;
+    width: 750px;
+    min-height: 200px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 7px 0 rgba(0,0,0,.1);
+    align-items: center;
+}
+.tools-circle {
+    width: 100px;
+    max-height: 150px;
+    background-color: #cccccc48;
+    border-radius: 100px;
+    margin-top: 10px;
+    /* margin-left: 10px; */
+    padding: 10px 0;
+}
+.port-list {
+    display: flex; 
+    justify-content: space-between; 
+    padding: 0 30px 0 30px; 
+    margin-bottom: 20px;
+}
+
+
+
+.port-listup {
+    margin: 0 15px;
+    border-radius: 5px;
+    border-top: 1px solid #e0e0e0;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+.port-cate {
+    margin: 30px auto;
+    width: 900px;
+    height: 80px;
+    background-color: #e8eaf667;
+    /* box-shadow: 0 2px 7px 0 rgba(0,0,0,.1); */
+    align-items: center;
+}
+.cate-btn button{
+    display: flex;
+    margin-top: 25px;
+    margin-right: 20px;
+    height: 30px;
+    width: 80px;
+    text-align: center;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 14px;
+    display: inline-block;
+    background-color: #ffffffef;
+    border: 1px solid #2c2c2c69;
+}
+
+
+.matching-request {
+    margin: 20px auto;
+    width: 900px;
+    min-height: 1000px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 7px 0 rgba(0,0,0,.1);
+    align-items: center;
+}
+.matching-text {
+    text-align: center;
+    font-size: x-large;
+    padding: 30px 0;
+}
+.divider-liner {
+    width: 750px;
+    height: 0.5px;
+    background-color: #ccc;
+    border: none;
+    align-items: center;
+}
+.matching-condition {
+    margin-left: 75px;
+    font-size: smaller;
+}
+.prefer-project {
+    margin-left: 100px;
+    font-size: x-small;
+    margin-top: 35px;
+}
+.matching-check {
+    display: flex;
+}
+.matching-checkbox {
+    padding: 5px 5px 5px 5px;
+    margin: 20px 20px 20px 0;
+    width: 130px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+.matching-checkbox > input {
+    margin-top: 15px;
+}
+.prefer-region {
+    align-items: center;
+    margin-left: 100px;
+    font-size: x-small;
+    margin-top: 30px;
+}
+.region-select {
+    margin: 20px 20px 20px 0;
+    font-size: small;
+}
+.matching-select {
+    align-items: left;
+}
+.prefer-period {
+    align-items: center;
+    margin-left: 100px;
+    font-size: x-small;
+    margin-top: 30px;
+}
+.project-content {
+    margin-top: 10px;
+    text-align: center;
+}
+#talk {
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    text-decoration: none;
+    width: 77%;
+    resize: none;
+}
+.period {
+    border: 1px solid #ccc;
+}
+.project-request {
+    align-items: center;
+    margin: 50px 0 10px 100px;
+    font-size: x-small;
+}
+.select-period {
+    margin: 30px 0 0 100px;
+    display: flex;
+    align-items: center;
+}
+.end-period {
+    margin-left: 30px;
+}
+.request-tool {
+    align-items: center;
+    margin: 20px 0 10px 100px;
+    font-size: x-small;
+}
+.request-tool-box {
+    margin-top: 10px;
+    text-align: center;
+}
+.submit-box {
+    text-align: center;
+    margin-top: 35px;
+    padding: 20px 30px;
+}
+.submit-btn {
+    border-radius: 4px;
+    color: #616161;
+    padding: 10px 25px 10px 25px;
+    border: solid 1px #e0e0e0;
+    background-color: #fff;
+    margin-left: 16px;
+    font-size: small;
+    line-height: 24px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    background: none
+}

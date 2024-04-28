@@ -4,104 +4,124 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
-  <servlet>
-  	<servlet-name>JoinService</servlet-name>
-  	<display-name>JoinService</display-name>
-  	<description></description>
-  	<servlet-class>com.smhrd.controller.JoinService</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>LoginService</servlet-name>
-  	<display-name>LoginService</display-name>
-  	<description></description>
-  	<servlet-class>com.smhrd.controller.LoginService</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>LogoutService</servlet-name>
-  	<display-name>LogoutService</display-name>
-  	<description></description>
-  	<servlet-class>com.smhrd.controller.LogoutService</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>ProfilService</servlet-name>
-  	<display-name>ProfilService</display-name>
-  	<description></description>
-  	<servlet-class>com.smhrd.controller.ProfilService</servlet-class>
-  </servlet>
-
-	<servlet>
-	  	<servlet-name>PortfolioWrite</servlet-name>
-	  	<display-name>PortfolioWrite</display-name>
-	  	<description></description>
-	  	<servlet-class>com.smhrd.controller.PortfolioWrite</servlet-class>
-	  </servlet>
 
   <servlet>
-  	<servlet-name>C_LoginService</servlet-name>
-  	<display-name>C_LoginService</display-name>
-  	<description></description>
-  	<servlet-class>com.smhrd.controller.C_LoginService</servlet-class>
+     <servlet-name>LoginService</servlet-name>
+     <display-name>LoginService</display-name>
+     <description></description>
+     <servlet-class>com.smhrd.controller.LoginService</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>C_JoinService</servlet-name>
-  	<display-name>C_JoinService</display-name>
-  	<description></description>
-  	<servlet-class>com.smhrd.controller.C_JoinService</servlet-class>
+     <servlet-name>LogoutService</servlet-name>
+     <display-name>LogoutService</display-name>
+     <description></description>
+     <servlet-class>com.smhrd.controller.LogoutService</servlet-class>
+  </servlet>
+  <servlet>
+     <servlet-name>ProfilService</servlet-name>
+     <display-name>ProfilService</display-name>
+     <description></description>
+     <servlet-class>com.smhrd.controller.ProfilService</servlet-class>
   </servlet>
 
+   <servlet>
+        <servlet-name>PortfolioWrite</servlet-name>
+        <display-name>PortfolioWrite</display-name>
+        <description></description>
+        <servlet-class>com.smhrd.controller.PortfolioWrite</servlet-class>
+     </servlet>
+
   <servlet>
-  	<servlet-name>ContestWrite</servlet-name>
-  	<display-name>ContestWrite</display-name>
-  	<description></description>
-  	<servlet-class>com.smhrd.controller.ContestWrite</servlet-class>
+     <servlet-name>C_LoginService</servlet-name>
+     <display-name>C_LoginService</display-name>
+     <description></description>
+     <servlet-class>com.smhrd.controller.C_LoginService</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>ContestInfoGet</servlet-name>
-  	<display-name>ContestInfoGet</display-name>
-  	<description></description>
-  	<servlet-class>com.smhrd.controller.ContestInfoGet</servlet-class>
+     <servlet-name>C_JoinService</servlet-name>
+     <display-name>C_JoinService</display-name>
+     <description></description>
+     <servlet-class>com.smhrd.controller.C_JoinService</servlet-class>
   </servlet>
+    <servlet>
+     <servlet-name>Contest</servlet-name>
+     <display-name>Contest</display-name>
+     <description></description>
+     <servlet-class>com.smhrd.model.Contest</servlet-class>
+  </servlet>
+  <servlet>
+     <servlet-name>ContestWrite</servlet-name>
+     <display-name>ContestWrite</display-name>
+     <description></description>
+     <servlet-class>com.smhrd.controller.ContestWrite</servlet-class>
+  </servlet>
+  <servlet>
+     <servlet-name>KakaoJoinService</servlet-name>
+     <display-name>KakaoJoinService</display-name>
+     <description></description>
+     <servlet-class>com.smhrd.controller.KakaoJoinService</servlet-class>
+  </servlet>
+  <servlet>
+     <servlet-name>modifyService</servlet-name>
+     <display-name>modifyService</display-name>
+     <description></description>
+     <servlet-class>com.smhrd.controller.modifyService</servlet-class>
+  </servlet>
+  <servlet>
+     <servlet-name>JoinService</servlet-name>
+     <display-name>JoinService</display-name>
+     <description></description>
+     <servlet-class>com.smhrd.controller.JoinService</servlet-class>
+  </servlet>
+
 
 
   <servlet-mapping>
-  	<servlet-name>JoinService</servlet-name>
-  	<url-pattern>/JoinService1</url-pattern>
+     <servlet-name>LoginService</servlet-name>
+     <url-pattern>/LoginService</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>LoginService</servlet-name>
-  	<url-pattern>/LoginService</url-pattern>
+     <servlet-name>LogoutService</servlet-name>
+     <url-pattern>/LogoutService</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>LogoutService</servlet-name>
-  	<url-pattern>/LogoutService</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>ProfilService</servlet-name>
-  	<url-pattern>/ProfilService</url-pattern>
+     <servlet-name>ProfilService</servlet-name>
+     <url-pattern>/ProfilService</url-pattern>
   </servlet-mapping>
 
    <servlet-mapping>
-  	<servlet-name>PortfolioWrite</servlet-name>
-  	<url-pattern>/PortfolioWrite</url-pattern>
+     <servlet-name>PortfolioWrite</servlet-name>
+     <url-pattern>/PortfolioWrite</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>
-  	<servlet-name>C_LoginService</servlet-name>
-  	<url-pattern>/C_LoginService</url-pattern>
+     <servlet-name>C_LoginService</servlet-name>
+     <url-pattern>/C_LoginService</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>C_JoinService</servlet-name>
-  	<url-pattern>/C_JoinService</url-pattern>
+     <servlet-name>C_JoinService</servlet-name>
+     <url-pattern>/C_JoinService</url-pattern>
   </servlet-mapping>
   
-
-  <servlet-mapping>
-  	<servlet-name>ContestWrite</servlet-name>
-  	<url-pattern>/ContestWrite</url-pattern>
+    <servlet-mapping>
+     <servlet-name>Contest</servlet-name>
+     <url-pattern>/Contest</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>ContestInfoGet</servlet-name>
-  	<url-pattern>/ContestInfoGet</url-pattern>
+     <servlet-name>ContestWrite</servlet-name>
+     <url-pattern>/ContestWrite</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+     <servlet-name>KakaoJoinService</servlet-name>
+     <url-pattern>/KakaoJoinService</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+     <servlet-name>modifyService</servlet-name>
+     <url-pattern>/modifyService</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+     <servlet-name>JoinService</servlet-name>
+     <url-pattern>/JoinService</url-pattern>
   </servlet-mapping>
 
 

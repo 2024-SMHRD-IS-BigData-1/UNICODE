@@ -38,7 +38,8 @@ public class ProfilService extends HttpServlet {
 		String id = multi.getParameter("u_id");
 		String name = multi.getParameter("profile_name");
 		String tel = multi.getParameter("profile_tel");
-		String tech = multi.getParameter("profile_tech");
+		String[] techs = multi.getParameterValues("profile_tech");
+		String tech = String.join(",", techs);
 		String refion = multi.getParameter("profile_region");
 		String period = multi.getParameter("profile_period");
 		String wage = multi.getParameter("profile_wage");

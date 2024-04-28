@@ -12,19 +12,24 @@ import lombok.ToString;
 
 @AllArgsConstructor
 @RequiredArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @ToString
 public class Profil {
 	
-	private String u_id;
-    private String profile_name;
-    private String profile_tel;
-    private String profile_tech;
-    private String profile_region;
+	
+	@NonNull private String u_id;
+	@NonNull private String profile_name;
+	@NonNull private String profile_tel;
+	@NonNull private String profile_tech;
+	@NonNull private String profile_region;
+	
     private String profile_period;
     private String profile_wage;
-    private String profile_residence;
+    
+    @NonNull private String profile_residence;
+    
     private String profile_career;
     private String profile_license;
     private String profile_award;

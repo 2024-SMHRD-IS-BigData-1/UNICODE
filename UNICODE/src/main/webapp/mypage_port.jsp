@@ -12,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UnicodeMypage</title>
+    <title>UnicodeMypagePort</title>
     <script src="https://kit.fontawesome.com/9e1b042d62.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/Main.css"/>
     <link rel="stylesheet" href="assets/css/mypage_port.css"/>

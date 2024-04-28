@@ -11,7 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>UnicodeMypage</title>
     <script src="https://kit.fontawesome.com/9e1b042d62.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/Main.css"/>
     <link rel="stylesheet" href="assets/css/mypage.css"/>
@@ -25,28 +25,13 @@
 </head>
 
 <body>
-    <header>
-        <div id="logo_menu" class="wrap">
-            <div id="logo_img">
-                <a href="../main.html">
-                    <img src="/img/logo.png"> 
-                </a>
-            </div>
-            <div id="search_box">           
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input id="search-input" type="text" name="search-input" placeholder="  검색어를 입력하세요.">
-                
-            </div>
-            <div class="menu_cont">
-                <ul id="menu">
-                    <li><a href="#">코딩 페스티벌</a></li>
-                    <li><a href="/프로모션/promotion.html">개발자 찾기</a></li>
-                    <li><a href="#">커뮤니티</a></li>
-                    <li><a href="mypage.html">마이페이지</a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
+     <div id="header"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("#header").load("header.jsp");
+    });
+    </script>
     
     <%Object loginUser = session.getAttribute("loginUser"); 
     	User user = (User)loginUser;
@@ -54,6 +39,7 @@
     <%
     Profil profil = new UserDAO().userprofil(user); 
        List<Portfolio> portfolioList = new PortfolioDAO().portfolioList(user);
+    
     %>
     
     <!-- 사용자 정보 시작 -->
@@ -65,11 +51,11 @@
                 </div>
                 <div>
                     <div class="profile-title">
-                        <span class="profile-username"><%=profil.getU_id() %></span>
+                        <span class="profile-username"><%=profil.getProfile_name() %></span>
                     </div>
                     <div class="profile-subtitle">
                         <div class="icon-badge">
-                            <i class="fa-solid fa-user"></i><%=profil.getProfile_name() %>
+                            <i class="fa-solid fa-envelope"></i><%=user.getU_email() %>
                         </div>
                         <div class="icon-badge">
                             <i class="fa-solid fa-code"></i><%=profil.getProfile_tech() %>
@@ -168,20 +154,35 @@
 
             <div class="divider-hr"></div>
             <div style="margin-left: 10px; padding-left: 30px;"><b>보유 기술</b></div>
-            <div style="margin-top: 15px;">
-                <div style="display: flex; justify-content: space-between; padding: 0 100px 0 100px; margin-bottom: 10px; text-align: center; align-items: center;">
-                    <div class="tools-circle" style="font-size: small;"><%=profil.getProfile_tech() %></div>
-                    <div class="tools-circle" style="font-size: small;"><%=profil.getProfile_tech() %></div>
-                    <div class="tools-circle" style="font-size: small;"><%=profil.getProfile_tech() %></div>
-                    <div class="tools-circle" style="font-size: small;"><%=profil.getProfile_tech() %></div>
-                </div>
-                <div style="display: flex; justify-content: space-between; padding: 0 100px 0 100px; margin-top: 10px; text-align: center;">
-                    <div class="tools-circle" style="font-size: small;"><%=profil.getProfile_tech() %></div>
-                    <div class="tools-circle" style="font-size: small;"><%=profil.getProfile_tech() %></div>
-                    <div class="tools-circle" style="font-size: small;"><%=profil.getProfile_tech() %></div>
-                    <div class="tools-circle" style="font-size: small;"><%=profil.getProfile_tech() %></div>
-                </div>
-            </div>
+			<div style="margin-top: 15px;">
+			    <div style="display: flex; justify-content: space-between; padding: 0 100px 0 100px; margin-bottom: 10px; text-align: center; align-items: center;">
+			        <% 
+			        String[] userTechs = profil.getProfile_tech().split(",");
+			        for (int i = 0; i < 4; i++) {
+			            if (i < userTechs.length) {
+			                %>
+			                <div class="tools-circle" style="font-size: small;"><%= userTechs[i] %></div>
+			                <%
+			            } else {
+			                %>
+			                <div class="tools-circle" style="font-size: small;"></div>
+			                <%
+			            }
+			        }
+			        %>
+			    </div>
+			    <div style="display: flex; justify-content: space-between; padding: 0 100px 0 100px; margin-top: 10px; text-align: center;">
+			        <% 
+			        for (int i = 4; i < 8; i++) {
+			            if (i < userTechs.length) {
+			                %>
+			                <div class="tools-circle" style="font-size: small;"><%= userTechs[i] %></div>
+			                <%
+			            }
+			        }
+			        %>
+			    </div>
+			</div>
             <div class="divider-hr"></div>
             <div style="margin-left: 10px; padding-left: 30px;"><b>우승한 콘테스트</b></div>
             <div style="display: flex; justify-content: space-between; margin-top: 30px; padding: 0 200px 0 200px; text-align: center; align-items: center;">
@@ -201,20 +202,20 @@
             <div>
                 <div style="display: flex; padding: 0 20px;">
                     <div class="contest-list">
-                        <div>
+                        <div name="cnt_file">
                             <img src="/img/contest_img1.jpg" alt="" style="width: 100%;">
                         </div>
                         <div class="project-done">
                             <div style="width: 100%; padding-left: 10px; margin: 10px;">
-                                <div style="margin-bottom: 10px;"><b>IOT 스마트 펌웨어 개발</b></div>
-                                <div class="money-cnt" style=" margin-bottom: 10px; font-size: smaller;">
+                                <div style="margin-bottom: 10px;" name="cnt_title"><b>IOT 스마트 펌웨어 개발</b></div>
+                                <div class="money-cnt" name="cnt_money" style=" margin-bottom: 10px; font-size: smaller;">
                                     <b>상금 </b><span style="font-size: smaller; margin-right: 5px;">2,500,000</span>
                                 </div>
                                 <div style="font-size: smaller;"><b>사용 기술</b></div> 
                                 <div style="display: flex; ">
-                                    <div class="used-skill"><img class="skill-img" src="/img/skill/java.png"><div class="skill-name">JAVA</div></div>
-                                    <div class="used-skill"><img class="skill-img" src="/img/skill/c_plus_plus.png"><div class="skill-name">C++</div></div>
-                                    <div class="used-skill"><img class="skill-img" src="/img/skill/html.png"><div class="skill-name">HTML</div></div>
+                                    <div name="cnt_skill" class="used-skill"><img class="skill-img" src="/img/skill/java.png"><div class="skill-name">JAVA</div></div>
+                                    <div name="cnt_skill" class="used-skill"><img class="skill-img" src="/img/skill/c_plus_plus.png"><div class="skill-name">C++</div></div>
+                                    <div name="cnt_skill" class="used-skill"><img class="skill-img" src="/img/skill/html.png"><div class="skill-name">HTML</div></div>
                                 </div>
                             </div>
                         </div>
