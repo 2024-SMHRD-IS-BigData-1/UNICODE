@@ -7,7 +7,7 @@
 	<insert id="enroll" parameterType="Contest">
 	  insert into contest_info 
 	  values(contest_info_SEQ.NEXTVAL ,#{bno_idx}, #{con_title} ,#{con_prize}, #{con_period}, #{con_content}, #{con_category},
-	  sysdate,#{con_file})
+	  sysdate,#{con_file},null)
 	</insert>
 	
 	<select id="ShowContest" resultType="Contest">

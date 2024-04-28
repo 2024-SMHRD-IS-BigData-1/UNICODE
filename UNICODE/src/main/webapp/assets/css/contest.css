@@ -40,6 +40,7 @@ body {
 #area {
     display: flex;
     justify-content: space-between;
+    width: 80%;
 }
 
 .side_bar {
@@ -117,6 +118,13 @@ div.pagination {
     text-align: center;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+.pagination i {
+	color: #fff;
+	font-size: 1.2rem;
+	padding: .5rem 1rem;
+	cursor: pointer;
 }
 
 ol#numbers {
@@ -132,6 +140,7 @@ ol#numbers {
     padding: .5rem 1rem;
     text-decoration: none;
     opacity: .7;
+    font-size: 1.2rem;
 }
 
 #numbers li a:hover, #numbers li a:focus {

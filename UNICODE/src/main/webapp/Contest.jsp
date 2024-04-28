@@ -16,6 +16,7 @@
     <title>Contest Page</title>
     <link rel="stylesheet" href="assets/css/contest.css"/>
     <link rel="stylesheet" href="assets/css/Main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.min.js"></script>
 </head>
@@ -95,35 +96,16 @@
 					</c:forEach>
 					</ul>
                     <div class="pagination">
+                    	<i class="fa-solid fa-arrow-left"></i>
                     	<ol id="numbers">
                     	</ol>
+                    	<i class="fa-solid fa-arrow-right"></i>
 					</div>
                 </article>
             </div>
         </section>
     </main>
-<script type="text/javascript">
-const rowsPerPage = 5;
-const rows = document.querySelectorAll('.contest-box ul li a');
-const rowsCount = rows.length;
-const pageCount = Math.ceil(rowsCount / rowsPerPage);
-const numbers = document.querySelector('#numbers');
-
-// 페이지 네이션 생성부분 수정
-for (let i = 1; i <= pageCount; i++) {
-    let li = document.createElement('li');
-    let a = document.createElement('a');
-    a.href = "#";
-    a.textContent = i; // 페이지 번호를 텍스트로 설정
-    a.addEventListener('click', (e) => { // 각 링크에 이벤트 리스너 추가
-        e.preventDefault();
-        document.querySelectorAll('#numbers a').forEach(el => el.classList.remove('active'));
-        a.classList.add('active');
-    });
-    li.appendChild(a);
-    numbers.appendChild(li);
-}
-</script>
+<script src="assets/js/contest.js"></script>
 
 </body>
 </html>

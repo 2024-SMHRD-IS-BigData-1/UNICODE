@@ -42,10 +42,10 @@ public class ContestWrite extends HttpServlet {
 		
 		if(cnt > 0) {
 			System.out.println("개최 성공!");
-			//response.sendRedirect("JoinSuccess.jsp?email="+member.getEmail());
+			response.sendRedirect("Contest.jsp");
 		}else {
 			System.out.println("개최 실패..");
-			// response.sendRedirect("Main.jsp");
+			response.sendRedirect("Contest.jsp");
 		}
 		
 	}
