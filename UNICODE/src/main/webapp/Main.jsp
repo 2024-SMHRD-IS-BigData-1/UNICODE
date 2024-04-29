@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/9e1b042d62.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <title>UnicodeMain</title>
 	<link rel="stylesheet" href="assets/css/Main.css">
 </head>
@@ -17,7 +18,7 @@
   </video>
   <div class="text-overlay" id="textOverlay"></div>
   </div>
-<div class="all">
+
 <div id="header"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
@@ -102,7 +103,7 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="slide-item">
-                        <img src="./img/portfolio_img1.png" />
+                        <img src="assets/img/portfolio_img.jpg" />
                         <div class="slide-text" >
                             <div>
                                 <div style="font-size: 18px;">
@@ -123,7 +124,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="slide-item">
-                        <img src="./img/portfolio_img2.jpg" />
+                        <img src="assets/img/portfolio_img2.jpg" />
                         <div class="slide-text" >
                             <div>
                                 <div style="font-size: 18px;">
@@ -144,7 +145,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="slide-item">
-                        <img src="./img/portfolio_img3.png" />
+                        <img src="assets/img/portfolio_img3.jpg" />
                         <div class="slide-text" >
                             <div>
                                 <div style="font-size: 18px;">
@@ -165,7 +166,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="slide-item">
-                        <img src="./img/portfolio_img.png" />
+                        <img src="assets/img/portfolio_img.jpg" />
                         <div class="slide-text" >
                             <div>
                                 <div style="font-size: 18px;">
@@ -192,7 +193,7 @@
               <div class="swiper-wrapper">
                   <div class="swiper-slide">
                       <div class="slide-item">
-                          <img src="./img/portfolio_img3.jpg" />
+                          <img src="assets/img/portfolio_img3.jpg" />
                           <div class="slide-text" >
                               <div>
                                   <div style="font-size: larger; text-align: center; ">
@@ -213,7 +214,7 @@
                   </div>
                   <div class="swiper-slide">
                       <div class="slide-item">
-                          <img src="./img/portfolio_img1.png" />
+                          <img src="assets/img/portfolio_img.jpg" />
                           <div class="slide-text" >
                               <div>
                                   <div style="font-size: larger; text-align: center; ">
@@ -234,7 +235,7 @@
                   </div>
                   <div class="swiper-slide">
                       <div class="slide-item">
-                          <img src="./img/portfolio_img3.png" />
+                          <img src="assets/img/portfolio_img3.jpg" />
                           <div class="slide-text" >
                               <div>
                                   <div style="font-size: larger; text-align: center; ">
@@ -255,7 +256,7 @@
                   </div>
                   <div class="swiper-slide">
                       <div class="slide-item">
-                          <img src="./img/portfolio_img2.jpg" />
+                          <img src="assets/img/portfolio_img2.jpg" />
                           <div class="slide-text" >
                               <div>
                                   <div style="font-size: larger; text-align: center; ">
@@ -281,7 +282,7 @@
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <div class="slide-item">
-                    <img src="./img/portfolio_img1.png" />
+                    <img src="assets/img/portfolio_img.jpg" />
                     <div class="slide-text" >
                         <div>
                             <div style="font-size: 18px;">
@@ -302,7 +303,7 @@
             </div>
             <div class="swiper-slide">
                 <div class="slide-item">
-                    <img src="./img/portfolio_img2.jpg" />
+                    <img src="assets/img/portfolio_img2.jpg" />
                     <div class="slide-text" >
                         <div>
                             <div style="font-size: 18px;">
@@ -323,7 +324,7 @@
             </div>
             <div class="swiper-slide">
                 <div class="slide-item">
-                    <img src="./img/portfolio_img3.png" />
+                    <img src="assets/img/portfolio_img3.jpg" />
                     <div class="slide-text" >
                         <div>
                             <div style="font-size: 18px;">
@@ -344,7 +345,7 @@
             </div>
             <div class="swiper-slide">
                 <div class="slide-item">
-                    <img src="./img/portfolio_img.png" />
+                    <img src="assets/img/portfolio_img.jpg" />
                     <div class="slide-text" >
                         <div>
                             <div style="font-size: 18px;">
@@ -368,6 +369,8 @@
   </div>
       <div style="width:100%; height:100px"></div>
 </div>
+
+
     <!-- <div class="wrap list-header title" >
         <p class="list-title">라우드 콘테스트 200% 활용법</p>
         <a href="/contest/list/end" class="sc-ftvSup jVerRq">
@@ -379,8 +382,8 @@
 
 
   <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       var video = document.getElementById('introVideo');
@@ -397,7 +400,6 @@
     
     $("#introVideo").on('ended', function(){
         $(".video-container").css('display', 'none'); // 동영상이 끝나면 비디오 컨테이너 숨김
-        $(".all").css('display', 'block'); // 동영상이 끝나면 비디오 컨테이너 숨김
     });
 });
 
