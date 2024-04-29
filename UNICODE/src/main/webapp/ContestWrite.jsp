@@ -129,30 +129,31 @@
                         </div>
                         <div class="portfolio-detail">
                             <div class="portfolio-text">
-                                상금
-                                <span class="star">*</span>
-                            </div>
-                            <div class="port-input">
-                                <input type="text" class="input-field" name="prize" placeholder="상금을 입력해 주세요. ex)100만원">
-                            </div>
-                        </div>
-                        <div class="portfolio-detail">
-                            <div class="portfolio-text">
                                 개최 기간
                                 <span class="star">*</span>
                             </div>
                             <div style="display: flex;">
-                                <div class="date-input-box" style="width: 132px; margin-right: 70px;">
-                                    <input class="date-input" data-type="label-placeholder" name="period_start" onkeypress="filter_number(this, 'm')" onkeyup="only_number(this, 'm')" placeholder="YYYY.MM.DD" type="text" value="">
-                                    <label class="input-label">시작 연월일  *</label>
-                                </div>
-                                <div class="date-input-box" style="width: 132px; margin-right: 70px;">
-                                    <input class="date-input finish" data-type="label-placeholder" name="period_end" onkeypress="filter_number(this, 'm')" onkeyup="only_number(this, 'm')" placeholder="YYYY.MM.DD" type="text" value="">
-                                    <label class="input-label">종료 연월일*</label>
-                                </div>
-                                
+							    <div class="date-input-box" style="width: 132px; margin-right: 70px;">
+							        <input class="date-input date1" id="period_start" name="period_start" style="border:1px solid #00C853" placeholder="YYYY.MM.DD" type="date" value="">
+							        <label class="input-label">시작 연월일 *</label>
+							    </div>
+							    <div class="date-input-box" style="width: 132px; margin-right: 70px;">
+							        <input class="date-input finish" id="period_end" name="period_end" placeholder="YYYY.MM.DD" type="date" value="">
+							        <label class="input-label">종료 연월일*</label>
+							    </div>
+							    
+							</div>
+                        </div>
+                        <div class="portfolio-detail">
+                            <div class="portfolio-text">
+                                상금
+                                <span class="star">*</span>
+                            </div>
+                            <div class="port-input">
+                                <input type="text" class="input-field" id="prize" name="prize" placeholder="상금을 입력해 주세요. ex)100만원">
                             </div>
                         </div>
+                        
 
                         <div class="portfolio-detail">
                             <div class="portfolio-text">
@@ -187,6 +188,48 @@
     </div>
 
 </div>
+<script>
+window.onload = function() {
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+
+    today = yyyy + '-' + mm + '-' + dd;
+    document.getElementById('period_start').value = today;
+};
+</script>
+<script>
+
+function calculateCost() {
+    let startDate = document.getElementById('period_start').value;
+    let endDate = document.getElementById('period_end').value;
+    console.log(startDate + endDate);
+    if(startDate != null && endDate != null){
+    	 startDate = new Date(startDate);
+    	    endDate = new Date(endDate);
+
+    	    // 날짜 차이 계산
+    	    let differenceInTime = endDate.getTime() - startDate.getTime();
+    	    let differenceInDays = differenceInTime / (1000 * 3600 * 24) + 1; // 시작일과 종료일을 포함하여 계산
+
+    	    // 총 금액 계산
+    	    let totalCost = differenceInDays * 30000;
+    	    
+    	    // 결과 출력
+    	    // document.getElementById('total_cost').innerText = totalCost.toLocaleString() + '원';
+    	    document.getElementById('prize').placeholder = differenceInDays + '일 평균가 : '+totalCost.toLocaleString() + '원 ※ 입력시 숫자만 입력 ※' ;
+    }
+    
+   
+}
+
+// 입력 필드에 이벤트 리스너 추가
+document.getElementById('period_start').addEventListener('change', calculateCost);
+document.getElementById('period_end').addEventListener('change', calculateCost);
+document.getElementById('prize').addEventListener('change', calculateCost);
+
+</script>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         var inputElement = document.querySelector('.textarea-border');
@@ -261,8 +304,9 @@
             }
         });
     });
+   
     document.addEventListener("DOMContentLoaded", function() {
-        var inputElement = document.querySelector('.date-input');
+        var inputElement = document.querySelector('.start');
         inputElement.addEventListener('input', function() {
             if(inputElement.value != '') {
                 // 값이 있을 때의 테두리 색상 변경
@@ -287,51 +331,7 @@
     });
     </script>
     <script>
-function filter_number(element, type) {
-  if (type === undefined) {
-    type = 'full';
-  }
 
-  const max_len = (type === 'm') ? 7 : 9; //  최대 길이 변경
-  const $el_val = $(element).val().replace(/\./g, '');
-
-  if (event.keyCode <= 47 || event.keyCode >= 58) event.returnValue = false;
-  if ($el_val.length > max_len) event.returnValue = false;
-}
-
-
-
-
-function only_number(element, type) {
-  const max_len = (type === 'm') ? 6 : 8;
-  const $element = $(element);
-  $element.val($element.val().replace(/[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g,''));
-
-  if (event.keyCode === 8 || event.keyCode === 46) return;
-
-  if (event.keyCode > 47 && event.keyCode < 58) {
-    var $el_val = $element.val().replace(/\./g, '');
-
-    if ($el_val.length === 4) {
-      $element.val($el_val.replace(/(\d{4})/g, '$1.'));
-    } else if ($el_val.length === 5) {
-      $element.val($el_val.replace(/(\d{4})(\d)/g, '$1.$2'));
-    } else if ($el_val.length === 6) {
-      $element.val($el_val.replace(/(\d{4})(\d{2})/g, '$1.$2.'));
-    } else if ($el_val.length === 7) {
-      $element.val($el_val.replace(/(\d{4})(\d{2})(\d)/g, '$1.$2.$3'));
-    } else if ($el_val.length === 8) {
-      $element.val($el_val.replace(/(\d{4})(\d{2})(\d{2})/g, '$1.$2.$3.'));
-    }
-  } else {
-    var $el_val = $element.val().replace(/\./g, '');
-    if ($el_val >= max_len && max_len === 6) {
-      $element.val($el_val.slice(0, 6).replace(/(\d{4})(\d{2})/g, '$1.$2.'));
-    } else if ($el_val >= max_len && max_len === 8) {
-      $element.val($el_val.slice(0, 8).replace(/(\d{4})(\d{2})(\d{2})/g, '$1.$2.$3.'));
-    }
-  }
-}
 
 
 function filter_percent(element) {
