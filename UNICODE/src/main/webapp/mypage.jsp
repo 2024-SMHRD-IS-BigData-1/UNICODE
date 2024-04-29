@@ -155,33 +155,18 @@
             <div class="divider-hr"></div>
             <div style="margin-left: 10px; padding-left: 30px;"><b>보유 기술</b></div>
 			<div style="margin-top: 15px;">
-			    <div style="display: flex; justify-content: space-between; padding: 0 100px 0 100px; margin-bottom: 10px; text-align: center; align-items: center;">
-			        <% 
-			        String[] userTechs = profil.getProfile_tech().split(",");
-			        for (int i = 0; i < 4; i++) {
-			            if (i < userTechs.length) {
-			                %>
-			                <div class="tools-circle" style="font-size: small;"><%= userTechs[i] %></div>
-			                <%
-			            } else {
-			                %>
-			                <div class="tools-circle" style="font-size: small;"></div>
-			                <%
-			            }
-			        }
-			        %>
-			    </div>
-			    <div style="display: flex; justify-content: space-between; padding: 0 100px 0 100px; margin-top: 10px; text-align: center;">
-			        <% 
-			        for (int i = 4; i < 8; i++) {
-			            if (i < userTechs.length) {
-			                %>
-			                <div class="tools-circle" style="font-size: small;"><%= userTechs[i] %></div>
-			                <%
-			            }
-			        }
-			        %>
-			    </div>
+				<div style="display: flex; justify-content: space-between; padding: 0 100px 0 100px; margin-bottom: 10px; text-align: center; align-items: center;">
+				    <% 
+				    String[] userTechs = profil.getProfile_tech().split(",");
+				    int maxTechsToShow = userTechs.length; // 사용자가 표시한 기술의 개수
+				
+				    for (int i = 0; i < maxTechsToShow; i++) {
+				        %>
+				        <div class="tools-circle" style="font-size: small;"><%= userTechs[i] %></div>
+				        <%
+				    }
+				    %>
+				</div>
 			</div>
             <div class="divider-hr"></div>
             <div style="margin-left: 10px; padding-left: 30px;"><b>우승한 콘테스트</b></div>
