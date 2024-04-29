@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/9e1b042d62.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     <title>UnicodeMain</title>
 	<link rel="stylesheet" href="assets/css/Main.css">
 </head>
@@ -103,7 +103,7 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="slide-item">
-                        <img src="assets/img/portfolio_img.jpg" />
+                        <img src="./img/portfolio_img1.png" />
                         <div class="slide-text" >
                             <div>
                                 <div style="font-size: 18px;">
@@ -124,7 +124,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="slide-item">
-                        <img src="assets/img/portfolio_img2.jpg" />
+                        <img src="./img/portfolio_img2.jpg" />
                         <div class="slide-text" >
                             <div>
                                 <div style="font-size: 18px;">
@@ -145,7 +145,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="slide-item">
-                        <img src="assets/img/portfolio_img3.jpg" />
+                        <img src="./img/portfolio_img3.png" />
                         <div class="slide-text" >
                             <div>
                                 <div style="font-size: 18px;">
@@ -166,7 +166,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="slide-item">
-                        <img src="assets/img/portfolio_img.jpg" />
+                        <img src="./img/portfolio_img.png" />
                         <div class="slide-text" >
                             <div>
                                 <div style="font-size: 18px;">
@@ -193,7 +193,7 @@
               <div class="swiper-wrapper">
                   <div class="swiper-slide">
                       <div class="slide-item">
-                          <img src="assets/img/portfolio_img3.jpg" />
+                          <img src="./img/portfolio_img3.jpg" />
                           <div class="slide-text" >
                               <div>
                                   <div style="font-size: larger; text-align: center; ">
@@ -214,7 +214,7 @@
                   </div>
                   <div class="swiper-slide">
                       <div class="slide-item">
-                          <img src="assets/img/portfolio_img.jpg" />
+                          <img src="./img/portfolio_img1.png" />
                           <div class="slide-text" >
                               <div>
                                   <div style="font-size: larger; text-align: center; ">
@@ -235,7 +235,7 @@
                   </div>
                   <div class="swiper-slide">
                       <div class="slide-item">
-                          <img src="assets/img/portfolio_img3.jpg" />
+                          <img src="./img/portfolio_img3.png" />
                           <div class="slide-text" >
                               <div>
                                   <div style="font-size: larger; text-align: center; ">
@@ -256,7 +256,7 @@
                   </div>
                   <div class="swiper-slide">
                       <div class="slide-item">
-                          <img src="assets/img/portfolio_img2.jpg" />
+                          <img src="./img/portfolio_img2.jpg" />
                           <div class="slide-text" >
                               <div>
                                   <div style="font-size: larger; text-align: center; ">
@@ -282,7 +282,7 @@
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <div class="slide-item">
-                    <img src="assets/img/portfolio_img.jpg" />
+                    <img src="./img/portfolio_img1.png" />
                     <div class="slide-text" >
                         <div>
                             <div style="font-size: 18px;">
@@ -303,7 +303,7 @@
             </div>
             <div class="swiper-slide">
                 <div class="slide-item">
-                    <img src="assets/img/portfolio_img2.jpg" />
+                    <img src="./img/portfolio_img2.jpg" />
                     <div class="slide-text" >
                         <div>
                             <div style="font-size: 18px;">
@@ -324,7 +324,7 @@
             </div>
             <div class="swiper-slide">
                 <div class="slide-item">
-                    <img src="assets/img/portfolio_img3.jpg" />
+                    <img src="./img/portfolio_img3.png" />
                     <div class="slide-text" >
                         <div>
                             <div style="font-size: 18px;">
@@ -345,7 +345,7 @@
             </div>
             <div class="swiper-slide">
                 <div class="slide-item">
-                    <img src="assets/img/portfolio_img.jpg" />
+                    <img src="./img/portfolio_img.png" />
                     <div class="slide-text" >
                         <div>
                             <div style="font-size: 18px;">
@@ -368,7 +368,6 @@
     </div>
   </div>
       <div style="width:100%; height:100px"></div>
-</div>
 
 
     <!-- <div class="wrap list-header title" >
@@ -384,6 +383,7 @@
   <!-- Swiper JS -->
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       var video = document.getElementById('introVideo');
