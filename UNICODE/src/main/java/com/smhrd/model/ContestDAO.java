@@ -22,5 +22,14 @@ public class ContestDAO {
 		System.out.println(contestList);
 	    return contestList;
 	}
-
+	public List<Contest> ActiveContest() {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		List<Contest> contestList = session.selectList("com.smhrd.db.ContestMapper.ActiveContests");
+	    return contestList;
+	}
+	public List<Contest> EndedContest() {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		List<Contest> contestList = session.selectList("com.smhrd.db.ContestMapper.EndedContests");
+	    return contestList;
+	}
 }
