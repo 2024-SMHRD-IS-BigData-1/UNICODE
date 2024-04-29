@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/9e1b042d62.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     <title>UnicodeMain</title>
 	<link rel="stylesheet" href="assets/css/Main.css">
 </head>
@@ -17,7 +18,7 @@
   </video>
   <div class="text-overlay" id="textOverlay"></div>
   </div>
-<div class="all">
+
 <div id="header"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
@@ -367,7 +368,8 @@
     </div>
   </div>
       <div style="width:100%; height:100px"></div>
-</div>
+
+
     <!-- <div class="wrap list-header title" >
         <p class="list-title">라우드 콘테스트 200% 활용법</p>
         <a href="/contest/list/end" class="sc-ftvSup jVerRq">
@@ -379,6 +381,7 @@
 
 
   <!-- Swiper JS -->
+
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <script>
@@ -397,7 +400,6 @@
     
     $("#introVideo").on('ended', function(){
         $(".video-container").css('display', 'none'); // 동영상이 끝나면 비디오 컨테이너 숨김
-        $(".all").css('display', 'block'); // 동영상이 끝나면 비디오 컨테이너 숨김
     });
 });
 
