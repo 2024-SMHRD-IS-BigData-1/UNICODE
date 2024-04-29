@@ -31,4 +31,10 @@
   	where u_id = #{u_id}
   </update>
   
+	<select id="UserList" resultType="User">
+		select u_id from profile_info
+	</select>
+  
+  
+  
 </mapper>

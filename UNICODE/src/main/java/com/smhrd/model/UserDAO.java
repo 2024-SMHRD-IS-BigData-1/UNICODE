@@ -61,6 +61,13 @@ public class UserDAO {
 		return cnt;
 	}
 	
+	public List<User> UserList(){
+		SqlSession session = sqlSessionFactory.openSession(true);
+		List<User> userList = session.selectList("com.smhrd.db.UserMapper.UserList");
+		session.close();
+		System.out.println(userList);
+		return userList;
+	}
 	
 
 	

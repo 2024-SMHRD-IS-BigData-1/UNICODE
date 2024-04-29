@@ -1,3 +1,6 @@
+<%@page import="java.awt.color.ProfileDataException"%>
+<%@page import="com.smhrd.model.ContestDAO"%>
+<%@page import="com.smhrd.model.Contest"%>
 <%@page import="com.smhrd.model.Portfolio"%>
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.model.Profil"%>
@@ -39,8 +42,8 @@
     <%
     Profil profil = new UserDAO().userprofil(user); 
        List<Portfolio> portfolioList = new PortfolioDAO().portfolioList(user);
-    
     %>
+
     
     <!-- 사용자 정보 시작 -->
     <div class="wrap" style="width: 1080px;">
@@ -82,15 +85,15 @@
         <div class="profile-box-wrapper">
             <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px;">
                 <div>
-                    <div style="margin-left: 5px; margin-bottom: 8px; margin-top: 8px;">⭐⭐⭐⭐⭐ <b>4.98</b> / <span class="text-small">평가 210개</span></div>
-                    <div style="font-size: xx-small; margin-left: 10px; ">적극성 : 4.99 완성도 : 5.00 만족도 : 5.00 피드백 : 4.97</div>
+                    <div style="margin-left: 5px; margin-bottom: 8px; margin-top: 8px;">☆☆☆☆☆ <b>0.00</b> / <span class="text-small">평가 0개</span></div>
+                    <div style="font-size: xx-small; margin-left: 10px; ">적극성 : 0.00 완성도 : 0.00 만족도 : 0.00 피드백 : 0.00</div>
                 </div>
                 <div>
                     <div style="display: flex; width: 300px; margin: 8px;">
                         <div style="margin-right: 10px;">우승한 콘테스트</div>
                         <div class="total-project-done2"><b><span span id="project-done-count2"></span></b>건</div>
                     </div>
-                        <div style="font-size: xx-small; margin-left: 10px;">웹 : 48% 안드로이드 : 23% iOS : 20% 기타 : 6%</div>
+                        <div style="font-size: xx-small; margin-left: 10px;">웹 : 00% 안드로이드 : 00% iOS : 00% 기타 : 00%</div>
                 </div>
             </div>
         </div>
@@ -155,33 +158,18 @@
             <div class="divider-hr"></div>
             <div style="margin-left: 10px; padding-left: 30px;"><b>보유 기술</b></div>
 			<div style="margin-top: 15px;">
-			    <div style="display: flex; justify-content: space-between; padding: 0 100px 0 100px; margin-bottom: 10px; text-align: center; align-items: center;">
-			        <% 
-			        String[] userTechs = profil.getProfile_tech().split(",");
-			        for (int i = 0; i < 4; i++) {
-			            if (i < userTechs.length) {
-			                %>
-			                <div class="tools-circle" style="font-size: small;"><%= userTechs[i] %></div>
-			                <%
-			            } else {
-			                %>
-			                <div class="tools-circle" style="font-size: small;"></div>
-			                <%
-			            }
-			        }
-			        %>
-			    </div>
-			    <div style="display: flex; justify-content: space-between; padding: 0 100px 0 100px; margin-top: 10px; text-align: center;">
-			        <% 
-			        for (int i = 4; i < 8; i++) {
-			            if (i < userTechs.length) {
-			                %>
-			                <div class="tools-circle" style="font-size: small;"><%= userTechs[i] %></div>
-			                <%
-			            }
-			        }
-			        %>
-			    </div>
+				<div style="display: flex; justify-content: space-between; padding: 0 100px 0 100px; margin-bottom: 10px; text-align: center; align-items: center;">
+				    <% 
+				    String[] userTechs = profil.getProfile_tech().split(",");
+				    int maxTechsToShow = userTechs.length; // 사용자가 표시한 기술의 개수
+				
+				    for (int i = 0; i < maxTechsToShow; i++) {
+				        %>
+				        <div class="tools-circle" style="font-size: small;"><%= userTechs[i] %></div>
+				        <%
+				    }
+				    %>
+				</div>
 			</div>
             <div class="divider-hr"></div>
             <div style="margin-left: 10px; padding-left: 30px;"><b>우승한 콘테스트</b></div>
@@ -207,7 +195,7 @@
                         </div>
                         <div class="project-done">
                             <div style="width: 100%; padding-left: 10px; margin: 10px;">
-                                <div style="margin-bottom: 10px;" name="cnt_title"><b>IOT 스마트 펌웨어 개발</b></div>
+                                <div style="margin-bottom: 10px;" name="cnt_title"><b>contest_title</b></div>
                                 <div class="money-cnt" name="cnt_money" style=" margin-bottom: 10px; font-size: smaller;">
                                     <b>상금 </b><span style="font-size: smaller; margin-right: 5px;">2,500,000</span>
                                 </div>
@@ -326,10 +314,10 @@
                     <div style="justify-content: space-between; display: flex;">
                         <div style="display: flex;">
                             <div style="border-right: 0.5px solid rgba(0,0,0,.2);">
-                                <img src="/img/기업1.png" alt="" style="padding: 0 12.5px; max-height:150px">
+                                <img src="/assets/image/" alt="" style="padding: 0 12.5px; max-height:150px">
                             </div>
                             <div style="margin-right:40px;">
-                                <div style="margin: 30px 10px 20px 10px; padding-left: 10px;"><b>IOT 스마트 펌웨어 개발</b></div>
+                                <div style="margin: 30px 10px 20px 10px; padding-left: 10px;"><b>title</b></div>
                                 <div style="margin-bottom: 10px;"><span style="padding-left: 15px; font-size: smaller;"><b>사용기술</b></span></div>
                                 <div style="display: flex;">
                                     <div class="used-skill"><img class="skill-img" src="/img/skill/java.png"><div class="skill-name">JAVA</div></div>

@@ -14,8 +14,14 @@
 		select con_title,con_prize,con_period,con_content,con_category,con_file
 		from contest_info
 	</select>
+	
+	<select id="WinnerContest" resultType="Contest">
+		select contest_winner
+		from contest_info
+		where contest_winner=#{contest_winner}
+	</select>
 
-		<select id="ActiveContests" resultType="Contest">
+	<select id="ActiveContests" resultType="Contest">
   		SELECT *
  		FROM contest_info
   		WHERE TO_DATE(SUBSTR(con_period, INSTR(con_period, '~') + 1), 'YYYY.MM.DD') >= SYSDATE
@@ -29,9 +35,5 @@
 	  ]]>
 	</select>
 	
-	<select id="getcon_id">
-		select con_idx
-		from contest_info
-		where 
-	</select>
+
 </mapper>

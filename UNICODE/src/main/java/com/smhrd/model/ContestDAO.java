@@ -32,9 +32,11 @@ public class ContestDAO {
 		List<Contest> contestList = session.selectList("com.smhrd.db.ContestMapper.EndedContests");
 	    return contestList;
 	}
-	public void getinfo() {
+
+	public List<Contest> WinnerContest(String user) {
 		SqlSession session = sqlSessionFactory.openSession(true);
-		session.selectOne("com.smhrd.db.ContestMapper.getcon_id");
-		
+		List<Contest> contestList = session.selectList("com.smhrd.db.ContestMapper.WinnerContest",user);
+	    return contestList;
+
 	}
 }

@@ -18,13 +18,19 @@ public class PortfolioDAO {
 	}
 	
 	public List<Portfolio> portfolioList(User user) {
-		System.out.println(user);
+		
 		SqlSession session = sqlSessionFactory.openSession(true);
 		List<Portfolio> portfolioList = session.selectList("com.smhrd.db.PortfolioMapper.portfolioList",user);
 		session.close();
 		return portfolioList;
 	}
-
+	public List<Portfolio> portfolioList1(String user) {
+		
+		SqlSession session = sqlSessionFactory.openSession(true);
+		List<Portfolio> portfolioList = session.selectList("com.smhrd.db.PortfolioMapper.portfolioList",user);
+		session.close();
+		return portfolioList;
+	}
 
 
 }

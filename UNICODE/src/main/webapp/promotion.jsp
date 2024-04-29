@@ -1,3 +1,11 @@
+<%@page import="com.smhrd.model.Contest"%>
+<%@page import="com.smhrd.model.ContestDAO"%>
+<%@page import="com.smhrd.model.Portfolio"%>
+<%@page import="com.smhrd.model.PortfolioDAO"%>
+<%@page import="java.util.List"%>
+<%@page import="com.smhrd.model.UserDAO"%>
+<%@page import="com.smhrd.model.Profil"%>
+<%@page import="com.smhrd.model.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -6,34 +14,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/9e1b042d62.js" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <title>UnicodeProfmotion</title>
     <link rel="stylesheet" href="assets/css/Main.css"/>
     <link rel="stylesheet" href="assets/css/promotion.css"/>
 </head>
 
 <body>
-    <header>
-        <div id="logo_menu" class="wrap">
-            <div id="logo_img">
-                <a href="/main.html">
-                    <img src="/img/logo.png"> 
-                </a>
-            </div>
-            <div id="search_box">           
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input id="search-input" type="text" name="search-input" placeholder="  검색어를 입력하세요.">
-                
-            </div>
-            <div class="menu_cont">
-                <ul id="menu">
-                    <li><a href="#">코딩 페스티벌</a></li>
-                    <li><a href="/프로모션/promotion.html">개발자 찾기</a></li>
-                    <li><a href="#">커뮤니티</a></li>
-                    <li><a href="/마이페이지/mypage.html">마이페이지</a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
+<div id="header"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("#header").load("header.jsp");
+    });
+    </script> 
+    
+    <%Object loginUser = session.getAttribute("loginUser"); 
+    	User user = (User)loginUser;
+    %>
+    <%
+    Profil profil = new UserDAO().userprofil(user); 
+       
+    %>
+    <%
+    List<User> userList = new UserDAO().UserList();
+    %>
 
     <!-- 상단 배너 시작 -->
     <div style="background-color: #abb5e763; max-width: 1440px; margin: 0 auto; border-radius: 20px;">
@@ -94,120 +98,56 @@
 
         <!-- 개발자 정보 시작 -->
         <div class="promotion-list">
-            <div class="member-listup">
-                <div class="member-border">
-                    <a href="./promo_detail.html?id=1"><img class="img1-1" src="/img/기업1.png"></a>
-                </div>
-                <div>
-                    <a href="./promo_detail.html?id=1">
-                        <h3 style="margin: 8px;">pika</h3>
-                        <div>⭐⭐⭐⭐⭐ <b>4.98</b> / <span class="text-small">평가 210개</span></div>
-                        <div style="display: flex; width: 300px; justify-content: space-between; margin: 8px;">
-                            <div>계약한 프로젝트</div>
-                            <div><b>309</b><span class="text-small">건</span></div>
-                        </div>
-                        <div style="display: flex; width: 300px; justify-content: space-between; margin: 8px;">
-                            <div>포트폴리오</div>
-                            <div><b>1,409</b><span class="text-small">개</span></div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="member-listup">
+
+			<%-- <div class="member-listup">
                 <div class="member-border">
                     <a href="./promo_detail.html?id=2"><img class="img1-1" src="/img/포켓몬2.png"></a>
                 </div>
                 <div>
                     <a href="./promo_detail.html?id=2">
-                        <h3 style="margin: 8px;">pika</h3>
-                        <div>⭐⭐⭐⭐⭐ <b>4.98</b> / <span class="text-small">평가 210개</span></div>
+                        <h3 style="margin: 8px;"><%=profil.getU_id() %></h3>
+                        <div>☆☆☆☆☆ <b>0</b> / <span class="text-small">평가 0개</span></div>
                         <div style="display: flex; width: 300px; justify-content: space-between; margin: 8px;">
                             <div>계약한 프로젝트</div>
-                            <div><b>309</b><span class="text-small">건</span></div>
+                            <div><b>0</b><span class="text-small">건</span></div>
                         </div>
                         <div style="display: flex; width: 300px; justify-content: space-between; margin: 8px;">
                             <div>포트폴리오</div>
-                            <div><b>1,409</b><span class="text-small">개</span></div>
+                            <div><b><%=portfolioList.size() %></b><span class="text-small">개</span></div>
                         </div>
                     </a>
                 </div>
-            </div>
-            <div class="member-listup">
-                <div class="member-border">
-                    <a href="./promo_detail.html?id=3"><img class="img1-1" src="/img/포켓몬3.png"></a>
-                </div>
-                <div>
-                    <a href="./promo_detail.html?id=3">
-                        <h3 style="margin: 8px;">pika</h3>
-                        <div>⭐⭐⭐⭐⭐ <b>4.98</b> / <span class="text-small">평가 210개</span></div>
-                        <div style="display: flex; width: 300px; justify-content: space-between; margin: 8px;">
-                            <div>계약한 프로젝트</div>
-                            <div><b>309</b><span class="text-small">건</span></div>
-                        </div>
-                        <div style="display: flex; width: 300px; justify-content: space-between; margin: 8px;">
-                            <div>포트폴리오</div>
-                            <div><b>1,409</b><span class="text-small">개</span></div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="member-listup">
-                <div class="member-border">
-                    <a href="./promo_detail.html?id=4"><img class="img1-1" src="/img/포켓몬4.jpg"></a>
-                </div>
-                <div>
-                    <a href="./promo_detail.html?id=4">
-                        <h3 style="margin: 8px;">pika</h3>
-                        <div>⭐⭐⭐⭐⭐ <b>4.98</b> / <span class="text-small">평가 210개</span></div>
-                        <div style="display: flex; width: 300px; justify-content: space-between; margin: 8px;">
-                            <div>계약한 프로젝트</div>
-                            <div><b>309</b><span class="text-small">건</span></div>
-                        </div>
-                        <div style="display: flex; width: 300px; justify-content: space-between; margin: 8px;">
-                            <div>포트폴리오</div>
-                            <div><b>1,409</b><span class="text-small">개</span></div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="member-listup">
-                <div class="member-border">
-                    <a href="./promo_detail.html?id=5"><img class="img1-1" src="/img/포켓몬5.png"></a>
-                </div>
-                <div>
-                    <a href="./promo_detail.html?id=5">
-                        <h3 style="margin: 8px;">pika</h3>
-                        <div>⭐⭐⭐⭐⭐ <b>4.98</b> / <span class="text-small">평가 210개</span></div>
-                        <div style="display: flex; width: 300px; justify-content: space-between; margin: 8px;">
-                            <div>계약한 프로젝트</div>
-                            <div><b>309</b><span class="text-small">건</span></div>
-                        </div>
-                        <div style="display: flex; width: 300px; justify-content: space-between; margin: 8px;">
-                            <div>포트폴리오</div>
-                            <div><b>1,409</b><span class="text-small">개</span></div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="member-listup">
-                <div class="member-border">
-                    <a href="./promo_detail.html?id=6"><img class="img1-1" src="/img/포켓몬6.png"></a>
-                </div>
-                <div>
-                    <a href="./promo_detail.html?id=6">
-                        <h3 style="margin: 8px;">pika</h3>
-                        <div>⭐⭐⭐⭐⭐ <b>4.98</b> / <span class="text-small">평가 210개</span></div>
-                        <div style="display: flex; width: 300px; justify-content: space-between; margin: 8px;">
-                            <div>계약한 프로젝트</div>
-                            <div><b>309</b><span class="text-small">건</span></div>
-                        </div>
-                        <div style="display: flex; width: 300px; justify-content: space-between; margin: 8px;">
-                            <div>포트폴리오</div>
-                            <div><b>1,409</b><span class="text-small">개</span></div>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            </div> --%>
+			
+		  	<%
+			for(User u : userList){ %>
+				
+			<%List<Portfolio> portfolioList = new PortfolioDAO().portfolioList1(u.getU_id()); 
+			   List<Contest> contestList = new ContestDAO().WinnerContest(u.getU_id());%>
+	            <div class="member-listup">
+	                <div class="member-border">
+	                    <a href="./promo_detail.html?id=2"><img class="img1-1" src="/assets/image/<%=profil.getProfile_img() %>"></a>
+	                </div>
+	                <div>
+	                    <a href="./promo_detail.html?id=2">
+	                        <h3 style="margin: 8px;"><%=u.getU_id() %></h3>
+	                        <div>☆☆☆☆☆ <b>0</b> / <span class="text-small">평가 0개</span></div>
+	                        <div style="display: flex; width: 300px; justify-content: space-between; margin: 8px;">
+	                            <div>우승한 콘테스트</div>
+	                            <div><b><%=contestList.size() %></b><span class="text-small">건</span></div>
+	                        </div>
+	                        <div style="display: flex; width: 300px; justify-content: space-between; margin: 8px;">
+	                            <div>포트폴리오</div>
+	                            <div><b><%=portfolioList.size() %></b><span class="text-small">개</span></div>
+	                        </div>
+	                    </a>
+	                </div>
+	            </div>
+      			
+            <%
+            
+            }%>
+             
             <!-- 개발자 정보 끝 -->
 
             <!-- 페이지 네비게이션을 위한 div 추가 -->
