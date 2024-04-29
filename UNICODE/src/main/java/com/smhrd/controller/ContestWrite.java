@@ -42,7 +42,7 @@ public class ContestWrite extends HttpServlet {
 		
 		if(cnt > 0) {
 			System.out.println("개최 성공!");
-			response.sendRedirect("Contest.jsp");
+			response.sendRedirect("pay.jsp?prize="+contest.getCon_prize());
 		}else {
 			System.out.println("개최 실패..");
 			response.sendRedirect("Contest.jsp");
