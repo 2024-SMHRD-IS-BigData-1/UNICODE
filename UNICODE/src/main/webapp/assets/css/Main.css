@@ -227,13 +227,24 @@ background-size: cover;
 display: block;
 width: 100%;
 }
-.slide-item{
-  
-}
+
 .slide-text{
   padding-top: 20px;
   display: flex;
   justify-content: space-between;
+}
+ .text-overlay {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white; /* 텍스트 색상이 배경과 대비되도록 설정 */
+  font-size: 200px; /* 필요에 따라 크기 조정 */
+  font-weight: 900;
+  text-align: center;
+  max-width: 80%; /* 텍스트가 비디오 너비를 넘지 않도록 설정 */
+  white-space: pre-wrap; /* 텍스트 줄바꿈 허용 */
+  z-index: 1000; /* 최상위로 올리기 위해 높은 값 설정 */
 }
 .video-container {
     margin: 0 auto;
@@ -247,19 +258,7 @@ width: 100%;
   #header{
     z-index: 1;
   }
-  .text-overlay {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white; /* 텍스트 색상이 배경과 대비되도록 설정 */
-  font-size: 200px; /* 필요에 따라 크기 조정 */
-  font-weight: 900;
-  text-align: center;
-  max-width: 80%; /* 텍스트가 비디오 너비를 넘지 않도록 설정 */
-  white-space: pre-wrap; /* 텍스트 줄바꿈 허용 */
-  z-index: 1000; /* 최상위로 올리기 위해 높은 값 설정 */
-}
+
 
 @keyframes typing {
   from { width: 0; }
@@ -271,17 +270,14 @@ width: 100%;
   50% { border-color: black; }
 }
 
-  video {
+video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
   }
-  /* video {
-
-	animation: fadeout 5s;
-} */
+ 
 @keyframes fadeout {
 /* 효과를 동작시간 동안 0 ~ 1까지 */
 	from {
