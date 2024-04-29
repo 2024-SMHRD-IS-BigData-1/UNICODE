@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.align-items-center {
+    display: flex;
+    justify-content: space-between; /* 좌우로 요소를 분배하는 스타일을 적용합니다. */
+    align-items: center; /* 요소를 수직으로 중앙에 정렬합니다. */
+}
+
+.content {
+    flex: 1;
+    box-sizing: border-box; /* 요소의 너비와 높이에 padding과 border를 포함합니다. */
+    padding-left: 20px;
+}
+
+
+.content .contest-category {
+    margin-bottom: 50%;
+}
+
+.content .contest-title {
+    /* 제목 스타일을 여기에 추가합니다. */
+}
+
+.content .contest-prize {
+    /* 상금 스타일을 여기에 추가합니다. */
+}
+
+.content .contest-content {
+    /* 내용 스타일을 여기에 추가합니다. */
+}
+
+.content .btn {
+    /* 버튼 스타일을 여기에 추가합니다. */
+}

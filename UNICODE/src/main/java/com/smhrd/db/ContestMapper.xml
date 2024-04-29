@@ -3,12 +3,12 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.smhrd.db.ContestMapper">
-	
-	<insert id="enroll" parameterType="Contest">
-	  insert into contest_info 
-	  values(contest_info_SEQ.NEXTVAL ,#{bno_idx}, #{con_title} ,#{con_prize}, #{con_period}, #{con_content}, #{con_category},
-	  sysdate,#{con_file},null)
+
+	<insert id="enroll" parameterType="com.smhrd.model.Contest" useGeneratedKeys="true" keyProperty="con_idx">
+	    INSERT INTO contest_info (bno_idx, con_title, con_prize, con_period, con_content, con_category, reg_date, con_file)
+	    VALUES (#{bno_idx}, #{con_title}, #{con_prize}, #{con_period}, #{con_content}, #{con_category}, SYSDATE, #{con_file})
 	</insert>
+
 	
 	<select id="ShowContest" resultType="Contest">
 		select con_title,con_prize,con_period,con_content,con_category,con_file
@@ -27,5 +27,11 @@
 	    FROM contest_info
 	    WHERE TO_DATE(SUBSTR(con_period, INSTR(con_period, '~') + 1), 'YYYY.MM.DD') < SYSDATE
 	  ]]>
+	</select>
+	
+	<select id="getcon_id">
+		select con_idx
+		from contest_info
+		where 
 	</select>
 </mapper>

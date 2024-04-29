@@ -24,7 +24,7 @@ public class ContestWrite extends HttpServlet {
 		
 		String title = request.getParameter("title");
 		Company company = (Company) session.getAttribute("loginCompany");
-		String bno_idx = company.getBno_idx(); // 기업아이디로 바꿔야함
+		String bno_idx = company.getBno_idx(); 
 		String[] categorys = request.getParameterValues("category");
 		String category = String.join(",", categorys);
 		String prize = request.getParameter("prize");
@@ -33,7 +33,7 @@ public class ContestWrite extends HttpServlet {
 		String period = start +"~"+ end;
 		String content = request.getParameter("content");
 		String filename = request.getParameter("filename");
-		
+	
 		
 		
 		Contest contest = new Contest(bno_idx,title, prize, period, content, category,filename);

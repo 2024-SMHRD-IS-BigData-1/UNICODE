@@ -124,8 +124,15 @@ function displayContests(data) {
     console.log("Updating UI with data");
     var html = '';
     data.forEach(function(contest) {
+        // 각 데이터 항목을 URL 인코딩하여 쿼리 스트링으로 추가
+        var queryString = 'file=' + encodeURIComponent(contest.con_file) +
+                          '&title=' + encodeURIComponent(contest.con_title) +
+                          '&category=' + encodeURIComponent(contest.con_category) +
+                          '&content=' + encodeURIComponent(contest.con_content) +
+                          '&prize=' + encodeURIComponent(contest.con_prize) +
+                          '&period=' + encodeURIComponent(contest.con_period);
         html += '<li>' +
-                '<a href="#" class="contest-list">' +
+       		 	'<a href="Contestdetail.jsp?' + queryString + '" class="contest-list">'+
                 '<div class="thumbnail">' +
                 '<img src="assets/img/' + contest.con_file + '" alt="이미지 불러오기 실패" class="thum-img">' +
                 '</div>' +
@@ -144,6 +151,7 @@ function displayContests(data) {
     $('.contest-box > ul').html(html); // 기존 <ul> 내용을 새 HTML로 대체
     initializePagination(); // 여기에서 페이지네이션을 초기화
 }
+
 </script>
 	
 <script src="assets/js/contest.js"></script>
