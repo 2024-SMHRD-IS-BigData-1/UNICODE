@@ -185,6 +185,10 @@
     width: 100%;
     padding: 24px 12px 8px 12px;
 }
+.date1{
+    border: solid 1px #00C853;
+   
+}
 .input-label{
     z-index: 16;
     transform: translateY(-20px);
