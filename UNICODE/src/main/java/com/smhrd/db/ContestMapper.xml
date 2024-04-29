@@ -15,4 +15,17 @@
 		from contest_info
 	</select>
 
+		<select id="ActiveContests" resultType="Contest">
+  		SELECT *
+ 		FROM contest_info
+  		WHERE TO_DATE(SUBSTR(con_period, INSTR(con_period, '~') + 1), 'YYYY.MM.DD') >= SYSDATE
+	</select>
+	
+	<select id="EndedContests" resultType="Contest">
+	  <![CDATA[
+	    SELECT *
+	    FROM contest_info
+	    WHERE TO_DATE(SUBSTR(con_period, INSTR(con_period, '~') + 1), 'YYYY.MM.DD') < SYSDATE
+	  ]]>
+	</select>
 </mapper>
