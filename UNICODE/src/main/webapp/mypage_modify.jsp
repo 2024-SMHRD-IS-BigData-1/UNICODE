@@ -1,3 +1,6 @@
+<%@page import="java.util.List"%>
+<%@page import="com.smhrd.model.PortfolioDAO"%>
+<%@page import="com.smhrd.model.Portfolio"%>
 <%@page import="com.smhrd.model.UserDAO"%>
 <%@page import="com.smhrd.model.Profil"%>
 <%@page import="com.smhrd.model.User"%>
@@ -18,9 +21,11 @@
 <%Object loginUser = session.getAttribute("loginUser"); 
     	User user = (User)loginUser;
     	Profil profil = new UserDAO().userprofil(user); 
+    	List<Portfolio> portfolioList = new PortfolioDAO().portfolioList(user);
     %>
 	 	<%String techs = profil.getProfile_tech();
 	 	  String residence = profil.getProfile_residence();
+	 	  String region = profil.getProfile_region();
 	 	%>
     <div id="header"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -32,10 +37,10 @@
     
     <!-- 사용자 정보 시작 -->
     <div class="wrap" style="width: 1080px;">
-        <div class="profile-box-wrapper" style="display: flex; justify-content: space-between; align-items: center;">
+        <div class="profile-box-wrapper" name="mypage_img" style="display: flex; justify-content: space-between; align-items: center;">
             <div style="display: flex; align-items: center;">
                 <div class="profile-img">
-                    <img class="user-img" src="/img/profile_img.jpeg" alt="프로필 이미지" style="cursor: pointer; width: 160px;">
+                    <img class="user-img" src="assets/image/<%=profil.getProfile_img() %>" alt="프로필 이미지" style="cursor: pointer; width: 160px;">
                 </div>
                 <div>
                 	<form action="modifyService" method="get">
@@ -73,26 +78,30 @@
                             <i class="fa-solid fa-phone"></i>
                             <input type="text" class="profile-folder" name="mypage_modify_tel" value="<%= profil.getProfile_tel() %>" style="font-size: xx-small;">
                         </div>
-                        <div class="icon-badge">
-                            <i class="fa-solid fa-location-dot"></i>
-                            <select class="region" name="mypage_modify_region" style="font-size: x-small; margin-top: 2px; color: #5b5858;">
-                                <option value="서울">서울</option>
-                                <option value="인천">인천</option>
-                                <option value="대전">대전</option>
-                                <option value="대구">대구</option>
-                                <option value="울산">울산</option>
-                                <option value="부산">부산</option>
-                                <option value="광주">광주</option>
-                                <option value="세종">세종</option>
-                            </select>
-                        </div>
+						<div class="icon-badge">
+						    <i class="fa-solid fa-location-dot"></i>
+						    <select class="region" name="mypage_modify_region" style="font-size: x-small; margin-top: 2px; color: #5b5858;">
+						        <option value="서울" <%= (region != null && region.equals("서울")) ? "selected" : "" %>>서울</option>
+						        <option value="인천" <%= (region != null && region.equals("인천")) ? "selected" : "" %>>인천</option>
+						        <option value="대전" <%= (region != null && region.equals("대전")) ? "selected" : "" %>>대전</option>
+						        <option value="대구" <%= (region != null && region.equals("대구")) ? "selected" : "" %>>대구</option>
+						        <option value="울산" <%= (region != null && region.equals("울산")) ? "selected" : "" %>>울산</option>
+						        <option value="부산" <%= (region != null && region.equals("부산")) ? "selected" : "" %>>부산</option>
+						        <option value="광주" <%= (region != null && region.equals("광주")) ? "selected" : "" %>>광주</option>
+						        <option value="세종" <%= (region != null && region.equals("세종")) ? "selected" : "" %>>세종</option>
+						    </select>
+						</div>
+
+
+
                         
-                        <% %>
-                        <div class="icon-badge">
-                            <div><input type="checkbox" name="mypage_modify_residence" value="상주"<%if(residence.equals("상주")){%>cheked <% } %> > 상주</div>
-                            <div><input type="checkbox" name="mypage_modify_residence" value="외주"<%if(residence.equals("외주")){%>cheked <% } %>> 외주</div>
-                            <div><input type="checkbox" name="mypage_modify_residence" value="상주•외주"<%if(residence.equals("상주•외주")){%>cheked <% } %>> 상관없음</div>
-                        </div>
+						<div class="icon-badge">
+						    <div><input type="checkbox" name="mypage_modify_residence" value="상주" <% if (residence != null && residence.equals("상주")) { %>checked="checked"<% } %>> 상주</div>
+						    <div><input type="checkbox" name="mypage_modify_residence" value="외주" <% if (residence != null && residence.equals("외주")) { %>checked="checked"<% } %>> 외주</div>
+						    <div><input type="checkbox" name="mypage_modify_residence" value="상주•외주" <% if (residence != null && residence.equals("상주•외주")) { %>checked="checked"<% } %>> 상관없음</div>
+						</div>
+
+
                         </div>
                     </div>
                 </div>
@@ -135,47 +144,38 @@
                 <div style="margin: 30px 30px 30px 10px;"><b>포트폴리오</b></div>
                 <div style="margin: 20px 50px;"><a href="./mypage_modify_port.html"><button class="more-btn">더보기 >> </button></a></div>
             </div>
-            <div class="port-list">
-                <div>
-                    <div class="port-list-img">
-                        <img src="/img/포켓몬1.jpg" alt="">
-                    </div>
-                    <div class="port-list-text">
-                        <div style="font-size: large; margin-bottom: 10px;">
-                            <b>제목1</b>
-                        </div>
-                        <div>
-                            내용1
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="port-list-img">
-                        <img src="/img/포켓몬1.jpg" alt="">
-                    </div>
-                    <div class="port-list-text">
-                        <div style="font-size: large; margin-bottom: 10px;">
-                            <b>제목1</b>
-                        </div>
-                        <div>
-                            내용1
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="port-list-img">
-                        <img src="/img/포켓몬1.jpg" alt="">
-                    </div>
-                    <div class="port-list-text">
-                        <div style="font-size: large; margin-bottom: 10px;">
-                            <b>제목1</b>
-                        </div>
-                        <div>
-                            내용1
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+<%-- 		<div class="port-list">
+		    <!-- 포트폴리오 항목 시작 -->
+		    <% int cnt = 0;
+		       for(Portfolio p : portfolioList) {
+		           if (cnt < 6) {
+		    %>
+		    <div class="port-item">
+		        <div class="port-list-img">
+		            <img src="assets/image/<%= p.getPort_file() %>" alt="">
+		        </div>
+		        <div class="port-list-text">
+		            <div style="font-size: large; margin-bottom: 10px;">
+		                <b><%= p.getPort_title() %></b>
+		            </div>
+		            <div>
+		                <%= p.getPort_category() %>
+		            </div>
+		        </div>
+		    </div>
+		    <% 
+		        cnt++;
+		        if (cnt % 3 == 0) { 
+		    %>
+		</div><div class="port-list">
+		    <% 
+		        }
+		    }
+		    %>
+		    <!-- 포트폴리오 항목 끝 -->
+		</div> --%>
+
             <div class="port-list">
                 <div>
                     <div class="port-list-img">
@@ -226,32 +226,30 @@
                 <div style="margin-left: 10px;"><b>보유 기술</b></div>
                 <div style="display: flex;">
                     <div style="margin-right: 20px; font-size: smaller;">
-                        <button class="add-btn" style="display: flex;">
-                            <div><i class="fa-solid fa-plus fa-xs"></i></div>
-                            <div style="font-size: xx-small; margin-left: 5px;">추가</div>
+                            <div><i></i></div>
+                            <div style="font-size: xx-small; margin-left: 5px;"></div>
                         </button>
                     </div>
                     <div style="margin-right: 50px; font-size: smaller;">
-                        <button class="add-btn" style="display: flex;">
-                            <div><i class="fa-solid fa-minus fa-xs"></i></div>
-                            <div style="font-size: xx-small; margin-left: 5px;">삭제</div>
+                            <div><i></i></div>
+                            <div style="font-size: xx-small; margin-left: 5px;"></div>
                         </button>
                     </div>
                 </div>
             </div>
             <div style="margin-top: 15px;">
-                <div style="display: flex; justify-content: space-between; padding: 0 100px 0 100px; margin-bottom: 10px; text-align: center; align-items: center;">
-                    <div class="tools-circle" style="font-size: small;">C</div>
-                    <div class="tools-circle" style="font-size: small;">JAVA</div>
-                    <div class="tools-circle" style="font-size: small;">HTML</div>
-                    <div class="tools-circle" style="font-size: small;">CSS</div>
-                </div>
-                <div style="display: flex; justify-content: space-between; padding: 0 100px 0 100px; margin-top: 10px; text-align: center;">
-                    <div class="tools-circle" style="font-size: small;"></div>
-                    <div class="tools-circle" style="font-size: small;"></div>
-                    <div class="tools-circle" style="font-size: small;"></div>
-                    <div class="tools-circle" style="font-size: small;"></div>
-                </div>
+				<div style="display: flex; justify-content: space-between; padding: 0 100px 0 100px; margin-bottom: 10px; text-align: center; align-items: center;">
+				    <% 
+				    String[] userTechsStrings = profil.getProfile_tech().split(",");
+				    int maxTechsToShow = userTechs.length; // 사용자가 표시한 기술의 개수
+				
+				    for (int i = 0; i < maxTechsToShow; i++) {
+				        %>
+				        <div class="tools-circle" style="font-size: small;"><%= userTechsStrings[i] %></div>
+				        <%
+				    }
+				    %>
+				</div>
             </div>
             <!-- 보유 기술 끝 -->
 

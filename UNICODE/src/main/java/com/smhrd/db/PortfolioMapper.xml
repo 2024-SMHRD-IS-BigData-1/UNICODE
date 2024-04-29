@@ -17,4 +17,7 @@
 	<select id="portfolioList" parameterType="User" resultType="Portfolio">
 		select * from portfolio_info where u_id=#{u_id}
 	</select>
+	<select id="portfolioList1" parameterType="String" resultType="Portfolio">
+		select * from portfolio_info where u_id=#{u_id}
+	</select>
 </mapper>
