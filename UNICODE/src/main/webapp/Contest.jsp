@@ -18,8 +18,8 @@
     <link rel="stylesheet" href="assets/css/Main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.min.js"></script>
 </head>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
 <body>
     <div id="header"></div>
     <script>
@@ -69,43 +69,83 @@
                     </div>
                 </div>
             </aside>
-            <div class="list-wrapper">
-            <%List<Contest> contestList = new ContestDAO().ShowContest();
-			pageContext.setAttribute("contestList",contestList);
-			%>       
-      
-                <article class="contest-box">
-					<ul>
-					<c:forEach var="contest" items="${contestList}">
-					    <li>
-					        <a href="#" class="contest-list">
-					            <div class="thumbnail">
-					                <img src="assets/img/${contest.con_file}" alt="이미지 불러오기 실패" class="thum-img">
-					            </div>
-					            <div class="contest-info">
-					                <div>${contest.con_title}</div>
-					                <div>${contest.con_category}</div>
-					                <div>${contest.con_content}</div>
-					            </div>
-					            <ul class="prize-info">
-					                <li>총상금 ${contest.con_prize}</li>
-					                <li>${contest.con_period}</li>
-					            </ul>
-					        </a>
-					    </li>
-					</c:forEach>
-					</ul>
-                    <div class="pagination">
-                    	<i class="fa-solid fa-arrow-left"></i>
-                    	<ol id="numbers">
-                    	</ol>
-                    	<i class="fa-solid fa-arrow-right"></i>
-					</div>
-                </article>
-            </div>
+			<div class="list-wrapper">
+			    <article class="contest-box">
+			        <ul>
+			            <!-- 내용들어가는부분 -->
+			        </ul>
+			        <div class="pagination">
+			            <i class="fa-solid fa-arrow-left"></i>
+			            <ol id="numbers">
+			            </ol>
+			            <i class="fa-solid fa-arrow-right"></i>
+			        </div>
+			    </article>
+			</div>
+
         </section>
     </main>
-<script src="assets/js/contest.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    // 체크박스 변경 이벤트에 filterContests 함수를 바인딩
+    $('#radio-recruit, #radio-end, #small-money, #middle-money, #large-money').change(filterContests);
 
+    // 페이지 로드 시 기본 콘테스트 목록 로드
+    filterContests();
+});
+
+function filterContests() {
+    console.log("filterContests function called");
+    var isActiveChecked = $('#radio-recruit').is(':checked');
+    var isEndedChecked = $('#radio-end').is(':checked');
+	console.log(isActiveChecked)
+    // 요청할 데이터 객체 생성
+    var requestData = {
+        active: isActiveChecked,
+        ended: isEndedChecked
+    };
+
+    // AJAX 요청
+    $.ajax({
+        url: 'FilterContest', // 서블릿 절대 경로 사용
+        type: 'GET', // GET 방식 선택
+        dataType: 'json',
+        data: requestData,
+        success: function(data) {
+            console.log("AJAX request succeeded with data:", data);
+            displayContests(data); // 데이터 표시 함수
+        },
+        error: function(xhr, status, error) {
+            console.error("Error fetching contests:", error);
+        }
+    });
+}
+function displayContests(data) {
+    console.log("Updating UI with data");
+    var html = '';
+    data.forEach(function(contest) {
+        html += '<li>' +
+                '<a href="#" class="contest-list">' +
+                '<div class="thumbnail">' +
+                '<img src="assets/img/' + contest.con_file + '" alt="이미지 불러오기 실패" class="thum-img">' +
+                '</div>' +
+                '<div class="contest-info">' +
+                '<div>' + contest.con_title + '</div>' +
+                '<div>' + contest.con_category + '</div>' +
+                '<div>' + contest.con_content + '</div>' +
+                '</div>' +
+                '<ul class="prize-info">' +
+                '<li>총상금 ' + contest.con_prize + '</li>' +
+                '<li>' + contest.con_period + '</li>' +
+                '</ul>' +
+                '</a>' +
+                '</li>';
+    });
+    $('.contest-box > ul').html(html); // 기존 <ul> 내용을 새 HTML로 대체
+    initializePagination(); // 여기에서 페이지네이션을 초기화
+}
+</script>
+	
+<script src="assets/js/contest.js"></script>
 </body>
 </html>
