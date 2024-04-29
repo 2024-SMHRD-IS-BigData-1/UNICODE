@@ -1,0 +1,329 @@
+* {
+  box-sizing: border-box;
+  border: 0 solid #e5e7eb;
+}
+a {
+  text-decoration-line: none;
+  color: inherit;
+  text-decoration: inherit;
+}
+hr p {
+  margin: 0;
+}
+hr {
+  height: 0;
+  color: inherit;
+  border-top-width: 1px;
+}
+#root{
+	background-color: #f5f5f5 !important;
+}
+.content-box-wrap {
+  --tw-shadow: 0px 4px 8px 0px #DBDDE980;
+  --tw-shadow-colored: 0px 4px 8px 0px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  padding: 2.25rem 2.5rem 60px 2.5rem;
+  background-color: rgb(255 255 255 / 1);
+  border-radius: .75rem;
+  margin-top: 30px;
+}
+.content-box-header {
+  padding-bottom: 2rem;
+  border-color: rgb(232 235 242 / 1);
+  border-bottom-width: 1px;
+  -moz-column-gap: 2.5rem;
+  column-gap: 2.5rem;
+  justify-content: space-between;
+  display: flex;
+}
+.content-box-header-title {
+  letter-spacing: -.5px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 54px;
+  word-break: break-all;
+  width: 100%;
+  margin-bottom: .75rem;
+  margin: 0;
+}
+.content-box-header-subtilte {
+  column-gap: .5rem;
+  align-items: flex-end;
+  display: flex;
+}
+.content-box-user {
+  letter-spacing: -.35px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+.separator-line {
+  background-color: rgb(232 235 242 / 1);
+  align-self: center;
+  width: 1px;
+  height: 11px;
+}
+.content-box-date {
+  color: rgb(116 122 134 / 1);
+  letter-spacing: -.3px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  font-family: Poppins, sans-serif;
+}
+.content-box-body {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+.content-box-textbox {
+  margin-bottom: 60px;
+  margin: -1rem;
+}
+.content-box-body-text {
+  font-family: Helvetica Neue;
+  font-size: 13px;
+  color: #333;
+  background-color: #fff;
+  line-height: 1.5;
+  word-break: normal;
+  word-wrap: break-word;
+  padding: 16px;
+  margin: 0;
+}
+.content-box-body-text p {
+  display: block;
+  margin: 0 0 10px;
+}
+.content-box-body-text * {
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+.content-gap {
+  column-gap: .5rem;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.back-to-community {
+  color: rgb(23 25 28 / 1);
+  letter-spacing: -.3px;
+  line-height: 22px;
+  font-weight: 500;
+  font-size: .875rem;
+  line-height: 1.25rem;
+  padding-bottom: .125rem;
+  background-color: rgb(255 255 255 / 1);
+  border-color: rgb(210 214 224 / 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 100000000px;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 48px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+.back-to-community span {
+  color: rgb(116 122 134 / 1);
+  letter-spacing: -.3px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  cursor: pointer;
+}
+.comment-title {
+  font-size: large;
+}
+.comment-box {
+  width: 90%;
+  border-radius: 4px;
+  overflow: hidden;
+  border: solid 1px #141414;
+  margin-top: 20px;
+  height: 50px;
+}
+.expand{
+  resize: vertical;
+  position: relative;
+  display: block;
+  padding: 8px 12px;
+  width: 100%;
+  font-size: 14px;
+  color: #616161;
+  line-height: 24px;
+  border-radius: 4px;
+  overflow: auto;
+  border: 0;
+}
+.submit-btn {
+  align-content: end;
+  margin-left: 30px;
+  font-size: smaller;
+}
+.submit-btn-text {
+  border-radius: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  height: 40px;
+  width: 60px;
+}
+.submit-text {
+  text-align: center;
+  align-items: center;
+  font-size: smaller;
+  padding: 0 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.section-contents-events.events-comment-wrap {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  font-family: Roboto, NotoSansKR, "Noto+Sans", "Malgun Gothic", "맑은 고딕", arial, sans-serif;
+}
+.section-contents-events.events-comment-wrap .textarea-comment-wrap .txt-number-info {
+  margin-bottom: 15px;
+}
+
+.section-contents-events.events-comment-wrap .textarea-comment-wrap .txt-number-info span {
+  color: #333;
+  font-size: 16px;
+  font-style: inherit;
+  font-weight: inherit;
+}
+
+.section-contents-events.events-comment-wrap .textarea-comment-wrap .txt-number-info span.num {
+  color: #ed2650;
+}
+
+.section-contents-events.events-comment-wrap .textarea-comment-wrap .txt-number-info span {
+  color: #333;
+  font-size: 16px;
+}
+
+fieldset {
+  border: none;
+  margin: 0;
+    padding: 0;
+}
+
+.field.has-addons {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.field.has-addons .control.is-expanded {
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+.field.has-addons .control:not(:last-child) {
+  margin-right: -1px;
+}
+
+.control {
+  box-sizing: border-box;
+  clear: both;
+  font-size: 16px;
+  position: relative;
+  text-align: left;
+}
+.section-contents-events.events-comment-wrap .textarea-comment-wrap .textarea {
+  overflow-y: auto;
+  height: 100px;
+  resize: none;
+  display: block;
+  max-width: 100%;
+  min-width: 100%;
+  padding: calc(0.75em - 1px);
+  width: 100%;
+  background-color: #fff;
+  border-color: #ccc;
+  border-radius: 0px;
+  color: #333;
+  align-items: center;
+  border: 1px solid #ccc;
+  box-shadow: none;
+  font-size: 16px;
+  line-height: 1.5;
+  position: relative;
+}
+
+
+.field.has-addons .control:last-child:not(:only-child) .button{
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  min-width: 140px;
+  height: 100px;
+  background-color: #333;
+  border-color: transparent;
+  color: #fff;
+}
+
+.section-contents-events.events-comment-wrap .textarea-comment-wrap .max-contents-txt {
+  margin-top: 5px;
+  color: #777;
+  font-size: 14px;
+  text-align: left;
+}
+
+.comment-divider {
+  margin: 50px 0;
+}
+.comment-list-box {
+  border: 1px solid #ccc;
+  width: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+
+}
+.comment-user-id {
+  font-size: small;
+}
+.comment-user-write {
+  font-size: smaller;
+}
+.fa-solid {
+  cursor: pointer;
+}
+.comment-user-profile {
+  border-radius: 100%;
+  width: 30px;
+  margin-right: 10px;
+}
+.comment-date {
+  font-size: xx-small;
+}
+.content-box-header-wrap {
+  display: flex;
+  justify-content: space-between !important;
+  border-bottom: 1px solid #ccc;
+  align-items: center;
+}
+.modify-delete-btn {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px 20px;
+  background-color: #fff;
+}
+.delete {
+  border: 1px solid #f71f1f91;
+}
+.accept {
+  border: 1px solid #0059ff98;
+}
