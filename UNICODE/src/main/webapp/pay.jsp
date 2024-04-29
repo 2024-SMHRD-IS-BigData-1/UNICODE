@@ -61,21 +61,23 @@
 	    IMP.init("imp41664822"); // 가맹점 식별코드 초기화
 	    
 	    const button = document.querySelector("button");
+	    const generateMerchantUID = () => {
+	        return `uid_${new Date().getTime()}`;
+	    }
+
 	    const onClickPay = () => {
 	        IMP.request_pay({
 	            pg: "kakaopay",
 	            pay_method: "card",
 	            amount: "<%=prize%>",
-	            name: "UNICODE", // 결제 상품명
-	            merchant_uid: "uid_001", // 상점에서 관리하는 주문번호
+	            name: "UNICODE",
+	            merchant_uid: generateMerchantUID(), // 여기서 함수를 호출하여 고유한 UID 생성
 	        }, function(response) {
 	            // 결제 완료 후 콜백 함수
 	            if (response.success) {
-	                // 결제 성공 시 로직
 	                alert("결제가 성공적으로 완료되었습니다.");
-	                window.location.href = "Contest.jsp"; // 결제 성공 페이지로 리다이렉션
+	                window.location.href = "Contest.jsp";
 	            } else {
-	                // 결제 실패 시 로직
 	                alert("결제에 실패하였습니다. 에러 메시지: " + response.error_msg);
 	            }
 	        });
