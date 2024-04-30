@@ -29,7 +29,7 @@ body {
     padding-top: 20px;
     max-width: 90%;
     min-width: 1000px;
-    margin: auto;
+    margin: 0;
 }
 
 #area {
@@ -41,6 +41,7 @@ body {
 .side_bar {
     width: 192px;
     margin-top: 24px;
+    min-width: 20%;
 }
 .state_title{
 	padding: 10px;
@@ -79,10 +80,13 @@ body {
 .list-wrapper {
     flex: 1;
     margin-left: 64px;
+    max-width: 90%;
+    min-width: 90%;
 }
 
 .contest-box ul {
     list-style: none;
+    text-align: center;
 }
 
 a.contest-list {
@@ -97,6 +101,7 @@ a.contest-list {
 .thumbnail img {
     width: 200px;
     height: 200px;
+    min-width: 30%;
 }
 
 .contest-info {
@@ -129,6 +134,10 @@ a.contest-list {
     padding: 10px;
     font-weight: bold;
     font-size: 24px;
+    overflow: hidden;         /* 넘치는 내용 숨기기 */
+    white-space: nowrap;      /* 텍스트를 한 줄로 유지 */
+    text-overflow: ellipsis;  /* 넘치는 텍스트를 '...'로 표시 */
+    width: 90%;
 }
 
 div.pagination {
