@@ -26,11 +26,11 @@
         <div class="profile-box-wrapper" style="display: flex; justify-content: space-between; align-items: center;">
             <div style="display: flex; align-items: center;">
                 <div class="profile-img">
-                    <img class="user-img" src="/img/포켓몬4.jpg" alt="프로필 이미지" style="width: 100%;">
+                    <img class="user-img" src="assets/img/profile_img.jpeg" alt="프로필 이미지" style="width: 100%;">
                 </div>
                 <div>
                     <div class="profile-title">
-                        <span style="font-size: x-large;">company</span>
+                        <span style="font-size: x-large;">스마트인재개발원</span>
                     </div>
                 </div>
             </div>
@@ -47,206 +47,13 @@
 <div class="mypage">
     <!-- 등록한 콘테스트 시작 -->
     <div style="margin-left: 10px; padding: 30px 0 0 30px;"><b>완료된 콘테스트</b></div>
-    <div style="display: flex; padding: 0 20px;">
-        <div class="contest-list">
-            <div>
-                <img src="/img/contest_img1.jpg" alt="" style="width: 100%;">
-            </div>
-            <div class="project-done">
-                <div style="width: 100%; padding-left: 10px; margin: 10px;">
-                    <div style="margin-bottom: 10px;"><b>IOT 스마트 펌웨어 개발</b></div>
-                    <div class="money-cnt" style=" margin-bottom: 10px; font-size: smaller;">
-                        <b>상금 </b><span style="font-size: smaller; margin-right: 5px;">2,500,000</span>
-                    </div>
-                    <div style="font-size: smaller;"><b>사용 기술</b></div> 
-                    <div style="display: flex; ">
-                        <div class="used-skill"><img class="skill-img" src="/img/skill/java.png"><div class="skill-name">JAVA</div></div>
-                        <div class="used-skill"><img class="skill-img" src="/img/skill/c_plus_plus.png"><div class="skill-name">C++</div></div>
-                        <div class="used-skill"><img class="skill-img" src="/img/skill/html.png"><div class="skill-name">HTML</div></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="contest-list">
-            <div>
-                <img src="/img/contest_img2.jpg" alt="" style="width: 100%;">
-            </div>
-            <div class="project-done">
-                <div style="width: 100%; padding-left: 10px; margin: 10px;">
-                    <div style="margin-bottom: 10px;"><b>IOT 스마트 펌웨어 개발</b></div>
-                    <div class="money-cnt" style="margin-bottom: 10px; font-size: smaller;">
-                        <b>상금 </b><span style="font-size: smaller; margin-right: 5px;">2,500,000</span>
-                    </div>
-                    <div style="font-size: smaller;"><b>사용 기술</b></div> 
-                    <div style="display: flex; ">
-                        <div class="used-skill"><img class="skill-img" src="/img/skill/java.png"><div class="skill-name">JAVA</div></div>
-                        <div class="used-skill"><img class="skill-img" src="/img/skill/c_plus_plus.png"><div class="skill-name">C++</div></div>
-                        <div class="used-skill"><img class="skill-img" src="/img/skill/html.png"><div class="skill-name">HTML</div></div>
-                    </div>
-                </div>
-            </div>
-        </div><div class="contest-list">
-            <div>
-                <img src="/img/contest_img3.jpg" alt="" style="width: 100%;">
-            </div>
-            <div class="project-done">
-                <div style="width: 100%; padding-left: 10px; margin: 10px;">
-                    <div style="margin-bottom: 10px;"><b>IOT 스마트 펌웨어 개발</b></div>
-                    <div class="money-cnt" style="margin-bottom: 10px; font-size: smaller;">
-                        <b>상금 </b><span style="font-size: smaller; margin-right: 5px;">2,500,000</span>
-                    </div>
-                    <div style="font-size: smaller;"><b>사용 기술</b></div> 
-                    <div style="display: flex; ">
-                        <div class="used-skill"><img class="skill-img" src="/img/skill/java.png"><div class="skill-name">JAVA</div></div>
-                        <div class="used-skill"><img class="skill-img" src="/img/skill/c_plus_plus.png"><div class="skill-name">C++</div></div>
-                        <div class="used-skill"><img class="skill-img" src="/img/skill/html.png"><div class="skill-name">HTML</div></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div style="display: flex; padding: 50px 20px;">
         
-    </div>
-    <div style="display: flex; padding: 0 20px;">
-        <div class="contest-list">
-            <div>
-                <img src="/img/contest_img1.jpg" alt="" style="width: 100%;">
-            </div>
-            <div class="project-done">
-                <div style="width: 100%; padding-left: 10px; margin: 10px;">
-                    <div style="margin-bottom: 10px;"><b>IOT 스마트 펌웨어 개발</b></div>
-                    <div class="money-cnt" style="margin-bottom: 10px; font-size: smaller;">
-                        <b>상금 </b><span style="font-size: smaller; margin-right: 5px;">2,500,000</span>
-                    </div>
-                    <div style="font-size: smaller;"><b>사용 기술</b></div> 
-                    <div style="display: flex; ">
-                        <div class="used-skill"><img class="skill-img" src="/img/skill/java.png"><div class="skill-name">JAVA</div></div>
-                        <div class="used-skill"><img class="skill-img" src="/img/skill/c_plus_plus.png"><div class="skill-name">C++</div></div>
-                        <div class="used-skill"><img class="skill-img" src="/img/skill/html.png"><div class="skill-name">HTML</div></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="contest-list">
-            <div>
-                <img src="/img/contest_img2.jpg" alt="" style="width: 100%;">
-            </div>
-            <div class="project-done">
-                <div style="width: 100%; padding-left: 10px; margin: 10px;">
-                    <div style="margin-bottom: 10px;"><b>IOT 스마트 펌웨어 개발</b></div>
-                    <div class="money-cnt" style="margin-bottom: 10px; font-size: smaller;">
-                        <b>상금 </b><span style="font-size: smaller; margin-right: 5px;">2,500,000</span>
-                    </div>
-                    <div style="font-size: smaller;"><b>사용 기술</b></div> 
-                    <div style="display: flex; ">
-                        <div class="used-skill"><img class="skill-img" src="/img/skill/java.png"><div class="skill-name">JAVA</div></div>
-                        <div class="used-skill"><img class="skill-img" src="/img/skill/c_plus_plus.png"><div class="skill-name">C++</div></div>
-                        <div class="used-skill"><img class="skill-img" src="/img/skill/html.png"><div class="skill-name">HTML</div></div>
-                    </div>
-                </div>
-            </div>
-        </div><div class="contest-list">
-            <div>
-                <img src="/img/contest_img3.jpg" alt="" style="width: 100%;">
-            </div>
-            <div class="project-done">
-                <div style="width: 100%; padding-left: 10px; margin: 10px;">
-                    <div style="margin-bottom: 10px;"><b>IOT 스마트 펌웨어 개발</b></div>
-                    <div class="money-cnt" style="margin-bottom: 10px; font-size: smaller;">
-                        <b>상금 </b><span style="font-size: smaller; margin-right: 5px;">2,500,000</span>
-                    </div>
-                    <div style="font-size: smaller;"><b>사용 기술</b></div> 
-                    <div style="display: flex; ">
-                        <div class="used-skill"><img class="skill-img" src="/img/skill/java.png"><div class="skill-name">JAVA</div></div>
-                        <div class="used-skill"><img class="skill-img" src="/img/skill/c_plus_plus.png"><div class="skill-name">C++</div></div>
-                        <div class="used-skill"><img class="skill-img" src="/img/skill/html.png"><div class="skill-name">HTML</div></div>
-                    </div>
-                </div>
-            </div>
         </div>
         
     </div>
     <!-- 등록한 콘테스트 끝 -->
 
-    <div class="divider-hr"></div>
-
-    <!-- 등록중인 콘테스트 시작 -->
-    <div style="margin-left: 10px; padding-left: 30px;"><b>진행중인 콘테스트</b></div>
-    <div class="project-continue">
-        <div style="width: 100%;">
-            <div style="justify-content: space-between; display: flex;">
-                <div style="display: flex;">
-                    <div style="height:155px;">
-                        <img src="/img/contest_img1.jpg" alt="" style="height:100%; border-radius: 5px;">
-                    </div>
-                    <div style="padding-left: 10px;">
-                        <div style="margin: 30px 10px 20px 10px;">
-                            <b>IOT 스마트 펌웨어 개발</b>
-                        </div>
-                        <div style="display: flex;">
-                            <div style="margin-bottom: 10px;"><span style="padding-left: 15px; font-size: smaller;"><b>사용기술</b></span></div>
-                        </div>
-                        <div style="display: flex; margin-left: 10px;">
-                            <div class="used-skill"><img class="skill-img" src="/img/skill/java.png"><div class="skill-name">JAVA</div></div>
-                            <div class="used-skill"><img class="skill-img" src="/img/skill/c_plus_plus.png"><div class="skill-name">C++</div></div>
-                            <div class="used-skill"><img class="skill-img" src="/img/skill/html.png"><div class="skill-name">HTML</div></div>
-                        </div>
-                    </div>
-                </div>
-                <div style="padding: 0 30px; margin-top: 30px;">
-                    <div style="margin-bottom: 17px; display: flex;">
-                        <div style="margin-right: 5px;"><b>상금</b></div><span style="font-size: smaller; margin-right: 5px;">2,500,000</span>
-                    </div>
-                    <div style="margin-bottom: 17px;">
-                        <b>참여인원 </b><span style="font-size: smaller; margin-left: 5px;">15명</span>
-                    </div>
-                    <div style="margin-bottom: 17px;">
-                        <div class="end-period">
-                            <b>종료일</b><span style="font-size: smaller; margin-left: 7px;">24.07.12</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="project-continue">
-        <div style="width: 100%;">
-            <div style="justify-content: space-between; display: flex;">
-                <div style="display: flex;">
-                    <div style=" height: 155px;">
-                        <img src="/img/contest_img2.jpg" alt="" style="height: 100%; border-radius: 5px;">
-                    </div>
-                    <div style="padding-left: 10px;">
-                        <div style="margin: 30px 10px 20px 10px;">
-                        <b>IOT 스마트 펌웨어 개발</b>
-                        </div>
-                        <div style="display: flex;">
-                            <div style="margin-bottom: 10px;"><span style="padding-left: 15px; font-size: smaller;"><b>사용기술</b></span></div>
-                        </div>
-                        <div style="display: flex; margin-left: 10px;">
-                            <div class="used-skill"><img class="skill-img" src="/img/skill/java.png"><div class="skill-name">JAVA</div></div>
-                            <div class="used-skill"><img class="skill-img" src="/img/skill/c_plus_plus.png"><div class="skill-name">C++</div></div>
-                            <div class="used-skill"><img class="skill-img" src="/img/skill/html.png"><div class="skill-name">HTML</div></div>
-                        </div>
-                    </div>
-                </div>
-                <div style="padding: 0 30px; margin-top: 30px;">
-                    <div style="margin-bottom: 17px; display: flex;">
-                        <div style="margin-right: 5px;"><b>상금</b></div><span style="font-size: smaller; margin-right: 5px;">2,500,000</span>
-                    </div>
-                    <div style="margin-bottom: 17px;">
-                        <b>참여인원 </b><span style="font-size: smaller; margin-left: 5px;">15명</span>
-                    </div>
-                    <div style="margin-bottom: 17px;">
-                        <div class="end-period">
-                            <b>종료일</b><span style="font-size: smaller; margin-left: 7px;">24.07.12</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- 등록중인 콘테스트 끝-->
-    <div class="divider-hr"></div>
 </div>
 
         <!-- 마이페이지 끝 -->
