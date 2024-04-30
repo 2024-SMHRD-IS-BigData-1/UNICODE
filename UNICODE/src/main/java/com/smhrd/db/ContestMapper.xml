@@ -5,7 +5,7 @@
 <mapper namespace="com.smhrd.db.ContestMapper">
 
 	<insert id="enroll" parameterType="Contest" >
-	    INSERT INTO contest_info (bno_idx, con_title, con_prize, con_period, con_content, con_category, reg_date, con_file)
+	    INSERT INTO contest_info (con_idx, bno_idx, con_title, con_prize, con_period, con_content, con_category, created_at, con_file)
 	    VALUES (CONTEST_INFO_SEQ.NEXTVAL,#{bno_idx}, #{con_title}, #{con_prize}, #{con_period}, #{con_content}, #{con_category}, SYSDATE, #{con_file})
 	</insert>
 

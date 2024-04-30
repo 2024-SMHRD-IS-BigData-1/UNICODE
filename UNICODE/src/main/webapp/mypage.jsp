@@ -44,9 +44,23 @@
        List<Portfolio> portfolioList = new PortfolioDAO().portfolioList(user);
     %>
 
-    
+            <!-- 상단 배너 시작 -->
+    <div style="background-color: #abb5e763; max-width: 1440px; margin: 0 auto; border-radius: 20px;">
+	    <a class="pick_banner" href="">
+	        <div class="wrap">
+	            <div class="banner_text">
+	                <p>쉽고 빠른 창업 토탈 패키지</p>
+	                <p class="sub">더 이상 고민하지 마세요. 이미 많은 분들이 경험했습니다.</p>
+	            </div>
+	            <img class="banner_img" src="assets/img/포켓몬1.jpg">
+	            <div class="banner_button">자세히 보기</div>
+	        </div>
+	    </a>
+	</div>
+    <!-- 상단 배너 끝 -->
     <!-- 사용자 정보 시작 -->
     <div class="wrap" style="width: 1080px;">
+    
         <div class="profile-box-wrapper" style="display: flex; justify-content: space-between; align-items: center;">
             <div style="display: flex; align-items: center;">
                 <div class="profile-img">

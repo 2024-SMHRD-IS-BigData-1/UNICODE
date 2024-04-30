@@ -29,7 +29,7 @@
         text-decoration: none;
         }
     .abox{
-        background-color:#8910ec;
+       
         color: #FFF;
         
         padding: 20px;
@@ -37,14 +37,14 @@
         
     }
     .abox:hover{
-        background-color:#57009e;
+        background-color:rgb(49, 55, 172);
         color: #FFF;
         
     }
      .text-overlay {
 		  position: absolute;
 		  top: 40%;
-		  left: 50%;
+		  left: 50.5%;
 		  transform: translate(-50%, -50%);
 		  color: white; /* 텍스트 색상이 배경과 대비되도록 설정 */
 		  font-size: 200px; /* 필요에 따라 크기 조정 */
@@ -94,16 +94,16 @@
     
     </style>
 </head>
-<body>
+<body style="background-image:url('assets/img/Unicode_bg.jpg'); background-size: cover;">
      <div class="video-container">
 	    <video id="introVideo" autoplay muted playsinline>
 	      <source src="assets/img/video.mp4" type="video/mp4">
 	  	</video>
 	  <div class="text-overlay" id="textOverlay"></div>
 	 </div>
-    <div style="margin-top: 260px; display: grid; align-items: center;">
-        <div style="margin: 0 auto;">
-            <img src="assets/img/UNICODE.png" alt="">
+    <div style="margin-top: 296.2px; display: grid; align-items: center; ">
+        <div style="margin: 0 auto; font-size:200px; font-weight:900; text-align:center; color:#fff;">
+            <span>UNICODE</span>
         </div>
         <div style="text-align: center; font-size: xx-large; margin-top: 60px;">
             <a href="Main.jsp" class="abox"><i class="fa-solid fa-house fa-xl"></i></a>

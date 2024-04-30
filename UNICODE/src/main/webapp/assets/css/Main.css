@@ -124,7 +124,7 @@
         align-items: center;
         position: relative;
         z-index: 1;
-        background-color: rgb(26, 154, 97);
+       
         display: flex !important;
       }
       .bn_inner1{

@@ -27,17 +27,17 @@
                   <a href="" class="bn">
                       <!-- 첫 번째 슬라이드 내용 -->
                       <div>
-                          <a href="" class="bn">
+                          <a href="Contest.jsp" class="bn" style="background-image:url('assets/img/banner.png');background-size:cover;">
                               <div class="bn_inner1">
                                   <div class="bn_inner2">
                                       <div class="bn_inner3">
                                           <span class="bn_text">
-                                              베너 1
+
                                           </span>
                                       
                                       </div>
                                   </div>
-                                  <img class="bn_img" src="./img/포켓몬1.jpg" alt="">
+                                  
                               </div>
                           </a>
                       </div>
