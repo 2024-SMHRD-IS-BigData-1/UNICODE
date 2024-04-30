@@ -36,22 +36,33 @@ System.out.println(con_idx +title+category+content+prize+period+file);
         <section class="containerwrap">
             <div class="container">
                 <div class="align-items-center">
-                    <div class="content"><img class="contestimg" src=assets/img/<%=file %> alt="https://dummyimage.com/600x700/dee2e6/6c757d.jpg" /></div>
-                    <div class="content2">
-                        <h1 class="contest-title"><%=title %></h1>
-                        <div class="contest-category"><%=category %></div>
-                        <div class="contest-prize">
-                            <span class="prize">상금: <%=prize %>원</span>
-                        </div>
-                        <p class="contest-content"><%=content %></p>
-                        <div class="d-flex">
-                            <% if (session.getAttribute("loginUser")!= null) {%>
-                            <button class="btn btn-outline-dark" type="button">   
-                                <a href="ContestApply.jsp?title=<%=title%>&con_idx=<%=con_idx%>">신청하기</a>
-                            <%} %>
-                            </button>
-                        </div>
+                    <div class="content">
+                    	<img class="contestimg" src=assets/img/<%=file %> alt="https://dummyimage.com/600x700/dee2e6/6c757d.jpg" />
+	                     <div class="content2">
+	                     	<h1 class="cotest-title" >제목</h1>
+	                        <h1 class="contest-title font-small" ><%=title %></h1>
+	                        <div class="border" style="border-bottom:2px solid #f5f5f5;height:10px;"></div>
+	                     	<h1 class="cotest-title">카테고리</h1>	                        
+	                        <h1 class="contest-title font-small" ><%=category %></h1>
+	                        <div class="border" style="border-bottom:2px solid #f5f5f5;height:10px;"></div>
+	                        <div class="contest-prize">
+	                            <h1 class="cotest-title">상금</h1>
+	                            <h1 class="cotest-title font-small" ><%=prize %>원</h1>
+	                        </div>
+	                        <div class="border" style="border-bottom:2px solid #f5f5f5;height:10px;"></div>
+	                            <h1 class="cotest-title">상세 설명</h1>
+	                        <p class="contest-content"><%=content %></p>
+	                         <div class="border" style="border-bottom:2px solid #f5f5f5;height:10px; margin-bottom:10px;"></div>
+	                        <div class="d-flex">
+	                            <% if (session.getAttribute("loginUser")!= null) {%>
+	                            <button class="btn btn-outline-dark" type="button">   
+	                                <a href="ContestApply.jsp?title=<%=title%>&con_idx=<%=con_idx%>">신청하기</a>
+	                            <%} %>
+	                            </button>
+	                        </div>
+	                    </div>
                     </div>
+                   
                 </div>
             </div>
         </section>

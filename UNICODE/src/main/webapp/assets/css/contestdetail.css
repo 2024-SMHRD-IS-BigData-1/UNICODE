@@ -1,56 +1,142 @@
+body {
+    font-family: 'Noto Sans', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    padding: 20px;
+}
+
+/* 상단 이미지 스타일 */
+.contestimg {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* 제목 및 내용을 감싸는 컨테이너 */
 .align-items-center {
-    display: flex; /* Flexbox 레이아웃 활성화 */
-    justify-content: space-between; /* 컨테이너 내 요소들을 양쪽 끝으로 배치 */
-    align-items: center; /* 요소들을 세로 축에서 중앙으로 정렬 */
-    height: 1000px; /* 컨테이너의 높이 설정 */
+    display: grid;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
 }
 
 .content, .content2 {
-    width: 50%; /* 두 주요 컨텐츠 블록에 각각 50%의 너비 할당 */
-    display: flex; /* Flexbox를 사용하여 내부 아이템 정렬 */
-    flex-direction: column; /* 요소들을 세로 방향으로 나열 */
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.content{
+	display: flex;
+}
+.content2{
+	width: 390px;
+}
+/* 제목 스타일 */
+.contest-title {
+    color: #007bff;
+    margin-bottom: 15px;
+}
+.font-small{
+	font-size: 1.3em;
+	color: #007bff;
+}
+/* 카테고리 및 상금 스타일 */
+.contest-category, .contest-prize {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* 신청하기 버튼 스타일 */
+.btn-outline-dark {
+    border: 2px solid #007bff;
+    color: #007bff;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-dark a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.btn-outline-dark:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* 컨텐츠 내용 스타일 */
+.contest-content {
+    color: #666;
+    line-height: 1.5;
+}
+
+
+.d-flex{
+	display: grid;
+	align-items: center;
+}
+
+
+
+/*.align-items-center {
+    display: flex;  Flexbox 레이아웃 활성화 
+    justify-content: space-between;  컨테이너 내 요소들을 양쪽 끝으로 배치 
+    align-items: center;  요소들을 세로 축에서 중앙으로 정렬 
+    height: 1000px;  컨테이너의 높이 설정 
+}
+
+.content, .content2 {
+    width: 50%;  두 주요 컨텐츠 블록에 각각 50%의 너비 할당 
+    display: flex;  Flexbox를 사용하여 내부 아이템 정렬 
+    flex-direction: column;  요소들을 세로 방향으로 나열 
 }
 .content2 {
     display: grid;
-    grid-template-columns: 1fr; /* 한 컬럼으로 설정 */
-    grid-gap: 10px; /* 그리드 사이의 간격 */
+    grid-template-columns: 1fr;  한 컬럼으로 설정 
+    grid-gap: 10px;  그리드 사이의 간격 
     padding: 20px;
 }
 .contest-title, .contest-category, .contest-prize, .contest-content {
-    padding: 10px; /* 내부 패딩 추가 */
-    border: 1px solid #007BFF; /* 테두리 추가, 밝은 푸른색 */
-    background-color: #E3F2FD; /* 배경색, 매우 연한 하늘색 */
-    margin-bottom: 10px; /* 요소들 사이의 하단 간격 */
-    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.1); /* 테두리 주변에 약간의 그림자 추가 */
-    border-radius: 5px; /* 테두리 둥글게 */
+    padding: 10px;  내부 패딩 추가 
+    border: 1px solid #007BFF;  테두리 추가, 밝은 푸른색 
+    background-color: #E3F2FD;  배경색, 매우 연한 하늘색 
+    margin-bottom: 10px;  요소들 사이의 하단 간격 
+    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.1);  테두리 주변에 약간의 그림자 추가 
+    border-radius: 5px;  테두리 둥글게 
     font-size: 2rem;
 }
 
 
 .contestimg {
-    max-width: 100%; /* 이미지가 그의 컨테이너를 넘지 않도록 최대 너비 제한 */
-    height: auto; /* 이미지 비율 유지 */
+    max-width: 100%;  이미지가 그의 컨테이너를 넘지 않도록 최대 너비 제한 
+    height: auto;  이미지 비율 유지 
 }
 
 .content2 .d-flex {
-    display: flex; /* Flexbox 활성화 */
-    justify-content: flex-start; /* 버튼을 왼쪽으로 정렬 */
+    display: flex;  Flexbox 활성화 
+    justify-content: flex-start;  버튼을 왼쪽으로 정렬 
 }
 
 .contest-content{
 	margin-top: 0;
 }
 .btn {
-    margin-top: 20px; /* 버튼 상단 여백 추가 */
-    padding: 10px 20px; /* 버튼 내부 패딩 */
-    background-color: darkblue; /* 버튼 배경 색상 */
-    color: white; /* 버튼 텍스트 색상 */
-    border: none; /* 버튼 테두리 제거 */
-    border-radius: 5px; /* 버튼 모서리 둥글게 */
-    cursor: pointer; /* 클릭 가능 표시 */
+    margin-top: 20px;  버튼 상단 여백 추가 
+    padding: 10px 20px;  버튼 내부 패딩 
+    background-color: darkblue;  버튼 배경 색상 
+    color: white;  버튼 텍스트 색상 
+    border: none;  버튼 테두리 제거 
+    border-radius: 5px;  버튼 모서리 둥글게 
+    cursor: pointer;  클릭 가능 표시 
 }
 
 .btn a {
-    color: white; /* 링크 색상 흰색으로 설정 */
-    text-decoration: none; /* 링크 밑줄 제거 */
-}
+    color: white;  링크 색상 흰색으로 설정 
+    text-decoration: none;  링크 밑줄 제거 
+}*/
