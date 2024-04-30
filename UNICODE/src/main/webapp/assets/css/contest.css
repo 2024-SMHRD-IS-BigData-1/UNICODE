@@ -113,6 +113,7 @@ a.contest-list {
     overflow: hidden;         /* 넘치는 내용 숨기기 */
     white-space: nowrap;      /* 텍스트를 한 줄로 유지 */
     text-overflow: ellipsis;  /* 넘치는 텍스트를 '...'로 표시 */
+    width: 90%;
 }
 
 
