@@ -20,7 +20,9 @@
     });
     </script>
 <!-- header 끝 -->
-			<%String title = request.getParameter("title"); %>
+			<%String title = request.getParameter("title");
+			String con_idx = request.getParameter("con_idx");
+			%>
 <div class="container">
     <div class="portfolio">
         <form action="ContestApply" id="portfolio-form" method="post">
@@ -46,6 +48,7 @@
                         <div class="button-box">
                             <input type="submit" value="등록" class="btn btn-11-24 btn-partner">
                             <input type="reset" value="취소" class="btn btn-11-24 btn-gray">
+                            <input type="hidden" name="con_idx" value="<%=con_idx%>" />
                             
                         </div>
                         <div class="body-3 btn-help-box">

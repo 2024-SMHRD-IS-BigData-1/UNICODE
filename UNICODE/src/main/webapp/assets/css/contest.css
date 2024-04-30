@@ -103,12 +103,28 @@ a.contest-list {
     align-items: center;
 }
 
+.contest-info > div {
+    padding: 10px;
+    font-weight: bold;
+    font-size: 24px;
+    overflow: hidden;         /* 넘치는 내용 숨기기 */
+    white-space: nowrap;      /* 텍스트를 한 줄로 유지 */
+    text-overflow: ellipsis;  /* 넘치는 텍스트를 '...'로 표시 */
+}
+
+
 .prize-info {
     width: 30%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: #fff;
+}
+
+.prize-info>li {
+    padding: 10px;
+    font-weight: bold;
+    font-size: 24px;
 }
 
 div.pagination {

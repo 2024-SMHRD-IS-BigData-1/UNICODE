@@ -1,26 +1,35 @@
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>콘테스트 상세페이지</title>
-        <link rel="stylesheet" href="assets/css/contestdetail.css"/>
-
-    </head>
-    <body>
-		<%
+<head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      <meta name="description" content="" />
+      <meta name="author" content="" />
+      <title>콘테스트 상세페이지</title>
+      <link rel="stylesheet" href="assets/css/contestdetail.css"/>
+	  <link rel="stylesheet" href="assets/css/Main.css">
+</head>
+<body>
+    <div id="header"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("#header").load("header.jsp");
+    });
+    </script> 
+<%
 String title = request.getParameter("title");
 String category = request.getParameter("category");
 String content = request.getParameter("content");
 String prize = request.getParameter("prize");
 String period = request.getParameter("period");
 String file = request.getParameter("file");
-System.out.println(title+category+content+prize+period+file);
+String con_idx = request.getParameter("con_idx");
+System.out.println(con_idx +title+category+content+prize+period+file);
 %>
 		
         <!-- Product section-->
@@ -28,16 +37,18 @@ System.out.println(title+category+content+prize+period+file);
             <div class="container">
                 <div class="align-items-center">
                     <div class="content"><img class="contestimg" src=assets/img/<%=file %> alt="https://dummyimage.com/600x700/dee2e6/6c757d.jpg" /></div>
-                    <div class="content">
+                    <div class="content2">
                         <h1 class="contest-title"><%=title %></h1>
                         <div class="contest-category"><%=category %></div>
                         <div class="contest-prize">
-                            <span class="prize"><%=prize %>원</span>
+                            <span class="prize">상금: <%=prize %>원</span>
                         </div>
                         <p class="contest-content"><%=content %></p>
                         <div class="d-flex">
+                            <% if (session.getAttribute("loginUser")!= null) {%>
                             <button class="btn btn-outline-dark" type="button">   
-                                <a href="ContestApply.jsp?title=<%=title%>">신청하기</a>
+                                <a href="ContestApply.jsp?title=<%=title%>&con_idx=<%=con_idx%>">신청하기</a>
+                            <%} %>
                             </button>
                         </div>
                     </div>
@@ -45,5 +56,5 @@ System.out.println(title+category+content+prize+period+file);
             </div>
         </section>
         
-    </body>
+</body>
 </html>

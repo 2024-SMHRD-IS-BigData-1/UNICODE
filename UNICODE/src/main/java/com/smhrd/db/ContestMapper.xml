@@ -4,14 +4,14 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.smhrd.db.ContestMapper">
 
-	<insert id="enroll" parameterType="com.smhrd.model.Contest" useGeneratedKeys="true" keyProperty="con_idx">
+	<insert id="enroll" parameterType="Contest" >
 	    INSERT INTO contest_info (bno_idx, con_title, con_prize, con_period, con_content, con_category, reg_date, con_file)
-	    VALUES (#{bno_idx}, #{con_title}, #{con_prize}, #{con_period}, #{con_content}, #{con_category}, SYSDATE, #{con_file})
+	    VALUES (CONTEST_INFO_SEQ.NEXTVAL,#{bno_idx}, #{con_title}, #{con_prize}, #{con_period}, #{con_content}, #{con_category}, SYSDATE, #{con_file})
 	</insert>
 
 	
 	<select id="ShowContest" resultType="Contest">
-		select con_title,con_prize,con_period,con_content,con_category,con_file
+		select con_idx,con_title,con_prize,con_period,con_content,con_category,con_file
 		from contest_info
 	</select>
 	
@@ -34,6 +34,11 @@
 	    WHERE TO_DATE(SUBSTR(con_period, INSTR(con_period, '~') + 1), 'YYYY.MM.DD') < SYSDATE
 	  ]]>
 	</select>
+
+	<insert id="apply" parameterType="com.smhrd.model.ContestApplication" >
+	    INSERT INTO APPLYING_CONTEST_INFO 
+	    VALUES (APPLYING_CONTEST_INFO_SEQ.NEXTVAL,#{con_idx}, #{u_id},sysdate,#{filename})
+	</insert>
 	
 
 </mapper>

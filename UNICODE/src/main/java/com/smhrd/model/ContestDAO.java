@@ -39,4 +39,10 @@ public class ContestDAO {
 	    return contestList;
 
 	}
+	public int apply(ContestApplication application) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		int cnt = session.insert("com.smhrd.db.ContestMapper.apply", application);
+		session.close();
+		return cnt;
+	}
 }

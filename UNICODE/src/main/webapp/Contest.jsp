@@ -130,7 +130,8 @@ function displayContests(data) {
                           '&category=' + encodeURIComponent(contest.con_category) +
                           '&content=' + encodeURIComponent(contest.con_content) +
                           '&prize=' + encodeURIComponent(contest.con_prize) +
-                          '&period=' + encodeURIComponent(contest.con_period);
+                          '&period=' + encodeURIComponent(contest.con_period) +
+                          '&con_idx='+ encodeURIComponent(contest.con_idx);
         html += '<li>' +
        		 	'<a href="Contestdetail.jsp?' + queryString + '" class="contest-list">'+
                 '<div class="thumbnail">' +
@@ -142,7 +143,7 @@ function displayContests(data) {
                 '<div>' + contest.con_content + '</div>' +
                 '</div>' +
                 '<ul class="prize-info">' +
-                '<li>총상금 ' + contest.con_prize + '</li>' +
+                '<li>총상금 ' + contest.con_prize + '원</li>' +
                 '<li>' + contest.con_period + '</li>' +
                 '</ul>' +
                 '</a>' +
