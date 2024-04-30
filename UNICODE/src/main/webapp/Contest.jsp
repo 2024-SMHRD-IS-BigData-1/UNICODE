@@ -61,12 +61,16 @@
                     <div class="state sidetitle">상태</div>
                     <div class="list-bar" style="height: 129px;">
                         <div class="description">
+                        	<label class="recruit">
+                                <input type="radio" class="checkbutton" name="recruit" id="radio-all" value="recruit">                                
+                                <div class="radio_label">전체</div>
+                            </label>
                             <label class="recruit">
-                                <input type="checkbox" class="checkbutton" id="radio-recruit" value="recruit">                                
+                                <input type="radio" class="checkbutton" name="recruit" id="radio-recruit" value="recruit">                                
                                 <div class="radio_label">진행중</div>
                             </label>
                             <label class="end">
-                                <input type="checkbox" class="checkbutton" id="radio-end" value="end">                                
+                                <input type="radio" class="checkbutton" name="recruit" id="radio-end" value="end">                                
                                 <div class="radio_label">종료</div>
                             </label>
                         </div>
@@ -77,15 +81,15 @@
                     <div class="list-bar" style="height: 129px;">
                         <div class="description">
                             <label class="small">
-                                <input type="checkbox" class="checkbutton" id="small-money" value="">
+                                <input type="radio" class="checkbutton" name="money" id="small-money" value="">
                                 <div class="radio_label">30만원 이하</div>
                             </label>
                             <label class="middle">
-                                <input type="checkbox" class="checkbutton" id="middel-money" value="">
+                                <input type="radio" class="checkbutton" name="money" id="middle-money" value="">
                                 <div class="radio_label">30만원~ 100만원</div>
                             </label>
                             <label class="large">
-                                <input type="checkbox" class="checkbutton" id="large-money" value="">
+                                <input type="radio" class="checkbutton" name="money" id="large-money" value="">
                                 <div class="radio_label">100만원 이상</div>
                             </label>
                         </div>
@@ -123,6 +127,7 @@ function filterContests() {
     console.log("filterContests function called");
     var isActiveChecked = $('#radio-recruit').is(':checked');
     var isEndedChecked = $('#radio-end').is(':checked');
+
 	console.log(isActiveChecked)
     // 요청할 데이터 객체 생성
     var requestData = {
@@ -146,10 +151,24 @@ function filterContests() {
     });
 }
 function displayContests(data) {
+    var isSmallChecked = $('#small-money').is(':checked');
+    var isMiddleChecked = $('#middle-money').is(':checked');
+    var isLargeChecked = $('#large-money').is(':checked');
     console.log("Updating UI with data");
     var html = '';
-    data.forEach(function(contest) {
-        // 각 데이터 항목을 URL 인코딩하여 쿼리 스트링으로 추가
+
+    var filteredData = data.filter(function(contest) {
+        var prize = parseInt(contest.con_prize, 10); // 상금을 정수로 변환, 불필요한 변환 최소화
+        // 상금 크기에 따라 필터링
+       
+        if (isSmallChecked) return prize >= 0 && prize <= 5000;
+        if (isMiddleChecked) return prize > 5000 && prize <= 10000;
+        if (isLargeChecked) return prize > 10000;
+        return true; // 아무 필터링도 적용되지 않을 경우 모든 데이터를 포함
+    });
+
+
+    filteredData.forEach(function(contest) {
         var queryString = 'file=' + encodeURIComponent(contest.con_file) +
                           '&title=' + encodeURIComponent(contest.con_title) +
                           '&category=' + encodeURIComponent(contest.con_category) +
@@ -158,7 +177,7 @@ function displayContests(data) {
                           '&period=' + encodeURIComponent(contest.con_period) +
                           '&con_idx='+ encodeURIComponent(contest.con_idx);
         html += '<li>' +
-       		 	'<a href="Contestdetail.jsp?' + queryString + '" class="contest-list">'+
+                '<a href="Contestdetail.jsp?' + queryString + '" class="contest-list">'+
                 '<div class="thumbnail">' +
                 '<img src="assets/img/' + contest.con_file + '" alt="이미지 불러오기 실패" class="thum-img">' +
                 '</div>' +
@@ -175,8 +194,9 @@ function displayContests(data) {
                 '</li>';
     });
     $('.contest-box > ul').html(html); // 기존 <ul> 내용을 새 HTML로 대체
-    initializePagination(); // 여기에서 페이지네이션을 초기화
+    initializePagination(); // 페이지네이션 초기화
 }
+
 
 </script>
 
