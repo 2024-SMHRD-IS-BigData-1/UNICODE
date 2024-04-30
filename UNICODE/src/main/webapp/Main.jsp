@@ -12,12 +12,7 @@
 	<link rel="stylesheet" href="assets/css/Main.css">
 </head>
 <body>    
- <div class="video-container">
-    <video id="introVideo" autoplay muted playsinline>
-      <source src="assets/img/video.mp4" type="video/mp4">
-  </video>
-  <div class="text-overlay" id="textOverlay"></div>
-  </div>
+
 
 <div id="header"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -384,67 +379,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      var video = document.getElementById('introVideo');
-  
-      video.addEventListener('play', function() {
-          // 애니메이션을 시작하기 전에 기다리는 시간을 설정합니다.
-          setTimeout(function() {
-              video.style.animation = "fadeout 2s forwards";
-          }, 3000); // 3초 후에 fadeout 애니메이션이 시작됩니다.
-      });
-  });
-  $(document).ready(function(){
-    $("#header").load("header.html");
-    
-    $("#introVideo").on('ended', function(){
-        $(".video-container").css('display', 'none'); // 동영상이 끝나면 비디오 컨테이너 숨김
-    });
-});
-
-
-$(document).ready(function(){
-  let text1 = "UNICODE";
-  let text2 = "UNICODE";
-  let duration = 3000; // 6초
-  let partDuration = duration / 3; // 3부분으로 나누어 각 효과에 할당
-  let $overlay = $("#textOverlay");
-
-  function typeEffect(text, callback) {
-    $overlay.html("");
-    let i = 0;
-    let interval = setInterval(function() {
-      $overlay.append(text.charAt(i));
-      i++;
-      if (i >= text.length) {
-        clearInterval(interval);
-        setTimeout(callback, partDuration); // 다음 단계로 이동
-      }
-    }, partDuration / text.length); // 전체 길이에 대한 타이핑 속도 계산
-  }
-
-  function eraseEffect(callback) {
-    let text = $overlay.html();
-    let interval = setInterval(function() {
-      text = text.slice(0, -1); // 매번 마지막 문자를 제거
-      $overlay.html(text);
-      if (text.length === 0) {
-        clearInterval(interval);
-        setTimeout(callback, 500); // 다음 단계로 이동
-      }
-    }, partDuration / text.length); // 지우는 속도 계산
-  }
-
-  typeEffect(text1, function() {
-    eraseEffect(function() {
-      typeEffect(text2, function() {
-        // 모든 텍스트 애니메이션이 완료되었습니다.
-      });
-    });
-  });
-});
-</script>
+ 
 
   <!-- Initialize Swiper -->
   <script>

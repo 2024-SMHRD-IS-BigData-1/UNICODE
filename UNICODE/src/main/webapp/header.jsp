@@ -16,11 +16,11 @@
                     <img src="assets/img/LOGO.png"> 
                 </a>
             </div>
-            <div id="search_box">           
+            <!-- <div id="search_box">           
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <input id="search-input" type="text" name="search-input" placeholder="  검색어를 입력하세요.">
                 
-            </div>
+            </div> -->
 			<%Object loginUser = session.getAttribute("loginUser");
 			  Object loginCompany = session.getAttribute("loginCompany");
 				%>
