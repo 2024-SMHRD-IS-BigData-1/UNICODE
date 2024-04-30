@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.db.CommunityMapper">
+  
+	
+	
+   <insert id="comm" parameterType="Community">
+     insert into community_info 
+     values(community_info_SEQ.nextval, #{comm_title}, #{comm_content}, #{comm_file}, sysdate, #{u_id})
+   </insert>
+	<insert id="comment" parameterType="Comment">
+	     insert into comm_comment_info 
+	     values(comm_comment_info_SEQ.nextval,#{comm_idx},#{u_id}, #{comment_text}, sysdate)
+	</insert>
+	<select id="commentList" parameterType="String" resultType="Comment">
+	     	select * from comm_comment_info where comm_idx=#{comm_idx} order by created_at desc
+	</select> 
+
+	<select id="communityList" parameterType="String" resultType="Community">
+		select * from community_info order by created_at desc
+	</select>
+	
+	<select id="communityD" parameterType="String" resultType="Community">
+	  	select * from community_info where comm_idx=#{comm_idx}
+	</select>
+</mapper>

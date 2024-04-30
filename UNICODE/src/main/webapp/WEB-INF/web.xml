@@ -79,6 +79,18 @@
   	<description></description>
   	<servlet-class>com.smhrd.controller.ContestApply</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>Community_writeService</servlet-name>
+  	<display-name>Community_writeService</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.Community_writeService</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>CommentService</servlet-name>
+  	<display-name>CommentService</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.CommentService</servlet-class>
+  </servlet>
 
 
 
@@ -132,6 +144,14 @@
   <servlet-mapping>
   	<servlet-name>ContestApply</servlet-name>
   	<url-pattern>/ContestApply</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Community_writeService</servlet-name>
+  	<url-pattern>/Community_writeService</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CommentService</servlet-name>
+  	<url-pattern>/CommentService</url-pattern>
   </servlet-mapping>
 
 

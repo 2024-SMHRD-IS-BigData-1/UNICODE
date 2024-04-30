@@ -13,9 +13,7 @@
         <form method="post" action="C_LoginService" id="login-form">
             <input type="text" name="id" placeholder="아이디">
             <input type="password" name="pw" placeholder="비밀번호">
-            <label for="remember-check">
-                <input type="checkbox" id="remember-check">아이디 저장
-            </label>
+           
             <input type="submit" value="로그인">
             <a href="Company_join.jsp" class="join">회원가입</a>
         </form>

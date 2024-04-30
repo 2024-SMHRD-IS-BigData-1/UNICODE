@@ -28,7 +28,7 @@
               <ul id="menu">
                   <li><a href="Contest.jsp">코딩 페스티벌</a></li>
                   <li><a href="promotion.jsp">개발자 찾기</a></li>
-                  <li><a href="#">커뮤니티</a></li>
+                  <li><a href="community.jsp">커뮤니티</a></li>
                   <% if(loginUser == null && loginCompany == null) { %>
                       <li><a href="Login.jsp">로그인/회원가입</a></li>
                       <li><a href="Company_login.jsp">기업로그인/회원가입</a></li>

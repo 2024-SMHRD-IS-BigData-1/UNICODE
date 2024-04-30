@@ -10,6 +10,8 @@
 		<typeAlias type="com.smhrd.model.Portfolio" alias="Portfolio"/>
 		<typeAlias type="com.smhrd.model.Company" alias="Company"/>
 		<typeAlias type="com.smhrd.model.Contest" alias="Contest"/>
+		<typeAlias type="com.smhrd.model.Community" alias="Community"/>
+		<typeAlias type="com.smhrd.model.Comment" alias="Comment"/>
 	</typeAliases>
 	
 
@@ -33,6 +35,7 @@
 		<mapper resource="com/smhrd/db/PortfolioMapper.xml" />
 		<mapper resource="com/smhrd/db/CompanyMapper.xml" />
 		<mapper resource="com/smhrd/db/ContestMapper.xml" />
+		<mapper resource="com/smhrd/db/CommunityMapper.xml" />
 	</mappers>
 	
 	

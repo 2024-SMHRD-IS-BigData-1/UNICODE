@@ -52,7 +52,12 @@ public class UserDAO {
 		session.close();
 		return userprofil;
 	}
-
+	public Profil userprofile(String user) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		Profil userprofile = session.selectOne("com.smhrd.db.UserMapper.userprofil",user);
+		session.close();
+		return userprofile;
+	}
 
 	public int modify(Profil profil) {
 		SqlSession session = sqlSessionFactory.openSession(true);
@@ -68,6 +73,8 @@ public class UserDAO {
 		System.out.println(userList);
 		return userList;
 	}
+	
+	
 	
 
 	

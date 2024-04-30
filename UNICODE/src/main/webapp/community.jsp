@@ -1,3 +1,8 @@
+<%@page import="com.smhrd.model.UserDAO"%>
+<%@page import="java.util.List"%>
+<%@page import="com.smhrd.model.Community"%>
+<%@page import="com.smhrd.model.CommunityDAO"%>
+<%@page import="com.smhrd.model.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -19,6 +24,28 @@
         $("#header").load("header.jsp");
     });
     </script>
+    
+            <!-- 상단 배너 시작 -->
+    <div style="background-color: #abb5e763; max-width: 1440px; margin: 0 auto; border-radius: 20px;">
+	    <a class="pick_banner" href="">
+	        <div class="wrap">
+	            <div class="banner_text">
+	                <p>쉽고 빠른 창업 토탈 패키지</p>
+	                <p class="sub">더 이상 고민하지 마세요. 이미 많은 분들이 경험했습니다.</p>
+	            </div>
+	            <img class="banner_img" src="assets/img/포켓몬1.jpg">
+	            <div class="banner_button">자세히 보기</div>
+	        </div>
+	    </a>
+	</div>
+    <!-- 상단 배너 끝 -->
+   <%
+    	Object loginUser = session.getAttribute("loginUser"); 
+    	User user = (User)loginUser;
+    %>
+    <%
+    	List<Community> communityList = new CommunityDAO().communityList();
+    %>
 
         <div class="content-min-height">
             <div class="full-content-width content-min-height">
@@ -54,6 +81,7 @@
                     </form>
                 </div>
                 <div class="content-main">
+                	
                     <table class="content-table">
                         <thead>
                             <tr class="table-header">
@@ -63,54 +91,27 @@
                             </tr>
                         </thead>
                         <tbody>
+                	<% int cnt = 1; 
+                	for(Community c : communityList){
+                		%>
                             <tr>
                                 <td colspan="3" class="paging" style="padding: 0;">
-                                    <a class="community-detail" href="community_detail.jsp">
-                                        <span class="upload-num">1</span>
+                                    <a class="community-detail" href="community_detail.jsp?comm_idx=<%=c.getComm_idx()%>">
+                                        <span class="upload-num"><%=cnt %></span>
                                         <div class="community-wrap">
                                             <div class="upload-wrap">
-                                                <span class="upload-title">제목</span>
+                                                <span class="upload-title"><%=c.getComm_title() %></span>
                                                 <p class="upload-text">
-                                                    안녕하세요. 개발자에 대해서 궁금한 게 있어서 질문 드립니다. 주로 개발자는 어디서
+                                                    <%=c.getComm_content() %>
                                                 </p>
                                             </div>
                                         </div>
-                                        <p class="upload-date">2024.03.27 11:29</p>
+                                        <p class="upload-date"><%=c.getCreated_at() %></p>
                                     </a>
                                 </td>
                             </tr>
-                            <tr>
-                                <td colspan="3" class="paging" style="padding: 0;">
-                                    <a class="community-detail" href="community_detail.jsp">
-                                        <span class="upload-num">2</span>
-                                        <div class="community-wrap">
-                                            <div class="upload-wrap">
-                                                <span class="upload-title">제목</span>
-                                                <p class="upload-text">
-                                                    안녕하세요. 개발자에 대해서 궁금한 게 있어서 질문 드립니다. 주로 개발자는 어디서
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <p class="upload-date">2024.03.27 11:29</p>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="3" class="paging" style="padding: 0;">
-                                    <a class="community-detail" href="community_detail.jsp">
-                                        <span class="upload-num">3</span>
-                                        <div class="community-wrap">
-                                            <div class="upload-wrap">
-                                                <span class="upload-title">제목</span>
-                                                <p class="upload-text">
-                                                    안녕하세요. 개발자에 대해서 궁금한 게 있어서 질문 드립니다. 주로 개발자는 어디서
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <p class="upload-date">2024.03.27 11:29</p>
-                                    </a>
-                                </td>
-                            </tr>
+                           
+                    <%cnt++; } %>
                         </tbody>
                     </table>
                     <div class="pagination-wrap">
