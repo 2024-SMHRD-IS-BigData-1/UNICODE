@@ -392,7 +392,7 @@
           // 애니메이션을 시작하기 전에 기다리는 시간을 설정합니다.
           setTimeout(function() {
               video.style.animation = "fadeout 2s forwards";
-          }, 6000); // 3초 후에 fadeout 애니메이션이 시작됩니다.
+          }, 3000); // 3초 후에 fadeout 애니메이션이 시작됩니다.
       });
   });
   $(document).ready(function(){
@@ -407,7 +407,7 @@
 $(document).ready(function(){
   let text1 = "UNICODE";
   let text2 = "UNICODE";
-  let duration = 7000; // 6초
+  let duration = 3000; // 6초
   let partDuration = duration / 3; // 3부분으로 나누어 각 효과에 할당
   let $overlay = $("#textOverlay");
 
