@@ -18,6 +18,14 @@
     <link rel="stylesheet" href="assets/css/Main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style type="text/css">
+    .contest-info div {
+        white-space: nowrap; /* 텍스트를 한 줄로 만듬 */
+        overflow: hidden; /* 넘치는 내용을 숨김 */
+        text-overflow: ellipsis; /* 넘치는 내용을 ...으로 표시 */
+        max-width: 300px; /* 최대 너비 설정, 필요에 따라 조정 */
+    }
+    </style>
 </head>
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 <body>
@@ -100,6 +108,8 @@
 
         </section>
     </main>
+    
+    
 <script type="text/javascript">
 $(document).ready(function() {
     // 체크박스 변경 이벤트에 filterContests 함수를 바인딩
@@ -155,7 +165,7 @@ function displayContests(data) {
                 '<div class="contest-info">' +
                 '<div>' + contest.con_title + '</div>' +
                 '<div>' + contest.con_category + '</div>' +
-                '<div>' + contest.con_content + '</div>' +
+                '<div class="con-test">' + contest.con_content + '</div>' +
                 '</div>' +
                 '<ul class="prize-info">' +
                 '<li>총상금 ' + contest.con_prize + '원</li>' +
@@ -169,6 +179,7 @@ function displayContests(data) {
 }
 
 </script>
+
 	
 <script src="assets/js/contest.js"></script>
 </body>
