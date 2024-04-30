@@ -27,17 +27,17 @@
                   <a href="" class="bn">
                       <!-- 첫 번째 슬라이드 내용 -->
                       <div>
-                          <a href="Contest.jsp" class="bn" style="background-image:url('assets/img/banner.png');background-size:cover;">
+                          <a href="Contest.jsp" class="bn" style="background-color:#000000;">
                               <div class="bn_inner1">
                                   <div class="bn_inner2">
                                       <div class="bn_inner3">
-                                          <span class="bn_text">
-
+                                          <span class="bn_text" style="color:#fff">
+												콘테스트의 왕좌를 도전하세요!
                                           </span>
                                       
                                       </div>
                                   </div>
-                                  
+                                  <img class="bn_img" src="https://cdn.inflearn.com/public/main_sliders/c7210512-f6e0-4bc8-96fd-aedb81b34a15/%5B%ED%83%9C%EA%B7%B8%EB%9E%9C%EB%94%A9%5DTOP50_521.webp">
                               </div>
                           </a>
                       </div>
@@ -48,18 +48,19 @@
                   <a href="" class="bn">
                       <!-- 두 번째 슬라이드의 내용 -->
                       <div>
-                          <a href="" class="bn">
+                       <a href="Contest.jsp" class="bn" style="background-color:rgb(236,239,255);">
                               <div class="bn_inner1">
                                   <div class="bn_inner2">
                                       <div class="bn_inner3">
                                           <span class="bn_text">
-                                              베너 2
+                                              포트폴리오 및 취업 준비에는 UNICODE!
                                           </span>
                                       </div>
                                   </div>
-                                  <img class="bn_img" src="./img/포켓몬2.png" alt="">
+                                  <img class="bn_img" src="https://soup.pw/_next/image?url=%2Fbanner%2F2.png&w=640&q=75" alt="">
                               </div>
                           </a>
+                          
                       </div>
                   </a>
               </div>
@@ -68,18 +69,19 @@
                   <a href="" class="bn">
                       <!-- 세 번째 슬라이드의 내용 -->
                       <div>
-                          <a href="" class="bn">
-                              <div class="bn_inner1">
-                                  <div class="bn_inner2">
-                                      <div class="bn_inner3">
-                                          <span class="bn_text">
-                                              베너 3
-                                          </span>
-                                      </div>
-                                  </div>
-                                  <img class="bn_img" src="./img/포켓몬3.png" alt="">
-                              </div>
-                          </a>
+	                      <a href="" class="bn" style="background-color:#000000;">
+	                              <div class="bn_inner1">
+	                                  <div class="bn_inner2">
+	                                      <div class="bn_inner3">
+	                                          <span class="bn_text" style="color:#fff">
+	                                              초보 개발자의 프로젝트 씹어먹기!
+	                                          </span>
+	                                      </div>
+	                                  </div>
+	                                  <img class="bn_img" src="https://cdn.inflearn.com/public/main_sliders/2bb11b09-e564-4191-ab4a-c4032d429136/%5B%E1%84%90%E1%85%A2%E1%84%80%E1%85%B3%E1%84%85%E1%85%A2%E1%86%AB%E1%84%83%E1%85%B5%E1%86%BC%5D%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%86%E1%85%AE%E1%86%AB%E1%84%85%E1%85%A6%E1%84%87%E1%85%A6%E1%86%AF_521.webp" alt="">
+	                              </div>
+	                          </a>
+                         
                       </div>
                   </a>
               </div>
@@ -98,7 +100,7 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="slide-item">
-                        <img src="./img/portfolio_img1.png" />
+                        <img src="https://cdn-dantats.stunning.kr/prod/portfolios/06d20579-4caa-4842-b8c4-8c2bdeec3565/covers/5f8MgEsz6YGu9c5E.%E1%84%8A%E1%85%A5%E1%86%B7%E1%84%82%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AF.png.small?s=1000x1000&e=0x0&t=crop&q=100&f=webp" />
                         <div class="slide-text" >
                             <div>
                                 <div style="font-size: 18px;">
@@ -119,7 +121,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="slide-item">
-                        <img src="./img/portfolio_img2.jpg" />
+                        <img src="https://cdn-dantats.stunning.kr/prod/portfolios/d7fdcd38-73be-43ce-b074-29c0d5cb7287/covers/nHgU3a5i9HftkZY6.%EC%A0%9C%EC%B6%9C%EC%9A%A9%20600.png.small?s=600x600&e=0x0&t=crop&q=100&f=webp" />
                         <div class="slide-text" >
                             <div>
                                 <div style="font-size: 18px;">
@@ -140,7 +142,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="slide-item">
-                        <img src="./img/portfolio_img3.png" />
+                        <img src="https://cdn-dantats.stunning.kr/prod/portfolios/4f576e2c-628b-47a7-8900-4dcb6a33733b/covers/kbkPzkFAETqdspTk.%E1%84%8C%E1%85%A6%E1%84%86%E1%85%A9%E1%86%A8%20%E1%84%8B%E1%85%A5%E1%86%B9%E1%84%8B%E1%85%B3%E1%86%B7-1.jpg.small?s=599x599&e=0x0&t=crop&q=100&f=webp" />
                         <div class="slide-text" >
                             <div>
                                 <div style="font-size: 18px;">
@@ -161,7 +163,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="slide-item">
-                        <img src="./img/portfolio_img.png" />
+                        <img src="https://cdn-dantats.stunning.kr/prod/portfolios/dcbf0844-048a-4881-9176-9fbc3f6a708f/covers/bDqFuBs62TfYiQRU.%E1%84%8A%E1%85%A5%E1%86%B7%E1%84%82%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AF.png.small?s=2560x2560&e=0x0&t=crop&q=100&f=webp" />
                         <div class="slide-text" >
                             <div>
                                 <div style="font-size: 18px;">
@@ -184,100 +186,99 @@
         </div>
           
       
-      <div class="swiper mySwiper1" dir="rtl">
-              <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                      <div class="slide-item">
-                          <img src="./img/portfolio_img3.jpg" />
-                          <div class="slide-text" >
-                              <div>
-                                  <div style="font-size: larger; text-align: center; ">
-                                      <b>상금</b>
-                                  </div>
-                                  <div>
-                                      300,000원
-                                  </div>
-                              </div>
-                              <div>
-                                  <div style="font-size: 18px;">
-                                      <b>프로젝트 이름</b>
-                                  </div>
-                                  <span style="float: left;">프로젝트 설명</span>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="swiper-slide">
-                      <div class="slide-item">
-                          <img src="./img/portfolio_img1.png" />
-                          <div class="slide-text" >
-                              <div>
-                                  <div style="font-size: larger; text-align: center; ">
-                                      <b>상금</b>
-                                  </div>
-                                  <div>
-                                      300,000원
-                                  </div>
-                              </div>
-                              <div>
-                                  <div style="font-size: 18px;">
-                                      <b>프로젝트 이름</b>
-                                  </div>
-                                  <span style="float: left;">프로젝트 설명</span>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="swiper-slide">
-                      <div class="slide-item">
-                          <img src="./img/portfolio_img3.png" />
-                          <div class="slide-text" >
-                              <div>
-                                  <div style="font-size: larger; text-align: center; ">
-                                      <b>상금</b>
-                                  </div>
-                                  <div>
-                                      300,000원
-                                  </div>
-                              </div>
-                              <div>
-                                  <div style="font-size: 18px;">
-                                      <b>프로젝트 이름</b>
-                                  </div>
-                                  <span style="float: left;">프로젝트 설명</span>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="swiper-slide">
-                      <div class="slide-item">
-                          <img src="./img/portfolio_img2.jpg" />
-                          <div class="slide-text" >
-                              <div>
-                                  <div style="font-size: larger; text-align: center; ">
-                                      <b>상금</b>
-                                  </div>
-                                  <div>
-                                      300,000원
-                                  </div>
-                              </div>
-                              <div>
-                                  <div style="font-size: 18px;">
-                                      <b>프로젝트 이름</b>
-                                  </div>
-                                  <span style="float: left;">프로젝트 설명</span>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          
-      </div>
+      <div class="swiper mySwiper" dir="ltr">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="slide-item">
+                        <img src="https://cdn-dantats.stunning.kr/prod/portfolios/241282df-a90e-4220-90bd-031846263d91/covers/ORDER_SUB_141603_1_151126033534.jpg.small?s=800x800&t=crop&q=100&f=webp" />
+                        <div class="slide-text" >
+                            <div>
+                                <div style="font-size: 18px;">
+                                    <b>콘테스트 이름</b>
+                                </div>
+                                <span>콘테스트 설명</span>
+                            </div>
+                            <div>
+                                <div style="font-size: larger; text-align: center; ">
+                                    <b>상금</b>
+                                </div>
+                                <div>
+                                    300,000원
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-item">
+                        <img src="https://cdn-dantats.stunning.kr/prod/portfolios/5853f5ed-8444-4333-adf8-f32a65379b9b/covers/order_sub_2174100_1_190210231146.jpg.small?s=800x800&t=crop&q=100&f=webp" />
+                        <div class="slide-text" >
+                            <div>
+                                <div style="font-size: 18px;">
+                                    <b>콘테스트 이름</b>
+                                </div>
+                                <span>콘테스트 설명</span>
+                            </div>
+                            <div>
+                                <div style="font-size: larger; text-align: center; ">
+                                    <b>상금</b>
+                                </div>
+                                <div>
+                                    300,000원
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-item">
+                        <img src="https://cdn-dantats.stunning.kr/prod/portfolios/241282df-a90e-4220-90bd-031846263d91/covers/ORDER_SUB_141479_1_151125032547.jpg.small?s=800x800&t=crop&q=100&f=webp" />
+                        <div class="slide-text" >
+                            <div>
+                                <div style="font-size: 18px;">
+                                    <b>콘테스트 이름</b>
+                                </div>
+                                <span>콘테스트 설명</span>
+                            </div>
+                            <div>
+                                <div style="font-size: larger; text-align: center; ">
+                                    <b>상금</b>
+                                </div>
+                                <div>
+                                    300,000원
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-item">
+                        <img src="https://cdn-dantats.stunning.kr/prod/portfolios/47ef82a9-e488-473c-a484-4a3b7f0d7b69/covers/EHJF5i2EvAqYFPc2.thumbnail.jpg.small?s=999x999&e=0x0&t=crop&q=100&f=webp" />
+                        <div class="slide-text" >
+                            <div>
+                                <div style="font-size: 18px;">
+                                    <b>콘테스트 이름</b>
+                                </div>
+                                <span>콘테스트 설명</span>
+                            </div>
+                            <div>
+                                <div style="font-size: larger; text-align: center; ">
+                                    <b>상금</b>
+                                </div>
+                                <div>
+                                    300,000원
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
       <div class="swiper mySwiper" dir="ltr">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <div class="slide-item">
-                    <img src="./img/portfolio_img1.png" />
+                    <img src="https://cdn-dantats.stunning.kr/prod/portfolios/b7cbd0ad-cad1-4a37-9a4f-57e8f1f74f39/covers/W4693LYbhFrbwgXf.%EC%8D%B8%EB%84%A4%EC%9D%BC.png.small?s=600x600&e=0x0&t=crop&q=100&f=webp" />
                     <div class="slide-text" >
                         <div>
                             <div style="font-size: 18px;">
@@ -298,7 +299,7 @@
             </div>
             <div class="swiper-slide">
                 <div class="slide-item">
-                    <img src="./img/portfolio_img2.jpg" />
+                    <img src="https://cdn-dantats.stunning.kr/prod/portfolios/c12afd01-5380-4216-b4bd-f7dd71bbd555/covers/order_sub_2429518_1_200408211209.png.small?s=800x800&t=crop&q=100&f=webp" />
                     <div class="slide-text" >
                         <div>
                             <div style="font-size: 18px;">
@@ -319,7 +320,7 @@
             </div>
             <div class="swiper-slide">
                 <div class="slide-item">
-                    <img src="./img/portfolio_img3.png" />
+                    <img src="https://cdn-dantats.stunning.kr/prod/portfolios/d7fdcd38-73be-43ce-b074-29c0d5cb7287/covers/Fja58jpfXvR4zRjV.600.png.small?s=600x600&e=0x0&t=crop&q=100&f=webp" />
                     <div class="slide-text" >
                         <div>
                             <div style="font-size: 18px;">
@@ -340,7 +341,7 @@
             </div>
             <div class="swiper-slide">
                 <div class="slide-item">
-                    <img src="./img/portfolio_img.png" />
+                    <img src="https://cdn-dantats.stunning.kr/prod/portfolios/45b0da35-22b4-4054-aa2b-c69504e69954/covers/ORDER_SUB_181038_1_160920005831.jpg.small?s=800x800&t=crop&q=100&f=webp" />
                     <div class="slide-text" >
                         <div>
                             <div style="font-size: 18px;">
