@@ -161,9 +161,9 @@ function displayContests(data) {
         var prize = parseInt(contest.con_prize, 10); // 상금을 정수로 변환, 불필요한 변환 최소화
         // 상금 크기에 따라 필터링
        
-        if (isSmallChecked) return prize >= 0 && prize <= 5000;
-        if (isMiddleChecked) return prize > 5000 && prize <= 10000;
-        if (isLargeChecked) return prize > 10000;
+        if (isSmallChecked) return prize >= 0 && prize <= 300000;
+        if (isMiddleChecked) return prize > 300000 && prize <= 1000000;
+        if (isLargeChecked) return prize > 1000000;
         return true; // 아무 필터링도 적용되지 않을 경우 모든 데이터를 포함
     });
 

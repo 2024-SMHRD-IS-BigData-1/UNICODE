@@ -99,15 +99,15 @@
         <div class="profile-box-wrapper">
             <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px;">
                 <div>
-                    <div style="margin-left: 5px; margin-bottom: 8px; margin-top: 8px;">☆☆☆☆☆ <b>0.00</b> / <span class="text-small">평가 0개</span></div>
-                    <div style="font-size: xx-small; margin-left: 10px; ">적극성 : 0.00 완성도 : 0.00 만족도 : 0.00 피드백 : 0.00</div>
+                    <div style="margin-left: 5px; margin-bottom: 8px; margin-top: 8px;">⭐⭐⭐⭐⭐ <b>4.98</b> / <span class="text-small">평가 210개</span></div>
+                    <div style="font-size: xx-small; margin-left: 10px; ">적극성 : 4.99 완성도 : 5.00 만족도 : 5.00 피드백 : 4.97</div>
                 </div>
                 <div>
                     <div style="display: flex; width: 300px; margin: 8px;">
                         <div style="margin-right: 10px;">우승한 콘테스트</div>
-                        <div class="total-project-done2"><b><span span id="project-done-count2"></span></b>건</div>
+                        <div><b>309</b><span class="text-small">건</span></div>
                     </div>
-                        <div style="font-size: xx-small; margin-left: 10px;">웹 : 00% 안드로이드 : 00% iOS : 00% 기타 : 00%</div>
+                        <div style="font-size: xx-small; margin-left: 10px;">웹 : 48% 안드로이드 : 23% iOS : 20% 기타 : 6%</div>
                 </div>
             </div>
         </div>
@@ -191,13 +191,13 @@
                 <div>
                     <div class="total-money-cnt">
                         <div style="font-size: larger; margin-bottom: 10px;"><b>누적 상금</b></div>
-                        <span id="money-cnt-total"></span>원
+                        <span id="money-cnt-total">6,650,000</span>원
                     </div>
                 </div>
                 <div>
                     <div class="total-project-done">
                         <div style="font-size: larger; margin-bottom: 10px;"><b>우승한 콘테스트</b></div>
-                        <span id="project-done-count"></span>건
+                        <span id="project-done-count">6</span>건
                     </div>
                 </div>
             </div>
@@ -211,13 +211,13 @@
                             <div style="width: 100%; padding-left: 10px; margin: 10px;">
                                 <div style="margin-bottom: 10px;" name="cnt_title"><b>contest_title</b></div>
                                 <div class="money-cnt" name="cnt_money" style=" margin-bottom: 10px; font-size: smaller;">
-                                    <b>상금 </b><span style="font-size: smaller; margin-right: 5px;">2,500,000</span>
+                                    <b>상금 </b><span style="font-size: smaller; margin-right: 5px;">350,000</span>
                                 </div>
                                 <div style="font-size: smaller;"><b>사용 기술</b></div> 
                                 <div style="display: flex; ">
-                                    <div name="cnt_skill" class="used-skill"><img class="skill-img" src="/img/skill/java.png"><div class="skill-name">JAVA</div></div>
-                                    <div name="cnt_skill" class="used-skill"><img class="skill-img" src="/img/skill/c_plus_plus.png"><div class="skill-name">C++</div></div>
-                                    <div name="cnt_skill" class="used-skill"><img class="skill-img" src="/img/skill/html.png"><div class="skill-name">HTML</div></div>
+                                    <div name="cnt_skill" class="used-skill"><img class="skill-img" src="assets/img/html.png"><div class="skill-name">HTML</div></div>
+                                    <div name="cnt_skill" class="used-skill"><img class="skill-img" src="assets/img/css.png"><div class="skill-name">CSS</div></div>
+                                    <div name="cnt_skill" class="used-skill"><img class="skill-img" src="assets/img/javascript.png"><div class="skill-name">JS</div></div>
                                 </div>
                             </div>
                         </div>
@@ -228,15 +228,15 @@
                         </div>
                         <div class="project-done">
                             <div style="width: 100%; padding-left: 10px; margin: 10px;">
-                                <div style="margin-bottom: 10px;"><b>IOT 스마트 펌웨어 개발</b></div>
+                                <div style="margin-bottom: 10px;"><b>(주)OO컴퍼니 서버 개발</b></div>
                                 <div class="money-cnt" style="margin-bottom: 10px; font-size: smaller;">
-                                    <b>상금 </b><span style="font-size: smaller; margin-right: 5px;">2,500,000</span>
+                                    <b>상금 </b><span style="font-size: smaller; margin-right: 5px;">3,000,000</span>
                                 </div>
                                 <div style="font-size: smaller;"><b>사용 기술</b></div> 
                                 <div style="display: flex; ">
-                                    <div class="used-skill"><img class="skill-img" src="/img/skill/java.png"><div class="skill-name">JAVA</div></div>
-                                    <div class="used-skill"><img class="skill-img" src="/img/skill/c_plus_plus.png"><div class="skill-name">C++</div></div>
-                                    <div class="used-skill"><img class="skill-img" src="/img/skill/html.png"><div class="skill-name">HTML</div></div>
+                                    <div class="used-skill"><img class="skill-img" src="assets/img/java.png"><div class="skill-name">JAVA</div></div>
+                                    <div class="used-skill"><img class="skill-img" src="assets/img/python.png"><div class="skill-name">PYTHON</div></div>
+                                    <div class="used-skill"><img class="skill-img" src="assets/img/c.png"><div class="skill-name">C</div></div>
                                 </div>
                             </div>
                         </div>
@@ -246,15 +246,15 @@
                         </div>
                         <div class="project-done">
                             <div style="width: 100%; padding-left: 10px; margin: 10px;">
-                                <div style="margin-bottom: 10px;"><b>IOT 스마트 펌웨어 개발</b></div>
+                                <div style="margin-bottom: 10px;"><b>인공지능사관학교 홈페이지 제작</b></div>
                                 <div class="money-cnt" style="margin-bottom: 10px; font-size: smaller;">
                                     <b>상금 </b><span style="font-size: smaller; margin-right: 5px;">2,500,000</span>
                                 </div>
                                 <div style="font-size: smaller;"><b>사용 기술</b></div> 
                                 <div style="display: flex; ">
-                                    <div class="used-skill"><img class="skill-img" src="/img/skill/java.png"><div class="skill-name">JAVA</div></div>
-                                    <div class="used-skill"><img class="skill-img" src="/img/skill/c_plus_plus.png"><div class="skill-name">C++</div></div>
-                                    <div class="used-skill"><img class="skill-img" src="/img/skill/html.png"><div class="skill-name">HTML</div></div>
+                                    <div name="cnt_skill" class="used-skill"><img class="skill-img" src="assets/img/html.png"><div class="skill-name">HTML</div></div>
+                                    <div name="cnt_skill" class="used-skill"><img class="skill-img" src="assets/img/css.png"><div class="skill-name">CSS</div></div>
+                                    <div name="cnt_skill" class="used-skill"><img class="skill-img" src="assets/img/javascript.png"><div class="skill-name">JS</div></div>
                                 </div>
                             </div>
                         </div>
@@ -270,13 +270,13 @@
                             <div style="width: 100%; padding-left: 10px; margin: 10px;">
                                 <div style="margin-bottom: 10px;"><b>IOT 스마트 펌웨어 개발</b></div>
                                 <div class="money-cnt" style=" margin-bottom: 10px; font-size: smaller;">
-                                    <b>상금 </b><span style="font-size: smaller; margin-right: 5px;">2,500,000</span>
+                                    <b>상금 </b><span style="font-size: smaller; margin-right: 5px;">400,000</span>
                                 </div>
                                 <div style="font-size: smaller;"><b>사용 기술</b></div> 
                                 <div style="display: flex; ">
-                                    <div class="used-skill"><img class="skill-img" src="/img/skill/java.png"><div class="skill-name">JAVA</div></div>
-                                    <div class="used-skill"><img class="skill-img" src="/img/skill/c_plus_plus.png"><div class="skill-name">C++</div></div>
-                                    <div class="used-skill"><img class="skill-img" src="/img/skill/html.png"><div class="skill-name">HTML</div></div>
+                                   <div class="used-skill"><img class="skill-img" src="assets/img/java.png"><div class="skill-name">JAVA</div></div>
+                                    <div class="used-skill"><img class="skill-img" src="assets/img/python.png"><div class="skill-name">PYTHON</div></div>
+                                    <div class="used-skill"><img class="skill-img" src="assets/img/c.png"><div class="skill-name">C</div></div>
                                 </div>
                             </div>
                         </div>
@@ -287,15 +287,15 @@
                         </div>
                         <div class="project-done">
                             <div style="width: 100%; padding-left: 10px; margin: 10px;">
-                                <div style="margin-bottom: 10px;"><b>IOT 스마트 펌웨어 개발</b></div>
+                                <div style="margin-bottom: 10px;"><b>스마트인재개발원 홈페이지 제작</b></div>
                                 <div class="money-cnt" style="margin-bottom: 10px; font-size: smaller;">
-                                    <b>상금 </b><span style="font-size: smaller; margin-right: 5px;">2,500,000</span>
+                                    <b>상금 </b><span style="font-size: smaller; margin-right: 5px;">250,000</span>
                                 </div>
                                 <div style="font-size: smaller;"><b>사용 기술</b></div> 
                                 <div style="display: flex; ">
-                                    <div class="used-skill"><img class="skill-img" src="/img/skill/java.png"><div class="skill-name">JAVA</div></div>
-                                    <div class="used-skill"><img class="skill-img" src="/img/skill/c_plus_plus.png"><div class="skill-name">C++</div></div>
-                                    <div class="used-skill"><img class="skill-img" src="/img/skill/html.png"><div class="skill-name">HTML</div></div>
+                                     <div name="cnt_skill" class="used-skill"><img class="skill-img" src="assets/img/html.png"><div class="skill-name">HTML</div></div>
+                                    <div name="cnt_skill" class="used-skill"><img class="skill-img" src="assets/img/css.png"><div class="skill-name">CSS</div></div>
+                                    <div name="cnt_skill" class="used-skill"><img class="skill-img" src="assets/img/javascript.png"><div class="skill-name">JS</div></div>
                                 </div>
                             </div>
                         </div>
@@ -305,15 +305,15 @@
                         </div>
                         <div class="project-done">
                             <div style="width: 100%; padding-left: 10px; margin: 10px;">
-                                <div style="margin-bottom: 10px;"><b>IOT 스마트 펌웨어 개발</b></div>
+                                <div style="margin-bottom: 10px;"><b>국방부 보안 프로그램 개발</b></div>
                                 <div class="money-cnt" style="margin-bottom: 10px; font-size: smaller;">
-                                    <b>상금 </b><span style="font-size: smaller; margin-right: 5px;">2,500,000</span>
+                                    <b>상금 </b><span style="font-size: smaller; margin-right: 5px;">150,000</span>
                                 </div>
                                 <div style="font-size: smaller;"><b>사용 기술</b></div> 
                                 <div style="display: flex; ">
-                                    <div class="used-skill"><img class="skill-img" src="/img/skill/java.png"><div class="skill-name">JAVA</div></div>
-                                    <div class="used-skill"><img class="skill-img" src="/img/skill/c_plus_plus.png"><div class="skill-name">C++</div></div>
-                                    <div class="used-skill"><img class="skill-img" src="/img/skill/html.png"><div class="skill-name">HTML</div></div>
+                                    <div class="used-skill"><img class="skill-img" src="assets/img/java.png"><div class="skill-name">JAVA</div></div>
+                                    <div class="used-skill"><img class="skill-img" src="assets/img/python.png"><div class="skill-name">PYTHON</div></div>
+                                    <div class="used-skill"><img class="skill-img" src="assets/img/c.png"><div class="skill-name">C</div></div>
                                 </div>
                             </div>
                         </div>
@@ -334,9 +334,9 @@
                                 <div style="margin: 30px 10px 20px 10px; padding-left: 10px;"><b>title</b></div>
                                 <div style="margin-bottom: 10px;"><span style="padding-left: 15px; font-size: smaller;"><b>사용기술</b></span></div>
                                 <div style="display: flex;">
-                                    <div class="used-skill"><img class="skill-img" src="/img/skill/java.png"><div class="skill-name">JAVA</div></div>
-                                    <div class="used-skill"><img class="skill-img" src="/img/skill/c_plus_plus.png"><div class="skill-name">C++</div></div>
-                                    <div class="used-skill"><img class="skill-img" src="/img/skill/html.png"><div class="skill-name">HTML</div></div>
+                                    <div class="used-skill"><img class="skill-img" src="assets/img/java.png"><div class="skill-name">JAVA</div></div>
+                                    <div class="used-skill"><img class="skill-img" src="assets/img/c.png"><div class="skill-name">C</div></div>
+                                    <div class="used-skill"><img class="skill-img" src="assets/img/html.png"><div class="skill-name">HTML</div></div>
                                 </div>
                             </div>
                         </div>
@@ -362,12 +362,12 @@
                                 <img src="/img/포켓몬2.png" alt="" style="padding: 0 12.5px; max-height:150px">
                             </div>
                             <div style="margin-right:40px;">
-                                <div style="margin: 30px 10px 20px 10px; padding-left: 10px;"><b>IOT 스마트 펌웨어 개발</b></div>
+                                <div style="margin: 30px 10px 20px 10px; padding-left: 10px;"><b>IT 스마트 앱 개발</b></div>
                                 <div style="margin-bottom: 10px;"><span style="padding-left: 15px; font-size: smaller;"><b>사용기술</b></span></div>
                                 <div style="display: flex;">
-                                    <div class="used-skill"><img class="skill-img" src="/img/skill/java.png"><div class="skill-name">JAVA</div></div>
-                                    <div class="used-skill"><img class="skill-img" src="/img/skill/c_plus_plus.png"><div class="skill-name">C++</div></div>
-                                    <div class="used-skill"><img class="skill-img" src="/img/skill/html.png"><div class="skill-name">HTML</div></div>
+                                    <div class="used-skill"><img class="skill-img" src="assets/img/java.png"><div class="skill-name">JAVA</div></div>
+                                    <div class="used-skill"><img class="skill-img" src="assets/img/db.png"><div class="skill-name">DB</div></div>
+                                    <div class="used-skill"><img class="skill-img" src="assets/img/python.png"><div class="skill-name">PYTHON</div></div>
                                 </div>
                             </div>
                         </div>
