@@ -38,10 +38,20 @@ public class LoginService extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("loginUser", loginUser);
 			response.sendRedirect("Main.jsp");
+		} else if(loginUser == null) {
+			System.out.println(loginUser);
+			System.out.println("로그인 실패..");
+			 String msg = "아이디 또는 비밀번호를 입력해주세요.";
+			   String str="";
+			   str = "<script language='javascript'>";
+			   str += "alert('"+ msg + "');";   //얼럿창 띄우기
+			   str += "location.href = 'Login.jsp';";
+			   str += "</script>";
+			   out.print(str);
 		} else {
 			System.out.println(loginUser);
 			System.out.println("로그인 실패..");
-			 String msg = "아이디 또는 비밀번호가 일치하지 않습니다.";
+			 String msg = "아이디 또는 비밀번호를 확인해주세요.";
 			   String str="";
 			   str = "<script language='javascript'>";
 			   str += "alert('"+ msg + "');";   //얼럿창 띄우기

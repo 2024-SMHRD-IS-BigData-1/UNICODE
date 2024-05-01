@@ -28,7 +28,7 @@
         cursor: pointer;
         text-decoration: none;
         }
-    .abox{
+    .abox{ 
        
         color: #FFF;
         
